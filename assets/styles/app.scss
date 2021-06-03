@@ -7,9 +7,39 @@ body {
     color: $primary;
     font-family: $text-font;
     font-size: 16pt;
+    padding-top: 70px;
 }
 
 h1, h2, h3 {
     font-family: $text-font;
     color: $secondary;
+}
+
+
+.nav-link, .navbar-brand{
+    font-family: $title-font;
+    color: $primary;
+    font-weight: bolder;
+}
+
+.nav-link:hover{
+    color: $tertiary;
+}
+
+.navbar-toggler{
+    display: inline;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    color: $primary;
+    background-color: $primary;
+}
+
+#navbarNavAltMarkup{
+    text-align: center;
+}
+
+.navbar-toggler-icon{
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");   
 }
