@@ -5,10 +5,8 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Entity\Picture;
+use App\Entity\Office;
 
-const OFFICE_1 = "cabinet 1";
-const OFFICE_2 = "cabinet 2";
 
 class ContactController extends AbstractController
 {
@@ -19,16 +17,14 @@ class ContactController extends AbstractController
 
     public function index(): Response
     {
-        return $this->render('home/contact.html.twig', ['cabinet1' => self::getPics($this, OFFICE_1),
-        'cabinet2' => self::getPics($this, OFFICE_2)
+        return $this->render('home/contact.html.twig', ['offices' => self::getOffices($this),
         ]);
     }
 
-
-    private static function getPics(ContactController $thisCollection, string $param): array
+    private static function getOffices(ContactController $thisCollection): array
     {
         return $thisCollection->getDoctrine()
-        ->getRepository(Picture::class)
-        ->findBy(['name' => $param]);
+        ->getRepository(Office::class)
+        ->findAll();
     }
 }

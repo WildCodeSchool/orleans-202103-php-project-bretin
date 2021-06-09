@@ -4,46 +4,28 @@
 
 {% block body %}
 
-<div class="container-fluid">
-<br>
-    <div class="row">
-        <div class="col-lg-4">
-          <p>Si vous êtes un PARTICULIER</p>
-        </div>
-        <div class="col-lg-4 text-center">
-          <h3><i class="fas fa-map-marker-alt"></i>&nbsp;Carte et informations d'accès</h3>
-        </div>
-        <div class="col-lg-4">
-        </div>
-    </div>
-</div>
-<div class="container p-3">
+<div class =) "container-fluid">
   <div class="row">
-    <div class="w-100">
+    <div class="col-lg-4 p-3">
+     <p>Si vous êtes un PARTICULIER</p>
     </div>
   </div>
+  <div class="container">
+    <div class = "row">
+    </div>
+        {% for office in offices %}
+        <div class="card">
+          <div class="card-header">
+                    {{ office.name }}
+          </div>
+            <div class="card-body">
+              <h5 class="card-title">  {{ office.address }} - {{ office.zipcode }} </h5>
+              <p class="card-text"> {{ office.phone }}</p>
+            </div>
+        </div>
+              {% endfor %}
+  </div>
+</div>
 
-  <div class="row">
-      <p>{{ cabinet1|first.name }}</p>
-       <div class="row p-3">
-        {% for picture in cabinet1 %}
-    <div class="col-md-4 d-flex">
-      <img src="{{ asset(picture.url) }}" alt=""  width = "70%" height="70%">
-    </div>
-    {% else %}
-        Aucune photo trouvée.
-    {% endfor %}
-      </div>
-           <p>{{ cabinet2|first.name }}</p>
-        <div class="row">
-   {% for picture in cabinet2 %}
-    <div class="col-md-4 d-flex">
-      <img src="{{ asset(picture.url) }}" alt=""  width = "70%" height="70%">
-    </div>
-    {% else %}
-        Aucune photo trouvée.
-    {% endfor %}
-      </div>
-  </div>
-</div>
 {% endblock %}
+

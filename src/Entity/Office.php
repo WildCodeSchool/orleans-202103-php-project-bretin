@@ -25,7 +25,7 @@ class Office
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private string $adress;
+    private string $address;
 
     /**
      * @ORM\Column(type="string", length=50)
@@ -41,11 +41,6 @@ class Office
      * @ORM\Column(type="string", length=10)
      */
     private string $phone;
-
-    /**
-     * @ORM\ManyToOne(targetEntity=Picture::class)
-     */
-    private Picture $picture;
 
     public function getId(): ?int
     {
@@ -64,14 +59,14 @@ class Office
         return $this;
     }
 
-    public function getAdress(): ?string
+    public function getAddress(): ?string
     {
-        return $this->adress;
+        return $this->address;
     }
 
-    public function setAdress(string $adress): self
+    public function setAddress(string $address): self
     {
-        $this->adress = $adress;
+        $this->address = $address;
 
         return $this;
     }
@@ -108,18 +103,6 @@ class Office
     public function setPhone(string $phone): self
     {
         $this->phone = $phone;
-
-        return $this;
-    }
-
-    public function getPicture(): ?Picture
-    {
-        return $this->picture;
-    }
-
-    public function setPicture(Picture $picture): self
-    {
-        $this->picture = $picture;
 
         return $this;
     }
