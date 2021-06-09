@@ -10,18 +10,21 @@ class AppFixturesOffice extends Fixture
 {
     public function load(ObjectManager $manager)
     {
-        self::saveline("cabinet 1", "1 Rue Courcaille", "45000", "Orléans", "0651856989", $manager);
-        self::saveline("cabinet 2", "85-89 Rue du Haut Midi,", "45160", "Saint-Hilaire-Saint-Mesmin", "0651856989", $manager);
-    }
-
-    private static function saveline(string $name, string $address, string $zipcode , string $city, string $phone,ObjectManager $manager)
-    {
         $office = new Office();
-        $office->setName($name);
-        $office->setAddress($address);
-        $office->setZipcode($zipcode);
-        $office->setCity($city);
-        $office->setPhone($phone);
+        $office->setName("cabinet 1");
+        $office->setAddress("1 Rue Courcaille");
+        $office->setZipcode("45000");
+        $office->setCity("Orléans");
+        $office->setPhone("0651856989");
+        $manager->persist($office);
+        $manager->flush();
+
+        $office = new Office();
+        $office->setName("cabinet 2");
+        $office->setAddress("85-89 Rue du Haut Midi");
+        $office->setZipcode("45160");
+        $office->setCity("Saint-Hilaire-Saint-Mesmin");
+        $office->setPhone("0651856989");
         $manager->persist($office);
         $manager->flush();
     }
