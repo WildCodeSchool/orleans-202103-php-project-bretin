@@ -10,15 +10,15 @@ class AppFixtures extends Fixture
 {
     public function load(ObjectManager $manager)
     {
-        self::saveline ("cabinet 1","build/images/cabinet1.jpg",$manager);
-        self::saveline ("cabinet 1","build/images/cabinet2.jpg",$manager);
-        self::saveline ("cabinet 1","build/images/cabinet3.jpg",$manager);
-        self::saveline ("cabinet 2","build/images/cabinet21.jpg",$manager);
-        self::saveline ("cabinet 2","build/images/cabinet22.jpg",$manager);
-        self::saveline ("cabinet 2","build/images/cabinet23.jpg",$manager);
+        self::saveline("cabinet 1", "build/images/cabinet1.jpg", $manager);
+        self::saveline("cabinet 1", "build/images/cabinet2.jpg", $manager);
+        self::saveline("cabinet 1", "build/images/cabinet3.jpg", $manager);
+        self::saveline("cabinet 2", "build/images/cabinet21.jpg", $manager);
+        self::saveline("cabinet 2", "build/images/cabinet22.jpg", $manager);
+        self::saveline("cabinet 2", "build/images/cabinet23.jpg", $manager);
     }
 
-    static function saveline(string $name,string $url,ObjectManager $manager)
+    private static function saveline(string $name, string $url, ObjectManager $manager)
     {
         $picture = new Picture();
         $picture->setName($name);

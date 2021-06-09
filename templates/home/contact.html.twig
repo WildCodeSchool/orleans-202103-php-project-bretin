@@ -24,22 +24,22 @@
   </div>
 
   <div class="row">
-      <p>{{cabinet1|first.name}}</p>
-        <div class="row p-3"> 
-   {% for picture in cabinet1 %} 
+      <p>{{ cabinet1|first.name }}</p>
+       <div class="row p-3">
+        {% for picture in cabinet1 %}
     <div class="col-md-4 d-flex">
       <img src="{{ asset(picture.url) }}" alt=""  width = "70%" height="70%">
-    </div>   
+    </div>
     {% else %}
         Aucune photo trouvée.
     {% endfor %}
       </div>
-           <p>{{cabinet2|first.name}}</p>
-        <div class="row"> 
-   {% for picture in cabinet2 %} 
+           <p>{{ cabinet2|first.name }}</p>
+        <div class="row">
+   {% for picture in cabinet2 %}
     <div class="col-md-4 d-flex">
       <img src="{{ asset(picture.url) }}" alt=""  width = "70%" height="70%">
-    </div>   
+    </div>
     {% else %}
         Aucune photo trouvée.
     {% endfor %}

@@ -12,21 +12,20 @@ const OFFICE_2 = "cabinet 2";
 
 class ContactController extends AbstractController
 {
-   
+
     /**
      * @Route("/contact", name="contact_")
      */
-    
+
     public function index(): Response
     {
-        return $this->render('home/contact.html.twig', 
-        ['cabinet1' => self::getPics($this,OFFICE_1),
-        'cabinet2' => self::getPics($this,OFFICE_2)
+        return $this->render('home/contact.html.twig', ['cabinet1' => self::getPics($this, OFFICE_1),
+        'cabinet2' => self::getPics($this, OFFICE_2)
         ]);
     }
 
 
-    static  private function getPics($thisCollection, $param)
+    private static function getPics(ContactController $thisCollection, string $param): array
     {
         return $thisCollection->getDoctrine()
         ->getRepository(Picture::class)

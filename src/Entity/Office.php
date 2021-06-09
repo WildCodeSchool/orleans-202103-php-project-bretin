@@ -15,37 +15,37 @@ class Office
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private int $id;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $name;
+    private string $name;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $adress;
+    private string $adress;
 
     /**
      * @ORM\Column(type="string", length=50)
      */
-    private $zipcode;
+    private string $zipcode;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $city;
+    private string $city;
 
     /**
      * @ORM\Column(type="string", length=10)
      */
-    private $phone;
+    private string $phone;
 
     /**
      * @ORM\ManyToOne(targetEntity=Picture::class)
      */
-    private $picture;
+    private Picture $picture;
 
     public function getId(): ?int
     {
@@ -117,7 +117,7 @@ class Office
         return $this->picture;
     }
 
-    public function setPicture(?Picture $picture): self
+    public function setPicture(Picture $picture): self
     {
         $this->picture = $picture;
 
