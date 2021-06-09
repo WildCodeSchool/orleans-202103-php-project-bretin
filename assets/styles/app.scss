@@ -54,9 +54,3 @@ h1, h2, h3 {
     color: $tertiary;
 }
 
-@media screen and (max-width: 460px)
-{
-    .a .navbar-brand{
-        display: none;
-    }
-}
