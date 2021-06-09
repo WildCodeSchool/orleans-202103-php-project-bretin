@@ -1,0 +1,49 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block body %}
+
+<div class="container-fluid">
+<br>
+    <div class="row">
+        <div class="col-lg-4">
+          <p>Si vous êtes un PARTICULIER</p>
+        </div>
+        <div class="col-lg-4 text-center">
+          <h3><i class="fas fa-map-marker-alt"></i>&nbsp;Carte et informations d'accès</h3>
+        </div>
+        <div class="col-lg-4">
+        </div>
+    </div>
+</div>
+<div class="container p-3">
+  <div class="row">
+    <div class="w-100">
+    </div>
+  </div>
+
+  <div class="row">
+      <p>{{cabinet1|first.name}}</p>
+        <div class="row p-3"> 
+   {% for picture in cabinet1 %} 
+    <div class="col-md-4 d-flex">
+      <img src="{{ asset(picture.url) }}" alt=""  width = "70%" height="70%">
+    </div>   
+    {% else %}
+        Aucune photo trouvée.
+    {% endfor %}
+      </div>
+           <p>{{cabinet2|first.name}}</p>
+        <div class="row"> 
+   {% for picture in cabinet2 %} 
+    <div class="col-md-4 d-flex">
+      <img src="{{ asset(picture.url) }}" alt=""  width = "70%" height="70%">
+    </div>   
+    {% else %}
+        Aucune photo trouvée.
+    {% endfor %}
+      </div>
+  </div>
+</div>
+{% endblock %}
