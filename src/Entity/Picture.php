@@ -32,7 +32,7 @@ class Picture
     /**
      * @ORM\ManyToMany(targetEntity=Office::class, mappedBy="picture")
      */
-    private $offices;
+    private collection $offices;
 
     public function __construct()
     {

@@ -17,8 +17,8 @@
       {{ office.name }}
     </div>
     <div class="card-body d-flex justify-content-between p-2">
-      <div class="row">   
-            {% for pic in  office.picture %}
+      <div class="row">
+            {% for pic in office.picture %}
         <div class="col">
             <img src="{{ asset(pic.url) }}" alt="">
         </div>

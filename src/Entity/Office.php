@@ -47,7 +47,7 @@ class Office
     /**
      * @ORM\ManyToMany(targetEntity=Picture::class, inversedBy="offices")
      */
-    private $picture;
+    private Collection $picture;
 
     public function __construct()
     {
