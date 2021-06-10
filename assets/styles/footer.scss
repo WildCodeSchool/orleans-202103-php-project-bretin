@@ -1,0 +1,20 @@
+$footer: #faf9f8;
+$font-footer: 1em;
+
+.footer{
+    background-color: $primary;
+}
+
+p.psy{
+    font-size: $font-footer;
+    color: $footer;
+    font-family: $title-font;
+    font-weight: bolder;
+}
+
+address.contacts{
+    color: $footer;
+    font-family: $title-font;
+    font-weight: bolder;
+    font-size: $font-footer;
+}
