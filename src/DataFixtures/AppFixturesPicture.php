@@ -10,12 +10,12 @@ class AppFixturesPicture extends Fixture
 {
     public function load(ObjectManager $manager)
     {
-        self::office1("cabinet 1", "build/images/cabinet1.jpg", $manager, $this);
-        self::office1("cabinet 1", "build/images/cabinet2.jpg", $manager, $this);
-        self::office1("cabinet 1", "build/images/cabinet3.jpg", $manager, $this);
-        self::office2("cabinet 2", "build/images/cabinet21.jpg", $manager, $this);
-        self::office2("cabinet 2", "build/images/cabinet22.jpg", $manager, $this);
-        self::office2("cabinet 2", "build/images/cabinet23.jpg", $manager, $this);
+        self::office1("cabinet 1", "uploads/cabinet1.jpg", $manager, $this);
+        self::office1("cabinet 1", "uploads/cabinet2.jpg", $manager, $this);
+        self::office1("cabinet 1", "uploads/cabinet3.jpg", $manager, $this);
+        self::office2("cabinet 2", "uploads/cabinet21.jpg", $manager, $this);
+        self::office2("cabinet 2", "uploads/cabinet22.jpg", $manager, $this);
+        self::office2("cabinet 2", "uploads/cabinet23.jpg", $manager, $this);
     }
 
     private static function office1(string $name, string $url, ObjectManager $manager, AppFixturesPicture $fixture)
