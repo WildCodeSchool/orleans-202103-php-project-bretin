@@ -51,7 +51,6 @@ class Office
 
     public function __construct()
     {
-        $this->picture = new ArrayCollection();
         $this->pictures = new ArrayCollection();
     }
 
@@ -143,10 +142,9 @@ class Office
         if ($this->pictures->removeElement($picture)) {
             // set the owning side to null (unless already changed)
             if ($picture->getOffice() === $this) {
-                $picture->setOffice(null);
+                //$picture->setOffice(null);
             }
         }
-
         return $this;
     }
 }

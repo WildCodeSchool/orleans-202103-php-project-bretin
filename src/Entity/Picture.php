@@ -36,7 +36,6 @@ class Picture
 
     public function __construct()
     {
-        $this->offices = new ArrayCollection();
     }
 
     /**
@@ -78,7 +77,7 @@ class Picture
         return $this->office;
     }
 
-    public function setOffice(?Office $office): self
+    public function setOffice(Office $office): self
     {
         $this->office = $office;
 
