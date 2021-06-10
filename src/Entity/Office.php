@@ -45,13 +45,14 @@ class Office
     private string $phone;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Picture::class, inversedBy="offices")
+     * @ORM\OneToMany(targetEntity=Picture::class, mappedBy="office")
      */
-    private Collection $picture;
+    private collection $pictures;
 
     public function __construct()
     {
         $this->picture = new ArrayCollection();
+        $this->pictures = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -122,15 +123,16 @@ class Office
     /**
      * @return Collection|Picture[]
      */
-    public function getPicture(): Collection
+    public function getPictures(): Collection
     {
-        return $this->picture;
+        return $this->pictures;
     }
 
     public function addPicture(Picture $picture): self
     {
-        if (!$this->picture->contains($picture)) {
-            $this->picture[] = $picture;
+        if (!$this->pictures->contains($picture)) {
+            $this->pictures[] = $picture;
+            $picture->setOffice($this);
         }
 
         return $this;
@@ -138,7 +140,12 @@ class Office
 
     public function removePicture(Picture $picture): self
     {
-        $this->picture->removeElement($picture);
+        if ($this->pictures->removeElement($picture)) {
+            // set the owning side to null (unless already changed)
+            if ($picture->getOffice() === $this) {
+                $picture->setOffice(null);
+            }
+        }
 
         return $this;
     }

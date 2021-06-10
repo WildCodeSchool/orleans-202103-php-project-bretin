@@ -30,9 +30,9 @@ class Picture
     private string $url;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Office::class, mappedBy="picture")
+     * @ORM\ManyToOne(targetEntity=Office::class, inversedBy="pictures")
      */
-    private collection $offices;
+    private Office $office;
 
     public function __construct()
     {
@@ -73,29 +73,14 @@ class Picture
         return $this;
     }
 
-    /**
-     * @return Collection|Office[]
-     */
-    public function getOffices(): Collection
+    public function getOffice(): ?Office
     {
-        return $this->offices;
+        return $this->office;
     }
 
-    public function addOffice(Office $office): self
+    public function setOffice(?Office $office): self
     {
-        if (!$this->offices->contains($office)) {
-            $this->offices[] = $office;
-            $office->addPicture($this);
-        }
-
-        return $this;
-    }
-
-    public function removeOffice(Office $office): self
-    {
-        if ($this->offices->removeElement($office)) {
-            $office->removePicture($this);
-        }
+        $this->office = $office;
 
         return $this;
     }

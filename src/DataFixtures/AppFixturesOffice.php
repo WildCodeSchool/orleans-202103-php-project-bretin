@@ -5,10 +5,12 @@ namespace App\DataFixtures;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use App\Entity\Office;
-use App\Entity\Picture;
 
 class AppFixturesOffice extends Fixture
 {
+    public const OFFICE_1 = 1;
+    public const OFFICE_2 = 2;
+
     public function load(ObjectManager $manager)
     {
         $office = new Office();
@@ -17,6 +19,7 @@ class AppFixturesOffice extends Fixture
         $office->setZipcode("45000");
         $office->setCity("Orléans");
         $office->setPhone("0651856989");
+        $this->addReference(self::OFFICE_1, $office);
         $manager->persist($office);
         $manager->flush();
 
@@ -26,6 +29,7 @@ class AppFixturesOffice extends Fixture
         $office->setZipcode("45160");
         $office->setCity("Saint-Hilaire-Saint-Mesmin");
         $office->setPhone("0651856989");
+        $this->addReference(self::OFFICE_2, $office);
         $manager->persist($office);
         $manager->flush();
     }
