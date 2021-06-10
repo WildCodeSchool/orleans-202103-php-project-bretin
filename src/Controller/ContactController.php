@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Office;
+use App\Entity\Picture;
 
 class ContactController extends AbstractController
 {
@@ -19,6 +20,7 @@ class ContactController extends AbstractController
         return $this->render('home/contact.html.twig', ['offices' => self::getOffices($this),
         ]);
     }
+
 
     private static function getOffices(ContactController $thisCollection): array
     {

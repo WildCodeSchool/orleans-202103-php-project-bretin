@@ -5,6 +5,8 @@ namespace App\DataFixtures;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use App\Entity\Office;
+Use App\Entity\Picture;
+
 
 class AppFixturesOffice extends Fixture
 {
