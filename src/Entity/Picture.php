@@ -80,23 +80,4 @@ class Picture
     {
         return $this->offices;
     }
-
-    public function addOffice(Office $office): self
-    {
-        if (!$this->offices->contains($office)) {
-            $this->offices[] = $office;
-            $office->addPicture($this);
-        }
-
-        return $this;
-    }
-
-    public function removeOffice(Office $office): self
-    {
-        if ($this->offices->removeElement($office)) {
-            $office->removePicture($this);
-        }
-
-        return $this;
-    }
 }
