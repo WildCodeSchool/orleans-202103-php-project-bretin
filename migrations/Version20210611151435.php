@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20210610165534 extends AbstractMigration
+final class Version20210611151435 extends AbstractMigration
 {
     public function getDescription(): string
     {
@@ -20,16 +20,13 @@ final class Version20210610165534 extends AbstractMigration
     public function up(Schema $schema): void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE picture ADD office_id INT DEFAULT NULL');
+        $this->addSql('CREATE TABLE picture (id INT AUTO_INCREMENT NOT NULL, office_id INT DEFAULT NULL, name VARCHAR(255) NOT NULL, url VARCHAR(255) NOT NULL, INDEX IDX_16DB4F89FFA0C224 (office_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('ALTER TABLE picture ADD CONSTRAINT FK_16DB4F89FFA0C224 FOREIGN KEY (office_id) REFERENCES office (id)');
-        $this->addSql('CREATE INDEX IDX_16DB4F89FFA0C224 ON picture (office_id)');
     }
 
     public function down(Schema $schema): void
     {
         // this down() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE picture DROP FOREIGN KEY FK_16DB4F89FFA0C224');
-        $this->addSql('DROP INDEX IDX_16DB4F89FFA0C224 ON picture');
-        $this->addSql('ALTER TABLE picture DROP office_id');
+        $this->addSql('DROP TABLE picture');
     }
 }
