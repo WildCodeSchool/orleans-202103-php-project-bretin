@@ -1,18 +1,14 @@
-<section class="story" id="biography">
-    <div class="card mb-3 d-flex align-items-start justify-content-around p-1 vh-100">
-        <div class="row g-0">
-            <div class="col-md-2">
+<section class="story vh-100" id="biography">
+    <div class="row g-0 d-flex align-items-start justify-content-around m-2 p-1 h-100">
+        <div class="p-3 col-12 col-sm-12 col-md-4 col-lg-2">
             <img src="{{ asset('build/images/loic.png') }}" class="img-fluid p-2" alt="photo de Loïc Bretin">
             <h2>Loïc Bretin</h2>
             <p>Psychologue du travail</p>
-            </div>
-            <div class="col-md-8">
+        </div>
+        <div class="col-12 col-sm-12 col-md-9 col-lg-9">
             <div class="card-body">
                 <h2 class="card-title p-bottom-2">Qui suis-je ?</h2>
-                <div class="card-text col-12 col-sm-12 col-md-12 col-lg-12">
-                    <p>{{ biography.biography|nl2br }}</p>
-                </div>
-            </div>
+                <p class="card-text">{{ biography.biography|nl2br }}</p>
             </div>
         </div>
     </div>

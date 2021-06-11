@@ -17,9 +17,8 @@ class UserFixtures extends Fixture
         L’expérience du travail transforme. 
         Les difficultés vécues et exprimées à l’occasion ou autour du travail m’ont toujours questionnées. 
         Mes expériences et rencontres ont nourri cet intérêt. 
-        Pourquoi certains collègues tombent malade ? 
-        Pourquoi le travail rend malade ? Pourquoi ces tensions et conflits ?
-        Pourquoi ces difficultés à avancer ? Pourquoi ces symptômes ?
+        Pourquoi certains collègues tombent malade ? Pourquoi le travail rend malade ? Pourquoi ces tensions
+        et conflits ? Pourquoi ces difficultés à avancer ? Pourquoi ces symptômes ?
         Issu du monde de l’emploi, de l’accompagnement et de la formation, j’ai orienté ma carrière vers l’écoute
         et le soutien à la personne.
         Je vous recevrai donc avec une réelle compréhension et connaissance des expériences
