@@ -14,11 +14,9 @@ class HomeController extends AbstractController
      * @Route("/", name="biography")
      * @return Response
      */
-    public function index(): Response
+    public function index(UserRepository $userRepository): Response
     {
-        $biography = $this->getDoctrine()
-            ->getRepository(User::class)
-            ->findOneBy([]);
+        $biography = $userRepository->findOneBy([]);
         return $this->render('home/index.html.twig', ['biography' => $biography]);
     }
 }
