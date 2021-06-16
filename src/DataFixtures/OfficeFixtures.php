@@ -6,7 +6,7 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use App\Entity\Office;
 
-class AppFixturesOffice extends Fixture
+class OfficeFixtures extends Fixture
 {
     public function load(ObjectManager $manager)
     {
