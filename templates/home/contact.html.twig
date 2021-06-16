@@ -12,12 +12,12 @@
   </div>
   <div class="container">
     <div class = "row">
-      {% set tel= 0 %}
+      {% set tel = 0 %}
       {% set mail = 0 %}
     </div>
         {% for office in offices %}
-        {% set tel= office.phone %}
-        {% set mail= office.mail %}
+        {% set tel = office.phone %}
+        {% set mail = office.mail %}
         <div class="card">
           <div class="card-header">
                {{ office.name }}

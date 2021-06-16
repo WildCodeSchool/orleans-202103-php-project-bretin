@@ -122,5 +122,4 @@ class Office
     {
         return $this->mail;
     }
-
 }
