@@ -1,0 +1,31 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block body %}
+<div class = "container-fluid">
+  <div class="row">
+    <div class="col-lg-4 p-3">
+      <p>Si vous êtes un PARTICULIER</p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="card-body">
+      <p class="card-text"><strong>J'interviens uniquement sur RDV</strong>.<br>
+        Je vous invite à me joindre par téléphone ou mail pour prendre rendez-vous ou obtenir des renseignements.
+        <br>Les séances sont d'une durée de 50 à 60 minutes.</p>
+    </div>
+      {% for office in offices %}
+    <div class="card">
+        <div class="card-header">
+          {{ office.name }}
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">  {{ office.address }} - {{ office.zipcode }} -  {{ office.city }} </h5>
+            <p class="card-text"> Tél. {{ office.phone }} - Mail: <a href="mailto:{{ office.mail }}">{{ office.mail }}<a></p>
+        </div>
+    </div>
+        {% endfor %}
+  </div>
+</div>
+{% endblock %}
