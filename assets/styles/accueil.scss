@@ -1,0 +1,26 @@
+.home {
+    background-image: url('../images/background-sofa.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+  
+}
+
+.btn {
+    font-family: $text-font;
+    color: $light;
+    font-size: 35px;
+    font-weight: bolder;
+}
+
+.btn:hover {
+    color: $quarternary;
+}
+
+.quote {
+    font-family: $second-text-font;
+    color: $quarternary;
+    font-size: 35px;
+    font-weight: bolder;
+
+}
