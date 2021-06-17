@@ -10,6 +10,7 @@ class OfficeFixtures extends Fixture
 {
     public function load(ObjectManager $manager)
     {
+        $indexReference = 0;
         $office = new Office();
         $office->setName("cabinet 1");
         $office->setAddress("1 Rue Courcaille");
@@ -17,8 +18,10 @@ class OfficeFixtures extends Fixture
         $office->setCity("Orléans");
         $office->setPhone("0651856989");
         $office->setMail("cabinet.bretin@gmail.com");
+        $this->addReference("office_" . $indexReference, $office);
         $manager->persist($office);
         $manager->flush();
+        $indexReference++;
 
         $office = new Office();
         $office->setName("cabinet 2");
@@ -27,6 +30,7 @@ class OfficeFixtures extends Fixture
         $office->setCity("Saint-Hilaire-Saint-Mesmin");
         $office->setPhone("0651856989");
         $office->setMail("cabinet.bretin@gmail.com");
+        $this->addReference("office_" . $indexReference, $office);
         $manager->persist($office);
         $manager->flush();
     }
