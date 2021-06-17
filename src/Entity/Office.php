@@ -52,7 +52,7 @@ class Office
     /**
      * @ORM\OneToMany(targetEntity=Picture::class, mappedBy="office")
      */
-    private $pictures;
+    private collection $pictures;
 
     public function __construct()
     {

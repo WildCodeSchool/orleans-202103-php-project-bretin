@@ -19,8 +19,7 @@ class PictureFixtures extends Fixture
 
     public function load(ObjectManager $manager)
     {
-        foreach (self::PICTURE as $pic)
-        {
+        foreach (self::PICTURE as $pic) {
             $picture = new Picture();
             $picture->setName($pic["name"]);
             $picture->setUrl($pic["url"]);

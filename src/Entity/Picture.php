@@ -15,23 +15,23 @@ class Picture
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private int $id;
 
     /**
      * @ORM\Column(type="string", length=50)
      */
-    private $name;
+    private string $name;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $url;
+    private string $url;
 
     /**
      * @ORM\ManyToOne(targetEntity=Office::class, inversedBy="pictures")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $office;
+    private Office $office;
 
     public function getId(): ?int
     {
@@ -69,8 +69,9 @@ class Picture
 
     public function setOffice(?Office $office): self
     {
-        $this->office = $office;
-
+        if ($office != null) {
+            $this->office = $office;
+        }
         return $this;
     }
 }
