@@ -17,7 +17,7 @@ class ContactController extends AbstractController
 
     public function index(OfficeRepository $office): Response
     {
-        return $this->render('home/contact.html.twig', ['offices' => $office->findAll(),
+        return $this->render('Contact/People/contact.html.twig', ['offices' => $office->findAll(),
         ]);
     }
 }

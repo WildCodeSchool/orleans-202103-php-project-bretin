@@ -1,0 +1,16 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Contact Particuliers{% endblock %}
+
+{% block body %}
+    <header class="container-fluid p-5">
+    </header>
+    <main class="container-fluid">
+        <div class="row">
+            <div class = "fw-bold">
+                <p>Si vous êtes un PARTICULIER</p>
+            </div>
+            {% include "Includes/_contact.html.twig" %}
+        </div>
+    </main>
+{% endblock %}
