@@ -18,7 +18,7 @@ class HomeController extends AbstractController
     public function index(UserRepository $userRepository, EducationRepository $educationRepository): Response
     {
         $biography = $userRepository->findOneBy([]);
-        $education = $educationRepository->findAll();
+        $education = $educationRepository->findBy([], ['obtentionYear' => 'DESC']);
         return $this->render('home/index.html.twig', [
             'biography' => $biography,
             'educations' => $education
