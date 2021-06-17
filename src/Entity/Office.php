@@ -42,6 +42,11 @@ class Office
      */
     private string $phone;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private string $mail;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -105,5 +110,16 @@ class Office
         $this->phone = $phone;
 
         return $this;
+    }
+
+    public function setMail(string $mail): self
+    {
+        $this->mail = $mail;
+
+        return $this;
+    }
+    public function getMail(): ?string
+    {
+        return $this->mail;
     }
 }

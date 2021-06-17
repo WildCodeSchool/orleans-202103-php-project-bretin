@@ -16,6 +16,7 @@ class OfficeFixtures extends Fixture
         $office->setZipcode("45000");
         $office->setCity("Orléans");
         $office->setPhone("0651856989");
+        $office->setMail("cabinet.bretin@gmail.com");
         $manager->persist($office);
         $manager->flush();
 
@@ -25,6 +26,7 @@ class OfficeFixtures extends Fixture
         $office->setZipcode("45160");
         $office->setCity("Saint-Hilaire-Saint-Mesmin");
         $office->setPhone("0651856989");
+        $office->setMail("cabinet.bretin@gmail.com");
         $manager->persist($office);
         $manager->flush();
     }
