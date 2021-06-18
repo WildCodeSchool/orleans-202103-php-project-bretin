@@ -1,0 +1,28 @@
+<div class="container col-md-8">
+    <div class="card-body">
+        <p class="card-text"><strong>
+            J'interviens uniquement sur RDV</strong>.<br>
+            Je vous invite à me joindre par téléphone ou mail pour prendre rendez-vous ou obtenir des renseignements.
+            <br>Les séances sont d'une durée de 50 à 60 minutes.
+        </p>
+    </div>
+    {% for office in offices %}
+        <div class="card m-2">
+            <div class="card-header">
+                 {{ office.name }}
+            </div>
+            <div class="card-body">
+                <div class= "row">
+                    {% for picture in office.pictures %}
+                        <div class="col-md-4 d-flex p-2 justify-content-center">
+                             <img src="{{ asset(picture.url) }}" alt="">
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <p class="card-title">&nbsp; {{ office.address }} - {{ office.zipcode }} -  {{ office.city }} </p>
+            <p class="card-text"> &nbsp; Tél. {{ office.phone }} - Mail: <a href="mailto:{{ office.mail }}">{{ office.mail }}<a></p>
+        </div>
+    {% endfor %}
+</div>
+
