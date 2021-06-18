@@ -3,10 +3,12 @@
 {% block title %}Home{% endblock %}
 
 {% block body %}
+    {% include 'Includes/_accueil.html.twig' %}
     <header class="container-fluid p-5">
     </header>
     <main class="container-fluid">
         {% include "Components/_story.html.twig" %}
         {% include "Components/_activity.html.twig" %}
+        {% include "Components/_education.html.twig" %}
     </main>
 {% endblock %}
