@@ -1,0 +1,54 @@
+@import 'variables.scss';
+@import "~bootstrap/scss/bootstrap";
+
+h1{
+    color: $light;
+}
+
+h2{
+    color: $light;
+    font-weight: bolder;
+}
+
+
+.title_individuals{
+    border-color: $primary;
+    font-size: 40px;
+}
+
+.bg-body{
+    background-color: $quarternary !important;
+}
+
+
+.card-body{
+    color: $quarternary;
+    font-weight: bolder;
+}
+
+
+.container{
+    line-height: 0.5em;
+}
+
+.container_individuals{
+    margin-left: 10%;
+    margin-right: 10%;
+    line-height: 50px;
+}
+
+.candle{
+    width: 250px; 
+    height: 200px;
+    float: left;
+    padding-right: 10px;
+    margin-left: 70px;
+}
+
+
+.services_description{
+    font-weight: bold;
+    font-size: 18px;
+    text-align: justify;
+    line-height: 1.5em;
+}
