@@ -3,14 +3,21 @@
 {% block title %}Home{% endblock %}
 
 {% block body %}
+    {% include 'Includes/_accueil.html.twig' %}
     <header class="container-fluid p-5">
     </header>
     <main class="container-fluid">
+<<<<<<< HEAD
         <div class="story-home d-flex">
             {% include "Components/_story.html.twig" %}
         </div>
         <div class="activity-home d-flex">
             {% include "Components/_activity.html.twig" %}
         </div>
+=======
+        {% include "Components/_story.html.twig" %}
+        {% include "Components/_activity.html.twig" %}
+        {% include "Components/_education.html.twig" %}
+>>>>>>> 5f2e63c39c83ee9b6041ee0457662bbaf99302f4
     </main>
 {% endblock %}
