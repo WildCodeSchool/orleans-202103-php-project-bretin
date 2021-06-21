@@ -8,8 +8,14 @@
     <header class="container-fluid p-5">
     </header>
     <main class="container-fluid">
-        {% include "Components/_story.html.twig" %}
-        {% include "Components/_activity.html.twig" %}
-        {% include "Components/_education.html.twig" %}
+        <div>
+            {% include "Components/_story.html.twig" %}
+        </div>
+        <section>
+            {% include "Components/_activity.html.twig" %}
+        </section>
+        <div>
+            {% include "Components/_education.html.twig" %}
+        </div>
     </main>
 {% endblock %}
