@@ -15,22 +15,22 @@ class Testimony
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private int $id;
 
     /**
      * @ORM\Column(type="string", length=25)
      */
-    private $name;
+    private string $name;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $age;
+    private int $age;
 
     /**
      * @ORM\Column(type="text")
      */
-    private $message;
+    private string $message;
 
     public function getId(): ?int
     {

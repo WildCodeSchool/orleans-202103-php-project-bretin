@@ -4,7 +4,6 @@ namespace App\DataFixtures;
 
 use Faker\Factory;
 use App\Entity\Testimony;
-
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 
@@ -28,3 +27,4 @@ class TestimonyFixtures extends Fixture
         $manager->flush();
     }
 }
+
