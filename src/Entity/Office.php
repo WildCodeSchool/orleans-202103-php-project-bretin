@@ -61,8 +61,8 @@ class Office
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank(message="Le champ Email est obligatoire")
      * @Assert\Length(max="100", maxMessage="Votre saisie ne devrait pas dépasser 100 caractères")
-     * * @Assert\Email( 
-         * message = "L'adresse Email saisie n'est pas valdie.", 
+     * * @Assert\Email(
+         * message = "L'adresse Email saisie n'est pas valdie.",
       * )
      */
     private string $mail;

@@ -41,7 +41,6 @@ class CabinetController extends AbstractController
 
             return $this->redirectToRoute('cabinet_index');
         }
-   
 
         return $this->render('Contact/People/Admin/add_office.html.twig', [
             'office' => $office,

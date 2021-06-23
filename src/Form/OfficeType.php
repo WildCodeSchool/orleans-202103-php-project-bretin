@@ -13,22 +13,22 @@ class OfficeType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('name', null, Array( 'attr' => array(
+            ->add('name', null, array( 'attr' => array(
                 'placeholder' => 'Cabinet Centre-ville',
             )))
-            ->add('address', null, Array( 'attr' => array(
+            ->add('address', null, array( 'attr' => array(
                 'placeholder' => '2, rue de la République',
             )))
-            ->add('zipcode', null, Array( 'attr' => array(
+            ->add('zipcode', null, array( 'attr' => array(
                 'placeholder' => '45000',
             )))
-            ->add('city', null, Array( 'attr' => array(
+            ->add('city', null, array( 'attr' => array(
                 'placeholder' => 'Orléans',
             )))
-            ->add('phone', null, Array( 'attr' => array(
+            ->add('phone', null, array( 'attr' => array(
                 'placeholder' => '0656989858',
             )))
-            ->add('mail',null, Array( 'attr' => array(
+            ->add('mail', null, array( 'attr' => array(
                 'placeholder' => 'adressemail@gmail.fr',
             )))
         ;
