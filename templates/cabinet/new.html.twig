@@ -5,28 +5,29 @@
 {% block body %}
        {{ form_start(form) }}
 <div class="d-flex justify-content-center">
-    <div class="row col-lg-6 col-md-8 m-5">
-        <strong><label for="form_name">Nom</label></strong>
+    <div class="row col-lg-6 col-md-8 mb-4 fw-bold">
+        <label class= "p-2" for="form_name">Nom</label>
         {{ form_widget(form.name) }}
-        <strong><label for="form_address">Adresse</label></strong>
+         {{ form_errors(form.name) }}
+        <label class= "p-2" for="form_address">Adresse</label>
         {{ form_widget(form.address) }}
-
-        <strong><label for="form_zipcode">Code postal</label></strong>
+        {{ form_errors(form.address) }}
+        <label class= "p-2" for="form_zipcode">Code postal</label>
         {{ form_widget(form.zipcode) }}
-
-        <strong><label for="form_city">Ville</label></strong>
+        {{ form_errors(form.zipcode) }}
+        <label  class= "p-2" for="form_city">Ville</label>
         {{ form_widget(form.city) }}
-
-        <strong><label for="form_phone">Téléphone</label></strong>
+        {{ form_errors(form.city) }}
+        <label  class= "p-2" for="form_phone">Téléphone</label>
         {{ form_widget(form.phone) }}
-
-        <strong><label for="form_mail">Email</label></strong>
+        {{ form_errors(form.phone) }}
+        <label class= "p-2"  for="form_mail">Email</label>
         {{ form_widget(form.mail) }}
-        <div class = "m-3 d-flex justify-content-end">
-            <button class="btn-admin btn-primary">{{ button_label|default('Enregistrer') }}</button>
+        {{ form_errors(form.mail) }}
+        <div class = "d-flex justify-content-end m-3 p-3">
+            <button class="btn btn-primary">{{ button_label|default('Enregistrer') }}</button>
         </div>
     </div>
 <div>
 {{ form_end(form) }}
-
 {% endblock %}

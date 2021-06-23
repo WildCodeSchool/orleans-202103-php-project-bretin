@@ -26,7 +26,7 @@ class CabinetController extends AbstractController
     }
 
     /**
-     * @Route("/ajout", name="cabinet_new", methods={"GET","POST"})
+     * @Route("/new", name="cabinet_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
     {
@@ -41,6 +41,7 @@ class CabinetController extends AbstractController
 
             return $this->redirectToRoute('cabinet_index');
         }
+   
 
         return $this->render('Contact/People/Admin/add_office.html.twig', [
             'office' => $office,
