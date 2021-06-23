@@ -26,7 +26,7 @@ class CabinetController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="cabinet_new", methods={"GET","POST"})
+     * @Route("/ajout", name="cabinet_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
     {
