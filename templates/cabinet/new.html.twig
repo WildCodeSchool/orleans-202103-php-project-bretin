@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau cabinet{% endblock %}
+
+{% block body %}
+       {{ form_start(form) }}
+<div class="d-flex justify-content-center">
+    <div class="row col-lg-6 col-md-8 m-5">
+        <strong><label for="form_name">Nom</label></strong>
+        {{ form_widget(form.name) }}
+        <strong><label for="form_address">Adresse</label></strong>
+        {{ form_widget(form.address) }}
+
+        <strong><label for="form_zipcode">Code postal</label></strong>
+        {{ form_widget(form.zipcode) }}
+
+        <strong><label for="form_city">Ville</label></strong>
+        {{ form_widget(form.city) }}
+
+        <strong><label for="form_phone">Téléphone</label></strong>
+        {{ form_widget(form.phone) }}
+
+        <strong><label for="form_mail">Email</label></strong>
+        {{ form_widget(form.mail) }}
+        <div class = "m-3 d-flex justify-content-end">
+            <button class="btn-admin btn-primary">{{ button_label|default('Enregistrer') }}</button>
+        </div>
+    </div>
+<div>
+{{ form_end(form) }}
+
+{% endblock %}
+
+    
