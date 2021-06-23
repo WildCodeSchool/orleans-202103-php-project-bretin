@@ -83,7 +83,7 @@ class CabinetController extends AbstractController
      */
     public function delete(Request $request, Office $office): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$office->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $office->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($office);
             $entityManager->flush();
