@@ -1,15 +1,13 @@
-<section class="card story vh-70" id="biography">
-    <div class="row g-0 d-flex align-items-start justify-content-around m-2 p-1 h-100">
-        <div class="p-3 col-md-4 col-lg-2">
-            <img src="{{ asset('build/images/loic.png') }}" class="img-fluid p-2" alt="photo de Loïc Bretin">
+<section class="story vh-auto" id="biography">
+    <div class="row g-0 d-flex align-items-start justify-content-evenly p-5 pb-2">
+        <div class="col-md-9 col-lg-9 w-auto">
+            <h2 class="title p-bottom-2">Qui suis-je ?</h2>
+            <p>{{ biography.biography|nl2br }}</p>
+        </div>
+        <div class="col-md-3 col-lg-3">
+            <img src="{{ asset('build/images/loic.png') }}" class="img-fluid rounded-3 w-75 h-75" alt="photo de Loïc Bretin">
             <h2>Loïc Bretin</h2>
             <p>Psychologue du travail</p>
-        </div>
-        <div class="col-md-9 col-lg-9">
-            <div class="card-body">
-                <h2 class="card-title p-bottom-2">Qui suis-je ?</h2>
-                <p class="card-text">{{ biography.biography|nl2br }}</p>
-            </div>
         </div>
     </div>
 </section>
