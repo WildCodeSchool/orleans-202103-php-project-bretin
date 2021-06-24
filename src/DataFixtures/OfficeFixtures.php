@@ -12,7 +12,7 @@ class OfficeFixtures extends Fixture
     {
         $indexReference = 0;
         $office = new Office();
-        $office->setName("cabinet 1");
+        $office->setName("Centre-ville");
         $office->setAddress("1 Rue Courcaille");
         $office->setZipcode("45000");
         $office->setCity("Orléans");
@@ -24,7 +24,7 @@ class OfficeFixtures extends Fixture
         $indexReference++;
 
         $office = new Office();
-        $office->setName("cabinet 2");
+        $office->setName("Périphérie");
         $office->setAddress("85-89 Rue du Haut Midi");
         $office->setZipcode("45160");
         $office->setCity("Saint-Hilaire-Saint-Mesmin");
