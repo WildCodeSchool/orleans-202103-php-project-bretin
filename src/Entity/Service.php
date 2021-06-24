@@ -15,22 +15,22 @@ class Service
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private int $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string")
      */
-    private $name;
+    private string $name;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $price;
+    private int $price;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
      */
-    private $price2;
+    private int $price2;
 
     public function getId(): ?int
     {
