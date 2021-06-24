@@ -11,7 +11,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass=OfficeRepository::class)
- * @UniqueEntity("name", message="Un cabinet existe déjà sous ce nom.")
+ * @UniqueEntity("name")
  */
 class Office
 {
@@ -24,46 +24,44 @@ class Office
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\Length(max="255", maxMessage="Votre saisie ne devrait pas dépasser 255 caractères")
-     * @Assert\NotBlank(message="Le champ Nom est obligatoire")
+     * @Assert\Length(max="255")
+     * @Assert\NotBlank
      */
     private string $name;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\Length(max="255", maxMessage="Votre saisie ne devrait pas dépasser 255 caractères")
-     * @Assert\NotBlank(message="Le champ Adresse est obligatoire")
+     * @Assert\Length(max="255")
+     * @Assert\NotBlank
      */
     private string $address;
 
     /**
-     * @ORM\Column(type="string", length=50)
-     * @Assert\Length(max="5", maxMessage="Votre saisie ne devrait pas dépasser 5 caractères")
-     * @Assert\NotBlank(message="Le champ Code Postal est obligatoire")
+     * @ORM\Column(type="string", length=15)
+     * @Assert\Length(max="15")
+     * @Assert\NotBlank
      */
     private string $zipcode;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\Length(max="255", maxMessage="Votre saisie ne devrait pas dépasser 255 caractères")
-     * @Assert\NotBlank(message="Le champ Ville est obligatoire")
+     * @Assert\Length(max="255")
+     * @Assert\NotBlank
      */
     private string $city;
 
     /**
-     * @ORM\Column(type="string", length=10)
-     * @Assert\NotBlank(message="Le champ Téléphone est obligatoire")
-     * @Assert\Length(max="10", maxMessage="Votre saisie ne devrait pas dépasser 10 caractères")
+     * @ORM\Column(type="string", length=20)
+     * @Assert\NotBlank
+     * @Assert\Length(max="20")
      */
     private string $phone;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank(message="Le champ Email est obligatoire")
-     * @Assert\Length(max="100", maxMessage="Votre saisie ne devrait pas dépasser 100 caractères")
-     * * @Assert\Email(
-         * message = "L'adresse Email saisie n'est pas valdie.",
-      * )
+     * @ORM\Column(type="string", length=100)
+     * @Assert\NotBlank
+     * @Assert\Length(max="100")
+     * * @Assert\Email
      */
     private string $mail;
 

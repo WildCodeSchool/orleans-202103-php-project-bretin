@@ -3,27 +3,47 @@
 {% block title %}Nouveau cabinet{% endblock %}
 
 {% block body %}
-       {{ form_start(form) }}
+
+{{ form_start(form) }}
 <div class="d-flex justify-content-center">
     <div class="row col-lg-6 col-md-8 mb-4 fw-bold">
-        <label class= "p-2" for="form_name">Nom</label>
+    {% block form_row %}
+        <div class="form_row p-2">
+            {{ form_label(form.name) }}
+         </div>
         {{ form_widget(form.name) }}
-         {{ form_errors(form.name) }}
-        <label class= "p-2" for="form_address">Adresse</label>
+        {{ form_errors(form.name) }}
+    
+        <div class="form_row p-2">
+            {{ form_label(form.address) }}
+        </div>
         {{ form_widget(form.address) }}
         {{ form_errors(form.address) }}
-        <label class= "p-2" for="form_zipcode">Code postal</label>
+
+        <div class="form_row p-2">
+            {{ form_label(form.zipcode) }}
+        </div>
         {{ form_widget(form.zipcode) }}
         {{ form_errors(form.zipcode) }}
-        <label  class= "p-2" for="form_city">Ville</label>
+
+        <div class="form_row p-2">
+            {{ form_label(form.city) }}
+        </div>
         {{ form_widget(form.city) }}
         {{ form_errors(form.city) }}
-        <label  class= "p-2" for="form_phone">Téléphone</label>
+        
+         <div class="form_row p-2">
+             {{ form_label(form.phone) }}
+        </div>
         {{ form_widget(form.phone) }}
         {{ form_errors(form.phone) }}
-        <label class= "p-2"  for="form_mail">Email</label>
+        
+          <div class="form_row p-2">
+             {{ form_label(form.mail) }}
+        </div>
         {{ form_widget(form.mail) }}
         {{ form_errors(form.mail) }}
+    {% endblock form_row %}
         <div class = "d-flex justify-content-end m-3 p-3">
             <button class="btn btn-primary">{{ button_label|default('Enregistrer') }}</button>
         </div>
