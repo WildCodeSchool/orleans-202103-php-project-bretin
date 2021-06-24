@@ -1,20 +1,12 @@
 .activity {
-    height: auto;
-    font-weight: bolder;
+    line-height: $line-height;
+  
+}
+.stone {
+    height: 270px;
 }
 
-.text-activity {
-    background-size: cover;
-}
-
-.activity-title {
+.activity p {
+    font-size: $text-size;
     color: $quarternary;
-}
-
-.activity .card-activity {
-    color: $quarternary;
-}
-
-.activity .card-body {
-    max-height: 180px;
 }
