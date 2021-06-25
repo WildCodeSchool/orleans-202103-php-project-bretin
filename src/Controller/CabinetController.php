@@ -39,7 +39,9 @@ class CabinetController extends AbstractController
             $entityManager->persist($office);
             $entityManager->flush();
 
-            return $this->redirectToRoute('cabinet_index');
+            $this->addFlash('success', 'Le cabinet a bien été ajouté.');
+
+            return $this->redirectToRoute('cabinet_new');
         }
 
         return $this->render('Contact/People/Admin/add_office.html.twig', [

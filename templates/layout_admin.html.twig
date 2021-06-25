@@ -1,4 +1,11 @@
-{% extends 'base.html.twig' %}
+{% extends 'base_admin.html.twig' %}
 
-{% block title %}Admin - {{ parent() }}{% endblock %}
-{% block navbar %}{% endblock %}
+{% block footer %}
+    {% include 'Includes/_footer.html.twig' %}
+{% endblock %}
+
+{% block navbar %}
+    {% include 'Includes/_navbar.html.twig' %}
+{% endblock %}
+{% block header %}{% endblock %}
+{% block body %}{% endblock %}
