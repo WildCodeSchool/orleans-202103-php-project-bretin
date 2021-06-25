@@ -4,14 +4,10 @@
 {% block title %}Home{% endblock %}
 
 {% block body %}
-    {% include 'Includes/_accueil.html.twig' %}
-    <main class="container-fluid p-0">
-            {% include "Components/_story.html.twig" %}
-        <section>
-            {% include "Components/_activity.html.twig" %}
-        </section>
-        <section>
-            {% include "Components/_education.html.twig" %}
-        </section>
-    </main>
+<main class="container-fluid p-0">
+    {% include 'Includes/_accueil.html.twig' %} 
+    {% include "Components/_story.html.twig" %}
+    {% include "Components/_activity.html.twig" %}
+    {% include "Components/_education.html.twig" %}
+</main>
 {% endblock %}
