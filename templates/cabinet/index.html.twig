@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Office index{% endblock %}
+
+{% block body %}
+    <h1>Office index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Zipcode</th>
+                <th>City</th>
+                <th>Phone</th>
+                <th>Mail</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for office in offices %}
+            <tr>
+                <td>{{ office.id }}</td>
+                <td>{{ office.name }}</td>
+                <td>{{ office.address }}</td>
+                <td>{{ office.zipcode }}</td>
+                <td>{{ office.city }}</td>
+                <td>{{ office.phone }}</td>
+                <td>{{ office.mail }}</td>
+                <td>
+                    <a href="{{ path('cabinet_show', {'id': office.id}) }}">show</a>
+                    <a href="{{ path('cabinet_edit', {'id': office.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('cabinet_new') }}">Create new</a>
+{% endblock %}
