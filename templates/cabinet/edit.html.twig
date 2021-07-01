@@ -3,11 +3,52 @@
 {% block title %}Edit Office{% endblock %}
 
 {% block body %}
-    <h1>Edit Office</h1>
+{{ form_start(form) }}
+<div class="d-flex justify-content-center">
+    <div class="row col-lg-6 col-md-8 mb-4 fw-bold">
+    {% block form_row %}
+        <div class="form_row p-2">
+            {{ form_label(form.name,"Nom") }}
+         </div>
+        {{ form_widget(form.name) }}
+        {{ form_errors(form.name) }}
 
-    {{ include('cabinet/_form.html.twig', {'button_label': 'Update'}) }}
+        <div class="form_row p-2">
+            {{ form_label(form.address,"Adresse") }}
+        </div>
+        {{ form_widget(form.address) }}
+        {{ form_errors(form.address) }}
 
-    <a href="{{ path('cabinet_index') }}">back to list</a>
+        <div class="form_row p-2">
+            {{ form_label(form.zipcode,"Code postal") }}
+        </div>
+        {{ form_widget(form.zipcode) }}
+        {{ form_errors(form.zipcode) }}
 
-    {{ include('cabinet/_delete_form.html.twig') }}
+        <div class="form_row p-2">
+            {{ form_label(form.city, "Ville") }}
+        </div>
+        {{ form_widget(form.city) }}
+        {{ form_errors(form.city) }}
+
+         <div class="form_row p-2">
+             {{ form_label(form.phone, "Téléphone") }}
+        </div>
+        {{ form_widget(form.phone) }}
+        {{ form_errors(form.phone) }}
+
+          <div class="form_row p-2">
+             {{ form_label(form.mail, "Email") }}
+        </div>
+        {{ form_widget(form.mail) }}
+        {{ form_errors(form.mail) }}
+    {% endblock form_row %}
+        <div class = "d-flex justify-content-end m-3 p-3">
+            <button class="btn btn-primary">{{ button_label|default('Mettre à jour') }}</button>
+        </div>
+    </div>
+<div>
+{{ form_end(form) }}
+
+
 {% endblock %}

@@ -71,10 +71,11 @@ class CabinetController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
+            $this->addFlash('success', 'Le cabinet a bien été modifié.');
             return $this->redirectToRoute('cabinet_index');
         }
 
-        return $this->render('cabinet/edit.html.twig', [
+        return $this->render('Contact/People/Admin/edit_office.html.twig', [
             'office' => $office,
             'form' => $form->createView(),
         ]);
