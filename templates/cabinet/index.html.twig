@@ -10,7 +10,7 @@
                     <p class="card-text"> &nbsp; <img src="{{ asset("build/images/tel.svg") }}" alt="icon_tel" height="22" width="27">  {{ office.phone }} - <img src="{{ asset("build/images/envelope.svg") }}" alt="icon_mail" height="22" width="27">  <a href="mailto:{{ office.mail }}" target="_blank">{{ office.mail }}<a></p>
                     <div class="d-flex justify-content-end">
                         <a href="{{ path('cabinet_edit', {'id': office.id}) }}" class="btn btn-primary">Modifier</a>&nbsp; &nbsp;
-                        <a href="#" class="btn btn-primary">Supprimer</a>
+                        {{ include('cabinet/_delete_form.html.twig') }}
                     </div>
                 </div>
             </div>
