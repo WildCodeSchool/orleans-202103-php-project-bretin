@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Testimony index{% endblock %}
+
+{% block body %}
+    <h1>Testimony index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Message</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for testimony in testimonies %}
+            <tr>
+                <td>{{ testimony.id }}</td>
+                <td>{{ testimony.name }}</td>
+                <td>{{ testimony.age }}</td>
+                <td>{{ testimony.message }}</td>
+                <td>
+                    <a href="{{ path('testimony_show', {'id': testimony.id}) }}">show</a>
+                    <a href="{{ path('testimony_edit', {'id': testimony.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('testimony_new') }}">Create new</a>
+{% endblock %}
