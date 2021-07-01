@@ -8,19 +8,19 @@
     <div class="row col-lg-6 col-md-8 mb-4 fw-bold">
     {% block form_row %}
         <div class="form_row p-2">
-            {{ form_label(form.name,"Nom") }}
+            {{ form_label(form.name, "Nom") }}
          </div>
         {{ form_widget(form.name) }}
         {{ form_errors(form.name) }}
 
         <div class="form_row p-2">
-            {{ form_label(form.address,"Adresse") }}
+            {{ form_label(form.address, "Adresse") }}
         </div>
         {{ form_widget(form.address) }}
         {{ form_errors(form.address) }}
 
         <div class="form_row p-2">
-            {{ form_label(form.zipcode,"Code postal") }}
+            {{ form_label(form.zipcode, "Code postal") }}
         </div>
         {{ form_widget(form.zipcode) }}
         {{ form_errors(form.zipcode) }}
