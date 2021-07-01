@@ -1,45 +1,24 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}Office index{% endblock %}
-
-{% block body %}
-    <h1>Office index</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Address</th>
-                <th>Zipcode</th>
-                <th>City</th>
-                <th>Phone</th>
-                <th>Mail</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for office in offices %}
-            <tr>
-                <td>{{ office.id }}</td>
-                <td>{{ office.name }}</td>
-                <td>{{ office.address }}</td>
-                <td>{{ office.zipcode }}</td>
-                <td>{{ office.city }}</td>
-                <td>{{ office.phone }}</td>
-                <td>{{ office.mail }}</td>
-                <td>
-                    <a href="{{ path('cabinet_show', {'id': office.id}) }}">show</a>
-                    <a href="{{ path('cabinet_edit', {'id': office.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="8">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('cabinet_new') }}">Create new</a>
-{% endblock %}
+<div class="container col-md-6">
+    {% for office in offices %}
+        <div class="card m-2 intro">
+            <div class="card-header">
+                 {{ office.name }}
+            </div>
+            <div class="card-body">
+                <div class= "row p-4">
+                    <p class="card-title">&nbsp; <img src="{{ asset("build/images/address.svg") }}" alt="icon_address" height="22" width="27">  {{ office.address }} - {{ office.zipcode }} -  {{ office.city }} </p>
+                    <p class="card-text"> &nbsp; <img src="{{ asset("build/images/tel.svg") }}" alt="icon_tel" height="22" width="27">  {{ office.phone }} - <img src="{{ asset("build/images/envelope.svg") }}" alt="icon_mail" height="22" width="27">  <a href="mailto:{{ office.mail }}" target="_blank">{{ office.mail }}<a></p>
+                    <div class="d-flex justify-content-end">
+                        <a href="{{ path('cabinet_edit', {'id': office.id}) }}" class="btn btn-primary">Modifier</a>&nbsp; &nbsp;
+                        <a href="#" class="btn btn-primary">Supprimer</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+        <div class="card-body">
+            <div class= "row">
+                  <a href="{{ path('cabinet_new') }}" class="btn btn-primary">Ajouter un nouveau cabinet</a>
+            </div>
+        </div>
+</div>

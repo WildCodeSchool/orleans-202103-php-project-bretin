@@ -20,7 +20,7 @@ class CabinetController extends AbstractController
      */
     public function index(OfficeRepository $officeRepository): Response
     {
-        return $this->render('cabinet/index.html.twig', [
+        return $this->render('Contact/People/Admin/office_index.html.twig', [
             'offices' => $officeRepository->findAll(),
         ]);
     }
