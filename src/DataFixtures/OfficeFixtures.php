@@ -16,7 +16,7 @@ class OfficeFixtures extends Fixture
         $office->setAddress("1 Rue Courcaille");
         $office->setZipcode("45000");
         $office->setCity("Orléans");
-        $office->setPhone("0651856989");
+        $office->setPhone("06 51 85 69 89");
         $office->setMail("cabinet.bretin@gmail.com");
         $this->addReference("office_" . $indexReference, $office);
         $manager->persist($office);
@@ -28,7 +28,7 @@ class OfficeFixtures extends Fixture
         $office->setAddress("85-89 Rue du Haut Midi");
         $office->setZipcode("45160");
         $office->setCity("Saint-Hilaire-Saint-Mesmin");
-        $office->setPhone("0651856989");
+        $office->setPhone("06 51 85 69 89");
         $office->setMail("cabinet.bretin@gmail.com");
         $this->addReference("office_" . $indexReference, $office);
         $manager->persist($office);
