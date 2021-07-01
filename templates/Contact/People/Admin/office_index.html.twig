@@ -1,0 +1,16 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Liste de vos cabinets actuels{% endblock %}
+
+{% block body %}
+    <header class="container-fluid m-3 p-2">
+    </header>
+    <main class="container-fluid">
+        <div>
+           <div class = "fw-bold text-center">
+                <p class = "titre">Vos cabinets actuellement en ligne</p>
+            </div>
+            {% include "cabinet/index.html.twig" %}
+        </div>
+    </main>
+{% endblock %}
