@@ -9,7 +9,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=EducationRepository::class)
- * @UniqueEntity("name", message="cet élément existe déjà")
+ * @UniqueEntity("name", message="Cet élément existe déjà")
  */
 class Education
 {
@@ -22,15 +22,15 @@ class Education
 
     /**
      * @ORM\Column(type="string", length=255, unique=true)
-     * @Assert\NotBlank(message="veuillez saisir un nom de diplôme ou de formation")
-     * @Assert\Length(max="255", maxMessage="Le nom saisie {{ value }} est trop long,
+     * @Assert\NotBlank(message="Veuillez saisir un nom de diplôme ou de formation")
+     * @Assert\Length(max="255", maxMessage="Le nom saisi {{ value }} est trop long,
      * il ne devrait pas dépasser {{ limit }} caractères")
      */
     private string $name;
 
     /**
      * @ORM\Column(type="integer")
-     * @Assert\NotBlank(message="veuillez saisir une année")
+     * @Assert\NotBlank(message="Veuillez saisir une année")
      */
     private int $obtentionYear;
 
