@@ -31,6 +31,8 @@ class Education
     /**
      * @ORM\Column(type="integer")
      * @Assert\NotBlank(message="Veuillez saisir une année")
+     * @Assert\Range(min = 1900, max = 2100,
+     * notInRangeMessage = "Le chiffre saisi doit se situer entre {{ min }} et {{ max }}")
      */
     private int $obtentionYear;
 
