@@ -12,10 +12,10 @@
         <thead>
             <tr>
                 <th>Date</th>
-                <th>Name</th>
-                <th>Age</th>
+                <th>Nom</th>
+                <th>Âge</th>
                 <th>Message</th>
-                <th>actions</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -27,7 +27,7 @@
                 <td>{{ testimony.message }}</td>
                 <td>
                     <div class="btn btn-primary bg-light">
-                        <a href="{{ path('testimony_show', {'id': testimony.id}) }}">Fiche Patient</a>
+                        <a href="{{ path('testimony_show', {'id': testimony.id}) }}">Voir</a>
                     </div>
                     <div class="btn btn-primary bg-light">
                         <a href="{{ path('testimony_edit', {'id': testimony.id}) }}">Editer</a>
@@ -42,11 +42,7 @@
         </tbody>
     </table>
     <div class = "d-flex justify-content-end m-3 p-3">
-        <a class="btn btn-primary" href="{{ path('testimony_new') }}">Ajout Témoignage</a>
+        <a class="btn btn-primary" href="{{ path('testimony_new') }}">Ajout Témoignages</a>
     </div>
 <div>
 {% endblock %}
-
-
-        
- 

@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\TestimonyRepository;
+use DateTime;
+use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -35,7 +37,7 @@ class Testimony
     /**
      * @ORM\Column(type="date")
      */
-    private $date;
+    private DateTimeInterface $date;
 
 
     public function getId(): ?int
