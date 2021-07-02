@@ -2,40 +2,36 @@
 @import "~bootstrap/scss/bootstrap";
 
 h1{
-    color: $light;
+    color: $quinary;
 }
 
 h2{
-    color: $light;
+    color: $quinary;
     font-weight: bolder;
 }
 
-
-.title_individuals{
-    border-color: $primary;
-    font-size: 40px;
+.list-group-item.active{
+    background-color: $senary;
+    border-color: $senary;  
 }
-
-.bg-body{
-    background-color: $quarternary !important;
-}
-
 
 .card-body{
-    color: $quarternary;
+    color: $quinary;
     font-weight: bolder;
 }
 
+.prices{
+    background-color: $quinary;
+    color: $light;
+    padding-left: 15px;
+    font-weight: bolder;
+}
 
 .container{
     line-height: 0.5em;
+    padding-top: 15px;
 }
 
-.container_individuals{
-    margin-left: 10%;
-    margin-right: 10%;
-    line-height: 50px;
-}
 
 .candle{
     width: 250px; 
@@ -51,4 +47,5 @@ h2{
     font-size: 18px;
     text-align: justify;
     line-height: 1.5em;
+    color: $quarternary;
 }

@@ -12,11 +12,11 @@ class OfficeFixtures extends Fixture
     {
         $indexReference = 0;
         $office = new Office();
-        $office->setName("cabinet 1");
+        $office->setName("Centre-ville");
         $office->setAddress("1 Rue Courcaille");
         $office->setZipcode("45000");
         $office->setCity("Orléans");
-        $office->setPhone("0651856989");
+        $office->setPhone("06 51 85 69 89");
         $office->setMail("cabinet.bretin@gmail.com");
         $this->addReference("office_" . $indexReference, $office);
         $manager->persist($office);
@@ -24,11 +24,11 @@ class OfficeFixtures extends Fixture
         $indexReference++;
 
         $office = new Office();
-        $office->setName("cabinet 2");
+        $office->setName("Périphérie");
         $office->setAddress("85-89 Rue du Haut Midi");
         $office->setZipcode("45160");
         $office->setCity("Saint-Hilaire-Saint-Mesmin");
-        $office->setPhone("0651856989");
+        $office->setPhone("06 51 85 69 89");
         $office->setMail("cabinet.bretin@gmail.com");
         $this->addReference("office_" . $indexReference, $office);
         $manager->persist($office);
