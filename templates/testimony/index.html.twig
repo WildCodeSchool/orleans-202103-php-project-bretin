@@ -3,12 +3,15 @@
 {% block title %}Testimony index{% endblock %}
 
 {% block body %}
-    <h1>Testimony index</h1>
+<div class="d-flex justify-content-center">
+    <div class="row col-lg-6 col-md-8 mb-4">
+
+    <h1 class="border text-center">Testimony index</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
+                <th>Date</th>
                 <th>Name</th>
                 <th>Age</th>
                 <th>Message</th>
@@ -18,22 +21,32 @@
         <tbody>
         {% for testimony in testimonies %}
             <tr>
-                <td>{{ testimony.id }}</td>
+                <td>{{ testimony.date|date("d/m/Y") }}</td>
                 <td>{{ testimony.name }}</td>
                 <td>{{ testimony.age }}</td>
                 <td>{{ testimony.message }}</td>
                 <td>
-                    <a href="{{ path('testimony_show', {'id': testimony.id}) }}">show</a>
-                    <a href="{{ path('testimony_edit', {'id': testimony.id}) }}">edit</a>
+                    <div class="btn btn-primary bg-light">
+                        <a href="{{ path('testimony_show', {'id': testimony.id}) }}">Fiche Patient</a>
+                    </div>
+                    <div class="btn btn-primary bg-light">
+                        <a href="{{ path('testimony_edit', {'id': testimony.id}) }}">Editer</a>
+                    </div>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="5">no records found</td>
+                <td colspan="5">aucun enregistrement trouvé</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('testimony_new') }}">Create new</a>
+    <div class = "d-flex justify-content-end m-3 p-3">
+        <a class="btn btn-primary" href="{{ path('testimony_new') }}">Ajout Témoignage</a>
+    </div>
+<div>
 {% endblock %}
+
+
+        
+ 

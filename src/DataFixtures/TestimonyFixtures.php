@@ -20,6 +20,7 @@ class TestimonyFixtures extends Fixture
             $testimony->setName($faker->title() . $faker->lastname());
             $testimony->setAge($faker->numberBetween(18, 100));
             $testimony->setMessage($faker->paragraph(2));
+            $testimony->setDate($faker->dateTime());
 
             $manager->persist($testimony);
             $this->addReference('testimony' . $i, $testimony);
