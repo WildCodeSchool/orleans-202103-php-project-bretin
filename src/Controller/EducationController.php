@@ -69,10 +69,11 @@ class EducationController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
+            $this->addFlash('success', 'Le diplôme ou la formation à bien été modifié.');
             return $this->redirectToRoute('education_index');
         }
 
-        return $this->render('education/edit.html.twig', [
+        return $this->render('home/Admin/edit_education.html.twig', [
             'education' => $education,
             'form' => $form->createView(),
         ]);
