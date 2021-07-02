@@ -11,7 +11,7 @@
 
 
 {% block body %}
-	<div class="title_individuals text-center shadow-lg p-2 mb-5 pt-3 mt-5 bg-body rounded">
+	<div class="title_individuals text-center pt-3 mt-5">
 		<h1>ESPACE PARTICULIERS</h1>
 	</div>
 	<section="services_section">
@@ -23,33 +23,12 @@
 				<img class="candle" img src="{{ asset('build/images/candle.png') }}" alt="candle_picture">
 				<div class="container d-flex justify-content-center">
 					<div class="card w-20 h-25">
-						<div class="card-body">Psychothérapie</div>
-						<div class="card-body">Aide psychologique</div>
-						<div class="card-body">Psychologie travail</div>
-						<div class="card-body">Anxiété</div>
-						<div class="card-body">Insomnie</div>
-					</div>
-					<div class="card w-20 h-25">
-						<div class="card-body">Dépression</div>
-						<div class="card-body">Harcèlement travail</div>
-						<div class="card-body">Stress</div>
-						<div class="card-body">Personnes handicapées</div>
-						<div class="card-body">Burn-out</div>
-					</div>
-					<div class="card w-20 h-25">
-						<div class="card-body">Test de personnalité</div>
-						<div class="card-body">Test psychotechnique</div>
-						<div class="card-body">Test d'orientation professionnelle</div>
-						<div class="card-body">Test de recrutement</div>
-						<div class="card-body">Développement personnel</div>
-					</div>
-					<div class="card w-20 h-25">
-						<div class="card-body">Confiance en soi</div>
-						<div class="card-body">Aptitudes sociales</div>
-					</div>
-				</li>
-			</li>
+					{% for service in services %}
+						<div class="card-body">{{ service.name }}</div>
+					{% endfor %}
+		        </div>
+			</li> 
 		</div>
 	</section>
-
 {% endblock %}
+			
