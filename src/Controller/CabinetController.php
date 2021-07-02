@@ -20,7 +20,7 @@ class CabinetController extends AbstractController
      */
     public function index(OfficeRepository $officeRepository): Response
     {
-        return $this->render('cabinet/index.html.twig', [
+        return $this->render('Contact/People/Admin/office_index.html.twig', [
             'offices' => $officeRepository->findAll(),
         ]);
     }
@@ -71,10 +71,11 @@ class CabinetController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
+            $this->addFlash('success', 'Le cabinet a bien été modifié.');
             return $this->redirectToRoute('cabinet_index');
         }
 
-        return $this->render('cabinet/edit.html.twig', [
+        return $this->render('Contact/People/Admin/edit_office.html.twig', [
             'office' => $office,
             'form' => $form->createView(),
         ]);

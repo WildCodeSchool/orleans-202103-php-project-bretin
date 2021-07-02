@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Education index{% endblock %}
+
+{% block body %}
+    <div class="table-responsive m-5">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Année d'obtention</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for education in education %}
+                <tr>
+                    <td>{{ education.name }}</td>
+                    <td>{{ education.obtentionYear }}</td>
+                    <td>
+                        <a href="{{ path('education_edit', {'id': education.id}) }}" class="btn btn-primary">Modifier</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="4">Aucun enregistrement trouvé</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    <a href="{{ path('education_new') }}" class="btn btn-primary p-1">Ajouter un diplôme/formation</a>
+{% endblock %}
