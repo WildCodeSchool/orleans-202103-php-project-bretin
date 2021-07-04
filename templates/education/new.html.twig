@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau Dipôme/Formation{% endblock %}
+
+{% block body %}
+
+    {{ include('education/_form.html.twig') }}
+
+    <a href="{{ path('education_index') }}">Retour à la liste</a>
+{% endblock %}
