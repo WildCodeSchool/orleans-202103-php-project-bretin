@@ -1,4 +1,5 @@
 .activity {
+<<<<<<< HEAD
     height: auto;
     font-weight: bolder;
 }
@@ -12,5 +13,16 @@
 }
 
 .activity .card-activity {
+=======
+    line-height: $line-height;
+}
+
+.stone {
+    height: 270px;
+}
+
+.activity p {
+    font-size: $text-size;
+>>>>>>> 60ffc6c8e8b9482cb5a0d2d3d99a0a80eb910c96
     color: $quarternary;
 }
