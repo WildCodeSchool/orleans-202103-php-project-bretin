@@ -1,0 +1,16 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Admin Liste DipLôme/Formation{% endblock %}
+
+{% block body %}
+    <header class="container-fluid m-3 p-2">
+    </header>
+    <main class="container-fluid">
+        <div>
+           <div class = "fw-bold text-center">
+                <p class = "titre">Liste des diplômes et formations</p>
+            </div>
+            {% include "education/index.html.twig" %}
+        </div>
+    </main>
+{% endblock %}
