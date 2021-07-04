@@ -23,7 +23,6 @@ final class Version20210702084036 extends AbstractMigration
         $this->addSql('CREATE TABLE education (id INT AUTO_INCREMENT NOT NULL, name VARCHAR(255) NOT NULL, obtention_year INT NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE office (id INT AUTO_INCREMENT NOT NULL, name VARCHAR(255) NOT NULL, address VARCHAR(255) NOT NULL, zipcode VARCHAR(15) NOT NULL, city VARCHAR(255) NOT NULL, phone VARCHAR(20) NOT NULL, mail VARCHAR(100) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE picture (id INT AUTO_INCREMENT NOT NULL, office_id INT NOT NULL, name VARCHAR(50) NOT NULL, url VARCHAR(255) NOT NULL, INDEX IDX_16DB4F89FFA0C224 (office_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
-        $this->addSql('CREATE TABLE testimony (id INT AUTO_INCREMENT NOT NULL, name VARCHAR(25) NOT NULL, age INT NOT NULL, message LONGTEXT NOT NULL, date DATE NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE user (id INT AUTO_INCREMENT NOT NULL, biography LONGTEXT NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('ALTER TABLE picture ADD CONSTRAINT FK_16DB4F89FFA0C224 FOREIGN KEY (office_id) REFERENCES office (id)');
     }
@@ -35,7 +34,6 @@ final class Version20210702084036 extends AbstractMigration
         $this->addSql('DROP TABLE education');
         $this->addSql('DROP TABLE office');
         $this->addSql('DROP TABLE picture');
-        $this->addSql('DROP TABLE testimony');
         $this->addSql('DROP TABLE user');
     }
 }
