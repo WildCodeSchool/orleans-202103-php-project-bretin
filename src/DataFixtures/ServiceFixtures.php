@@ -40,5 +40,5 @@ class ServiceFixtures extends Fixture
         }
 
         $manager->flush();
-    } 
+    }
 }
