@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class HomeController extends AbstractController
 {
     /**
-     * @Route("/", name="biography")
+     * @Route("/", name="accueil")
      * @return Response
      */
     public function index(UserRepository $userRepository, EducationRepository $educationRepository): Response
