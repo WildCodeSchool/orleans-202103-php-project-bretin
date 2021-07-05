@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\TestimonyRepository;
+use DateTime;
+use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -31,6 +33,12 @@ class Testimony
      * @ORM\Column(type="text")
      */
     private string $message;
+
+    /**
+     * @ORM\Column(type="date")
+     */
+    private DateTimeInterface $date;
+
 
     public function getId(): ?int
     {
@@ -69,6 +77,18 @@ class Testimony
     public function setMessage(string $message): self
     {
         $this->message = $message;
+
+        return $this;
+    }
+
+    public function getDate(): ?\DateTimeInterface
+    {
+        return $this->date;
+    }
+
+    public function setDate(\DateTimeInterface $date): self
+    {
+        $this->date = $date;
 
         return $this;
     }
