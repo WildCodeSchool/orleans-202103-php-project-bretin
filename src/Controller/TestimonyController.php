@@ -81,7 +81,7 @@ class TestimonyController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="testimony_delete", methods={"POST"})
+     * @Route("/{id}/supprimer", name="testimony_delete", methods={"POST"})
      */
     public function delete(Request $request, Testimony $testimony): Response
     {
