@@ -1,35 +1,21 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}User index{% endblock %}
-
 {% block body %}
-    <h1>User index</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Biography</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for user in users %}
-            <tr>
-                <td>{{ user.id }}</td>
-                <td>{{ user.biography }}</td>
-                <td>
-                    <a href="{{ path('user_show', {'id': user.id}) }}">show</a>
-                    <a href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('user_new') }}">Create new</a>
+<section class="story vh-auto" id="biography">
+    <div class="row g-0 d-flex align-items-start justify-content-evenly p-5">
+    {% for user in users %}
+    <div class="col-md-9 col-lg-9 w-auto">
+                <h2 class="title p-bottom-2">Qui suis-je ?</h2>
+                <p>{{ user.biography|nl2br }}</p>
+            </div>
+            <div class="col-md-3 col-lg-3">
+                <img src="{{ asset('build/images/loic.png') }}" class="img-fluid rounded-3 w-75 h-75" alt="photo de Loïc Bretin">
+                <h2>Loïc Bretin</h2>
+                <p>Psychologue du travail</p>
+            </div>
+        </div>
+    <a href="{{ path('user_edit', {'id': user.id}) }}" class="btn btn-primary p-1">Modifier</a>
+    {{ include('user/_delete_form.html.twig') }}
+    <a href="{{ path('user_new') }}" class="btn btn-primary p-1 mb-3">Ajouter une biographie</a>
+    {% endfor %}
 {% endblock %}
