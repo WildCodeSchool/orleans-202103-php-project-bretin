@@ -26,7 +26,7 @@ class TestimonyController extends AbstractController
     }
 
     /**
-     * @Route("/ajout-testimony", name="testimony_new", methods={"GET","POST"})
+     * @Route("/ajout-temoignage", name="testimony_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
     {
