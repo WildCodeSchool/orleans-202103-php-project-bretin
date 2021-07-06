@@ -29,9 +29,10 @@
                     <div class="btn btn-primary bg-light mx-2 px-3">
                         <a href="{{ path('testimony_show', {'id': testimony.id}) }}">Voir</a>
                     </div>
-                    <div class="btn btn-primary bg-light">
+                    <div class="btn btn-primary bg-light mx-2 px-3">
                         <a href="{{ path('testimony_edit', {'id': testimony.id}) }}">Editer</a>
                     </div>
+                        {{ include('testimony/_delete_form.html.twig') }}
                 </td>
             </tr>
         {% else %}
