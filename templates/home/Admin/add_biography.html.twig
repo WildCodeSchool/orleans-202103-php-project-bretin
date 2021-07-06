@@ -1,0 +1,16 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Admin Ajout Biographie{% endblock %}
+
+{% block body %}
+    <header class="container-fluid m-3 p-2">
+    </header>
+    <main class="container-fluid">
+        <div>
+           <div class = "fw-bold text-center">
+                <p class = "titre">Ajouter une nouvelle biographie</p>
+            </div>
+            {% include "user/new.html.twig" %}
+        </div>
+    </main>
+{% endblock %}
