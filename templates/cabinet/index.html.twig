@@ -7,7 +7,7 @@
             <div class="card-body">
                 {% set picture_index = 1 %}
                 {% for picture in office.pictures %}
-                    <a href="{{ path('cabinet_picture_edit', {'id': picture.id}) }}" class="btn btn-primary"> Photo {{ picture_index }}</a>
+                    <a href="{{ path('cabinet_picture_edit', {'id': picture.id}) }}" class="btn btn-primary"> Photo {{ loop.index }}</a>
                     {% set picture_index = picture_index + 1 %}
                 {% endfor %}
                 <div class= "row p-4">
