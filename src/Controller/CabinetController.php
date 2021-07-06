@@ -3,7 +3,9 @@
 namespace App\Controller;
 
 use App\Entity\Office;
+use App\Entity\Picture;
 use App\Form\OfficeType;
+use App\Form\PictureType;
 use App\Repository\OfficeRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -46,6 +48,26 @@ class CabinetController extends AbstractController
 
         return $this->render('Contact/People/Admin/add_office.html.twig', [
             'office' => $office,
+            'form' => $form->createView(),
+        ]);
+    }
+
+      /**
+     * @Route("/picture/{id}/edit", name="cabinet_picture_edit", methods={"GET","POST"})
+     */
+    public function editPicture(Request $request, Picture $picture): Response
+    {
+        $form = $this->createForm(PictureType::class, $picture);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('cabinet_index');
+        }
+
+        return $this->render('cabinet/edit_picture.html.twig', [
+            'picture' => $picture,
             'form' => $form->createView(),
         ]);
     }
