@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Biography{% endblock %}
+
+{% block body %}
+{{ form_start(form) }}
+<div class="d-flex justify-content-center">
+    <div class="row col-lg-6 col-md-8 mb-4 fw-bold">
+    {% block form_row %}
+        <div class="form_row p-2">
+            {{ form_label(form.biography, 'Texte de la biographie') }}
+         </div>
+        {{ form_widget(form.biography) }}
+        {{ form_errors(form.biography) }}
+    {% endblock form_row %}
+        <div class = "d-flex justify-content-end m-3 p-3">
+            <button class="btn btn-primary">{{ button_label|default('Mettre à jour') }}</button>
+        </div>
+    </div>
+<div>
+{{ form_end(form) }}
+<a href="{{ path('user_index') }}">Retour à la liste</a>
+{% endblock %}

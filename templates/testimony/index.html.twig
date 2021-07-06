@@ -4,13 +4,15 @@
 
 {% block body %}
 <div class="d-flex justify-content-center">
-    <div class="row col-lg-6 col-md-8 mb-4">
+    <div class="testimony-admin row col-lg-6 col-md-8 mb-4">
 
     <h1 class="border text-center">Témoignages index</h1>
 
-    <table class="table">
+    <h1>Témoignages</h1>
+
+    <table class="table border text-center m-4">
         <thead>
-            <tr>
+            <tr class="bg-primary">
                 <th>Date</th>
                 <th>Nom</th>
                 <th>Âge</th>
@@ -25,8 +27,8 @@
                 <td>{{ testimony.name }}</td>
                 <td>{{ testimony.age }}</td>
                 <td>{{ testimony.message }}</td>
-                <td>
-                    <div class="btn btn-primary bg-light">
+                <td class="d-flex border-0">
+                    <div class="btn btn-primary bg-light mx-2 px-3">
                         <a href="{{ path('testimony_show', {'id': testimony.id}) }}">Voir</a>
                     </div>
                     <div class="btn btn-primary bg-light">
