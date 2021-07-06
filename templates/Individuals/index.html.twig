@@ -18,18 +18,20 @@
 		<p class="services_description">J’accompagne au sein de mon cabinet, toute personne qui souhaite trouver un lieu d’écoute, de soutien, un lieu sécurisé et bienveillant, pour trouver les clés et les réponses d’un avenir meilleur. Les séances s’organisent et reposent sur des principes forts du cabinet, à savoir la confidentialité, la confiance, le non jugement.<br>
 			Ces principes rendent alors possible une expression libre et libérée, facilitée.</p>
 		<div class="row g-2">
-			<div class="col-12 col-md-6 col-lg-3">
+			<div class="col col-md-6 col-lg-3">
 				<img class="candle w-100" img src="{{ asset('build/images/candle.png') }}" alt="candle_picture">
 			</div>
 			<div class="card container col col-lg-9">
 				<div class="card-body row">
+					{% set price = 0 %}
 					{% for service in services %}
-						<div class="col-12 col-sm-12 col-md-12 col-lg-4">
+						<div class="col col-sm col-md col-lg-4">
 							<p class="card-text">{{ service.name }}</p>
 						</div>
+					{% set price = service.price %}
 					{% endfor %}
 				</div>
-				<p class="prices">*tarif unique à la consultation 50€ (durée de la séance 50 à 60 min)</p>
+				<p class="prices">*tarif unique à la consultation {{ price }} € (durée de la séance 50 à 60 min)</p>
 			</div>
 		</div>
 		</div>
