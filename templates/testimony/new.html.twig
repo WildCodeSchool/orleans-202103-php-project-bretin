@@ -1,11 +1,84 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Testimony{% endblock %}
+{% block title %}Admin Ajout d'un Témoignage{% endblock %}
 
 {% block body %}
-    <h1>Create new Testimony</h1>
 
-    {{ include('testimony/_form.html.twig') }}
+{{ form_start(form) }}
+    <div class="d-flex justify-content-center">
+        <div class="row col-lg-6 col-md-8 mb-4 fw-bold">
+            {% block form_row %}
 
-    <a href="{{ path('testimony_index') }}">back to list</a>
+                    <div class="form_row p-2">
+                {{ form_label(form.name) }}
+                    </div>
+                {{ form_widget(form.name) }}
+                {{ form_errors(form.name) }}
+                    <div class="form_row p-2">
+                {{ form_label(form.age) }}
+                    </div>
+                {{ form_widget(form.age) }}
+                {{ form_errors(form.age) }}
+                     <div class="form_row p-2">
+                {{ form_label(form.message) }}
+                    </div>
+                {{ form_widget(form.message) }}
+                {{ form_errors(form.message) }}
+                <div class="form_row p-2">
+                {{ form_label(form.date) }}
+                    </div>
+                {{ form_widget(form.date) }}
+                {{ form_errors(form.date) }}
+
+            {% endblock form_row %}
+            <div class = "d-flex justify-content-end m-3 p-3">
+                <button class="btn btn-primary">{{ button_label|default('Enregistrer') }}</button>
+            </div>
+        </div>
+    <div>
+{{ form_end(form) }}
+
+    <a href="{{ path('testimony_index') }}">retour à la liste</a>
+
 {% endblock %}
+
+
+
+
+
+
+    
+    
+        
+        
+{# 
+
+        <div class="form_row p-2">
+            {{ form_label(form.zipcode) }}
+        </div>
+        {{ form_widget(form.zipcode) }}
+        {{ form_errors(form.zipcode) }}
+
+        <div class="form_row p-2">
+            {{ form_label(form.city) }}
+        </div>
+        {{ form_widget(form.city) }}
+        {{ form_errors(form.city) }}
+
+         <div class="form_row p-2">
+             {{ form_label(form.phone) }}
+        </div>
+        {{ form_widget(form.phone) }}
+        {{ form_errors(form.phone) }}
+
+          <div class="form_row p-2">
+             {{ form_label(form.mail) }}
+        </div>
+        {{ form_widget(form.mail) }}
+        {{ form_errors(form.mail) }}
+    
+        #}
+    
+{# 
+
+{% endblock %} #}
