@@ -7,7 +7,6 @@
     <div class="d-flex justify-content-center">
         <div class="row col-lg-6 col-md-8 mb-4 fw-bold">
             {% block form_row %}
-
                     <div class="form_row p-2">
                 {{ form_label(form.name, 'Nom') }}
                     </div>
@@ -28,12 +27,10 @@
                     </div>
                 {{ form_widget(form.date) }}
                 {{ form_errors(form.date) }}
-                    
             {% endblock form_row %}
         </div>
     <div>
 {{ form_end(form) }}
-
     <div class = "d-flex justify-content-end m-3 p-3 pb-1">
         <button class="btn btn-primary">{{ button_label|default('Enregistrer') }}</button>
     </div>
@@ -43,5 +40,4 @@
     <div class="d-flex justify-content-end m-3 p-3">
         <a href="{{ path('testimony_index') }}">retour à la liste</a>
     </div>
-    
 {% endblock %}
