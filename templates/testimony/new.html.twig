@@ -10,22 +10,22 @@
             {% block form_row %}
 
                     <div class="form_row p-2">
-                {{ form_label(form.name) }}
+                {{ form_label(form.name, 'Nom') }}
                     </div>
                 {{ form_widget(form.name) }}
                 {{ form_errors(form.name) }}
                     <div class="form_row p-2">
-                {{ form_label(form.age) }}
+                {{ form_label(form.age, 'Âge') }}
                     </div>
                 {{ form_widget(form.age) }}
                 {{ form_errors(form.age) }}
                      <div class="form_row p-2">
-                {{ form_label(form.message) }}
+                {{ form_label(form.message, 'Message') }}
                     </div>
                 {{ form_widget(form.message) }}
                 {{ form_errors(form.message) }}
-                <div class="form_row p-2">
-                {{ form_label(form.date) }}
+                    <div class="form_row p-2">
+                {{ form_label(form.date, 'Date') }}
                     </div>
                 {{ form_widget(form.date) }}
                 {{ form_errors(form.date) }}
