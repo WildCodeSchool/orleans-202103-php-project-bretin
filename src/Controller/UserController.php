@@ -69,10 +69,11 @@ class UserController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
+            $this->addFlash('success', 'la biographie à bien été modifiée.');
             return $this->redirectToRoute('user_index');
         }
 
-        return $this->render('user/edit.html.twig', [
+        return $this->render('home/Admin/edit_biography.html.twig', [
             'user' => $user,
             'form' => $form->createView(),
         ]);
