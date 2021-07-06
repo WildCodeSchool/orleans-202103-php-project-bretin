@@ -72,7 +72,7 @@ class UserController extends AbstractController
             return $this->redirectToRoute('user_index');
         }
 
-        return $this->render('user/edit.html.twig', [
+        return $this->render('home/Admin/edit_biography.html.twig', [
             'user' => $user,
             'form' => $form->createView(),
         ]);
