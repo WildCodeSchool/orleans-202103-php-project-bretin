@@ -1,13 +1,47 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Testimony{% endblock %}
+{% block title %}Admin Editer un Témoignage{% endblock %}
 
 {% block body %}
-    <h1>Edit Testimony</h1>
+{{ form_start(form) }}
+    <div class="d-flex justify-content-center">
+        <div class="row col-lg-6 col-md-8 mb-4 fw-bold">
+            {% block form_row %}
 
-    {{ include('testimony/_form.html.twig', {'button_label': 'Update'}) }}
+                    <div class="form_row p-2">
+                {{ form_label(form.name, 'Nom') }}
+                    </div>
+                {{ form_widget(form.name) }}
+                {{ form_errors(form.name) }}
+                    <div class="form_row p-2">
+                {{ form_label(form.age, 'Âge') }}
+                    </div>
+                {{ form_widget(form.age) }}
+                {{ form_errors(form.age) }}
+                     <div class="form_row p-2">
+                {{ form_label(form.message, 'Message') }}
+                    </div>
+                {{ form_widget(form.message) }}
+                {{ form_errors(form.message) }}
+                    <div class="form_row p-2">
+                {{ form_label(form.date, 'Date') }}
+                    </div>
+                {{ form_widget(form.date) }}
+                {{ form_errors(form.date) }}
+                    
+            {% endblock form_row %}
+        </div>
+    <div>
+{{ form_end(form) }}
 
-    <a href="{{ path('testimony_index') }}">back to list</a>
-
-    {{ include('testimony/_delete_form.html.twig') }}
+    <div class = "d-flex justify-content-end m-3 p-3 pb-1">
+        <button class="btn btn-primary">{{ button_label|default('Enregistrer') }}</button>
+    </div>
+    <div class="d-flex justify-content-end m-3 p-3">
+        {{ include('testimony/_delete_form.html.twig') }}
+    </div>
+    <div class="d-flex justify-content-end m-3 p-3">
+        <a href="{{ path('testimony_index') }}">retour à la liste</a>
+    </div>
+    
 {% endblock %}

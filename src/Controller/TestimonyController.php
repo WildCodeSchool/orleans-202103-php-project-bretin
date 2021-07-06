@@ -59,7 +59,7 @@ class TestimonyController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="testimony_edit", methods={"GET","POST"})
+     * @Route("/{id}/Editer", name="testimony_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Testimony $testimony): Response
     {
@@ -69,10 +69,11 @@ class TestimonyController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
+            $this->addFlash('success', 'Le témoignage a bien été modifié.');
             return $this->redirectToRoute('testimony_index');
         }
 
-        return $this->render('testimony/edit.html.twig', [
+        return $this->render('Individuals/Admin/edit_testimony.html.twig', [
             'testimony' => $testimony,
             'form' => $form->createView(),
         ]);
