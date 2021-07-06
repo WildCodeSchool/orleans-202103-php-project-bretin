@@ -87,13 +87,13 @@ class Picture
         return $this;
     }
 
-    public function setOfficeFile(?File $image = null):Picture
+    public function setOfficeFile(?File $image = null): Picture
     {
         $this->officeFile = $image;
         if ($image) {
             $this->updatedAt = new DateTime('now');
         }
-        
+
         return $this;
     }
 

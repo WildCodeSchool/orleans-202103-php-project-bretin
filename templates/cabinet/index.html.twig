@@ -5,15 +5,14 @@
                  {{ office.name }}
             </div>
             <div class="card-body">
-                {% set pictureIndex = 1 %}
+                {% set picture_index = 1 %}
                 {% for picture in office.pictures %}
-                    <a href="{{ path('cabinet_picture_edit', {'id': picture.id}) }}" class="btn btn-primary"> Photo {{pictureIndex  }}</a>
-                    {% set pictureIndex = pictureIndex + 1 %}
+                    <a href="{{ path('cabinet_picture_edit', {'id': picture.id}) }}" class="btn btn-primary"> Photo {{ picture_index }}</a>
+                    {% set picture_index = picture_index + 1 %}
                 {% endfor %}
                 <div class= "row p-4">
                     <p class="card-title">&nbsp; <img src="{{ asset("build/images/address.svg") }}" alt="icon_address" height="22" width="27">  {{ office.address }} - {{ office.zipcode }} -  {{ office.city }} </p>
                     <p class="card-text"> &nbsp; <img src="{{ asset("build/images/tel.svg") }}" alt="icon_tel" height="22" width="27">  {{ office.phone }} - <img src="{{ asset("build/images/envelope.svg") }}" alt="icon_mail" height="22" width="27">  <a href="mailto:{{ office.mail }}" target="_blank">{{ office.mail }}<a></p>
-                    
                     <div class="d-flex justify-content-end">
                         <a href="{{ path('cabinet_edit', {'id': office.id}) }}" class="btn btn-primary">Modifier</a>&nbsp; &nbsp;
                         {{ include('cabinet/_delete_form.html.twig') }}
