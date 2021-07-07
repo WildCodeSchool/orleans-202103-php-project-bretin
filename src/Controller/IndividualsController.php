@@ -10,7 +10,7 @@ use App\Repository\ServiceRepository;
 class IndividualsController extends AbstractController
 {
     /**
-     * @Route("/particuliers", name="individuals")
+     * @Route("/particuliers", name="particuliers")
      */
     public function index(serviceRepository $serviceRepository): Response
     {
