@@ -19,7 +19,7 @@ class TestimonyType extends AbstractType
             'placeholder' => '35',
         )))
         ->add('message', null, array( 'attr' => array(
-            'placeholder' => 'citation',
+            'placeholder' => 'avis',
         )))
         ->add('date', null, array( 'attr' => array(
             'placeholder' => '10/07/2021',
