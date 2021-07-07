@@ -11,6 +11,7 @@ class UserFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
         $biography = new User();
+        $biography->setBiographyFile(null);
         $biography->setBiography('
         Issu du monde du travail et de l’entreprise, ayant évolué dans le secteur public et privé, j’ai évolué sur des 
         fonctions managériales en ressources humaines.
