@@ -21,7 +21,7 @@ class PictureFixtures extends Fixture
     {
         foreach (self::PICTURE as $pic) {
             $picture = new Picture();
-            $picture->setName($pic["name"]);
+            $picture->setOfficeFile(null);
             $picture->setUrl($pic["url"]);
             $picture->setOffice($this->getReference($pic["reference"]));
             $manager->persist($picture);
