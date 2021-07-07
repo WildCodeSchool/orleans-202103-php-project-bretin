@@ -12,18 +12,18 @@ class TestimonyType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-        ->add('name', null, array('attr' => array(
+        ->add('name', null, ['attr' => [
             'placeholder' => 'John Doe'
-        )))
-        ->add('age', null, array( 'attr' => array(
+        ]])
+        ->add('age', null, ['attr' => [
             'placeholder' => '35',
-        )))
-        ->add('message', null, array( 'attr' => array(
-            'placeholder' => 'avis',
-        )))
-        ->add('date', null, array( 'attr' => array(
+        ]])
+        ->add('message', null, ['attr' => [
+            'placeholder' => 'Avis',
+        ]])
+        ->add('date', null, [ 'attr' => [
             'placeholder' => '10/07/2021',
-        )))
+        ]])
         ;
     }
 
