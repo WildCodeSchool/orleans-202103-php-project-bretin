@@ -59,7 +59,7 @@ class TestimonyController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/Editer", name="testimony_edit", methods={"GET","POST"})
+     * @Route("/{id}/editer", name="testimony_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Testimony $testimony): Response
     {

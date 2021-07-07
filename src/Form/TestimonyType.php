@@ -13,16 +13,16 @@ class TestimonyType extends AbstractType
     {
         $builder
         ->add('name', null, array('attr' => array(
-            'placeholder' => 'nom'
+            'placeholder' => 'John Doe'
         )))
         ->add('age', null, array( 'attr' => array(
-            'placeholder' => 'âge',
+            'placeholder' => '35',
         )))
         ->add('message', null, array( 'attr' => array(
-            'placeholder' => 'message',
+            'placeholder' => 'citation',
         )))
         ->add('date', null, array( 'attr' => array(
-            'placeholder' => 'date',
+            'placeholder' => '10/07/2021',
         )))
         ;
     }
