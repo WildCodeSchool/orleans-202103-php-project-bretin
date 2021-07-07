@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier une photo du cabinet{% endblock %}
+
+{% block body %}
+    <header class="container-fluid m-3 p-2"></header>
+    <main class="container-fluid">
+        <div>
+            <div class = "fw-bold text-center">
+                <p class = "titre">Changer la photo</p>
+            </div>
+            {{ form_start(form) }}
+                <div class="d-flex justify-content-center m-2">
+                    <div class="row col-lg-6 col-md-8 mb-4 fw-bold">
+                        {{ form_row(form.officeFile, {'attr': {'class': 'form-control'}}) }}
+                    <div>
+                </div>
+            {{ form_end(form) }}
+                <button class="btn btn-primary m-2">{{ button_label|default('Enregistrer') }}</button>
+        </div>
+    </main>
+{% endblock %}

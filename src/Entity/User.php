@@ -4,9 +4,12 @@ namespace App\Entity;
 
 use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
+ * use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+ * use Symfony\Component\Validator\Constraints as Assert;
  */
 class User
 {
@@ -18,7 +21,10 @@ class User
     private int $id;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", length=1200)
+     * @Assert\NotBlank(message="Veuillez saisir une biographie")
+     * @Assert\Length(max="1200", maxMessage="Le texte saisi {{ value }} est trop long,
+     * il ne devrait pas dépasser {{ limit }} caractères")
      */
     private string $biography;
 

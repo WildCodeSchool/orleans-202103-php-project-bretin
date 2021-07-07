@@ -1,6 +1,6 @@
 {% extends 'layout.html.twig' %}
 
-{% block title %}Admin Ajout DipLôme/Formation{% endblock %}
+{% block title %}Admin Modifier Biographie{% endblock %}
 
 {% block body %}
     <header class="container-fluid m-3 p-2">
@@ -8,9 +8,9 @@
     <main class="container-fluid">
         <div>
            <div class = "fw-bold text-center">
-                <p class = "titre">Ajouter un nouveau diplôme ou formation</p>
+                <p class = "titre">Modifier la biographie</p>
             </div>
-            {% include "education/new.html.twig" %}
+            {% include "user/edit.html.twig" %}
         </div>
     </main>
 {% endblock %}

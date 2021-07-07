@@ -10,9 +10,9 @@ h2{
     font-weight: bolder;
 }
 
-.list-group-item.active{
+.services{
     background-color: $senary;
-    border-color: $senary;  
+    border-color: $senary; 
 }
 
 .card-body{
@@ -21,24 +21,13 @@ h2{
 }
 
 .prices{
-    background-color: $quinary;
-    color: $light;
-    padding-left: 15px;
+    color: $quinary;
     font-weight: bolder;
-}
-
-.container{
-    line-height: 0.5em;
-    padding-top: 15px;
-}
-
+ }
 
 .candle{
     width: 250px; 
     height: 200px;
-    float: left;
-    padding-right: 10px;
-    margin-left: 70px;
 }
 
 
