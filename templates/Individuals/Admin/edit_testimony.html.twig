@@ -1,0 +1,15 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Modifier un Témoignage{% endblock %}
+
+{% block body %}
+    <header class="container-fluid m-3 p-2"></header>
+    <main class="container-fluid">
+        <div>
+            <div class = "fw-bold text-center">
+                <p class = "titre">Modification d'un témoignage</p>
+            </div>
+            {% include "testimony/edit.html.twig" %}
+        </div>
+    </main>
+{% endblock %}
