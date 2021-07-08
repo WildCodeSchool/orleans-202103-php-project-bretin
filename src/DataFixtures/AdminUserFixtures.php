@@ -13,9 +13,9 @@ class AdminUserFixtures extends Fixture
 
     public function __construct(UserPasswordEncoderInterface $passwordEncoder)
     {
-        $this->passwordEncoder = $passwordEncoder;        
+        $this->passwordEncoder = $passwordEncoder;
     }
-    
+
     public function load(ObjectManager $manager)
     {
         $admin = new AdminUser();
