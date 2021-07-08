@@ -26,7 +26,7 @@ class ServiceController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="service_new", methods={"GET","POST"})
+     * @Route("/nouveau", name="service_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
     {
@@ -39,7 +39,9 @@ class ServiceController extends AbstractController
             $entityManager->persist($service);
             $entityManager->flush();
 
-            return $this->redirectToRoute('service_index');
+            $this->addFlash('success', 'un service a bien été ajouté.');
+
+            return $this->redirectToRoute('service_new');
         }
 
         return $this->render('service/new.html.twig', [
