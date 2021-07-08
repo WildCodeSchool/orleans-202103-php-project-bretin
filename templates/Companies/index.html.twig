@@ -1,0 +1,80 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Espace Entreprises
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	{{ encore_entry_link_tags('companies') }}
+{% endblock %}
+
+
+{% block body %}
+	<section="companies">
+		<img class="background-entreprises w-100 position-relative" img src="{{ asset('build/images/background-entreprises.jpg') }}" alt="background_entreprises_picture">
+		<div class="title_companies position-absolute top-50 start-50 translate-middle">
+			<h1>ESPACE ENTREPRISES</h1>
+		</div>
+		<div class="container_description px-3">
+			<h2 class="subtitle text-center pt-5 text-uppercase">L' accompagnement du collectif de travail et de l' entreprise</h2>
+			<div class="container justify-content-center">
+				<div class="card mb-3">
+					<div class="row g-0">
+						<div class="col-md-4">
+							<img src="{{ asset('build/images/hands.png') }}" class="img-fluid rounded-start" alt="hands_picture">
+						</div>
+						<div class="col-md-8">
+							<div class="card-body">
+								<p class="card-text"></p>
+								<p class="p_1 pt-4">Mon intervention en entreprise vise à répondre à un besoin réel, soit en mettant à disposition des créneaux de consultation pour recevoir individuellement les salariés, soit en mettant en place une cellule d’écoute dédiée à l’entreprise, soit pour répondre à des préoccupations, questions, conflits ou toutes autres problématiques impliquant le collectif de travail.</p>
+								<p class="p_2">Dès lors, un temps de travail avec la direction visant à préparer l’intervention est indispensable. Mon approche méthodologique vise à vous proposer une intervention sur mesure, répondant à la situation rencontrée.</p>
+								<p class="p_3">Il convient de ne pas « vendre » une prestation ou une formation standardisée offrant incontestablement une réponse rapide et pouvant donner l’illusion d’une solution à un problème.</p>
+								<p class="p_4">En effet, si l’ambition est de répondre à une situation complexe, en souhaitant prendre soin du travail et de ses acteurs, l’intervention doit être spécifique et adaptée. Mon approche vise à construire une réponse en élaborant un dispositif souple et agile. La démarche devra être pensée en tenant compte de l’histoire de l’entreprise, de ses dirigeants, du collectif, mais aussi en fonction du contexte, des contraintes et de ses enjeux. L’intervention vise à redonner des perspectives et instaurer une zone de développement dans un objectif de performance individuelle et collective. Restaurer le débat et la qualité du travail, c’est soigner le travail en le réhabilitant et le replaçant au cœur de l’entreprise. Soigner le travail, c’est prendre soin de l’entreprise et de ses membres.</p>
+								<p class="p_5">Mon intervention se veut d’être spécifique et unique pour répondre au besoin réel. Cette prise en compte et compréhension du besoin nécessitent donc un temps de préparation et d’élaboration conjointe avec la direction.</p>
+								<p class="p_6">Avant d’agir, la réponse par mon intervention se doit d’être adaptée, personnalisée et co-construite avec les membres de l’entreprise.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-body">
+						<p class="card-text"></p>
+						<p class="p_7">Mon intervention s’appuie sur des principes et valeurs suivants :<br><img class="clipboard-check px-2" img src="{{ asset('build/images/clipboard-check.svg') }}" alt="clipboard-check_picture">Créer des espaces de parole et d’écoute
+							<br><img class="clipboard-check px-2" img src="{{ asset('build/images/clipboard-check.svg') }}" alt="clipboard-check_picture">La confidentialité
+							<br><img class="clipboard-check px-2" img src="{{ asset('build/images/clipboard-check.svg') }}" alt="clipboard-check_picture">Le non jugement
+							<br><img class="clipboard-check px-2" img src="{{ asset('build/images/clipboard-check.svg') }}" alt="clipboard-check_picture">Le respect des décisions prises
+							<br><img class="clipboard-check px-2" img src="{{ asset('build/images/clipboard-check.svg') }}" alt="clipboard-check_picture">Le secret professionnel
+							<br><img class="clipboard-check px-2" img src="{{ asset('build/images/clipboard-check.svg') }}" alt="clipboard-check_picture">Alerter la direction en cas d’identification de situations critiques, graves ou dangereuses
+							<br><img class="clipboard-check px-2" img src="{{ asset('build/images/clipboard-check.svg') }}" alt="clipboard-check_picture">La connaissance du monde de l’entreprise</p>
+						<img src="{{ asset('build/images/together.png') }}" class="card-img-together w-100" alt="together_picture">
+						<p class="p_8">Mes services :<br><img class="check-circle px-2" img src="{{ asset('build/images/check-circle.svg') }}" alt="check-circle_picture">Créer des espaces de parole et d’écoute
+							<br><img class="check-circle px-2" img src="{{ asset('build/images/check-circle.svg') }}" alt="check-circle_picture">Recréer des espaces d’expression sur le travail
+							<br><img class="check-circle px-2" img src="{{ asset('build/images/check-circle.svg') }}" alt="check-circle_picture">Soutenir et accompagner la fonction managériale
+							<br><img class="check-circle px-2" img src="{{ asset('build/images/check-circle.svg') }}" alt="check-circle_picture">Prévenir des Risques Psycho-sociaux
+							<br><img class="check-circle px-2" img src="{{ asset('build/images/check-circle.svg') }}" alt="check-circle_picture">Nourrir et développer la qualité du travail
+							<br><img class="check-circle px-2" img src="{{ asset('build/images/check-circle.svg') }}" alt="check-circle_picture">Accompagner au changement
+							<br><img class="check-circle px-2" img src="{{ asset('build/images/check-circle.svg') }}" alt="check-circle_picture">Recréer du dialogue et faire exprimer les tensions, conflits liés au travail
+							<br><img class="check-circle px-2" img src="{{ asset('build/images/check-circle.svg') }}" alt="check-circle_picture">Améliorer la communication et les échanges dans les équipes
+							<br><img class="check-circle px-2" img src="{{ asset('build/images/check-circle.svg') }}" alt="check-circle_picture">Recréer du collectif de travail
+							<br><img class="check-circle px-2" img src="{{ asset('build/images/check-circle.svg') }}" alt="check-circle_picture">Soigner les éventuelles souffrances dans le travail
+							<br><img class="check-circle px-2" img src="{{ asset('build/images/check-circle.svg') }}" alt="check-circle_picture">Accompagner les salariés dans une meilleure connaissance de soi</p>
+					</div>
+				</div>
+				<p class="p_1 pt-4">L’offre personnalisée proposée peut également répondre à des situations d’urgence ou de souffrance. Ainsi, fonction du contexte rencontré, je peux intervenir en collaboration avec un ou plusieurs autres professionnels spécialisés dans les diagnostics, traitement des RPS ou des professionnels de santé comme une psychologue clinicienne spécialisée dans la prise en charge des traumatismes.</p>
+				<p class="p_2">Cette offre vise à enrichir et renforcer l’offre de service faite à l’entreprise et à ses membres pour répondre à des situations très particulières, pour lesquelles l’entreprise doit apporter une réponse pour évacuer le traumatisme et recréer un avenir apaisé.</p>
+				<p class="p_3">En effet, lorsqu'une entreprise doit surmonter des évènements graves liés à des conflits, traumatismes, accidents, celle-ci peut faire appels à une multitude d’acteurs et d’intervenants (experts en QVT, coachs, consultants, psychologues du travail, psychologues clinicien, sophrologues…).</p>
+				<p class="p_4">Toutefois, la diversité des approches peut bien souvent conduire à devoir arbitrer en privilégiant une démarche mais en renonçant finalement aux apports des autres. Au final, la problématique peut être traitée que partiellement. C'est la raison pour laquelle le recours au cabinet doit pouvoir répondre à votre besoin.</p>
+				<p class="p_5">Le psychologue du travail s’attache à soigner le travail et de redonner du pouvoir d’agir au collectif de travail. Le soin est apporté sur le travail et sur le collectif. Le psychologue clinicien s’attache à soigner la personne et prendre en charge des traumatismes individuels.</p>
+				<p class="p_6">Le psychologue du travail questionne l’organisation du travail, les phénomènes de groupe, l’inconscient collectif alors que le consultant va appréhender l’entreprise dans une approche globale avec une dimension RH, de processus.</p>
+				<p class="p_7">Mon approche ne vise pas à opposer mais à réunir les apports de chaque discipline et métiers au seul profit et bénéfice de l’entreprise et de ses membres.</p>
+				<p class="p_8">Réunissant ces compétences et approches différentes en fonction des situations rencontrées, l’action du cabinet permet de construire des réponses adaptées et personnalisées à votre situation.</p>
+				<p class="p_9">Considérant que chaque problématique est unique et particulière, la réponse à apporter doit être construite pour un besoin unique et spécifique.</p>
+				<p class="p_10">Notre intervention s’inscrit donc dans le cadre du code de déontologie des psychologues. Le secret professionnel est garanti. Nos interventions sont préparées et travaillées au préalable avec la direction. Nous traitons la(les) problématique(s) avec les salariés de façon adaptée, personnalisée, en collectif et/ou en individuel.</p>
+				<img src="{{ asset('build/images/mbti-logo.png') }}" class="card-img-mbti" alt="logo_mbti">
+				<ul>
+					<li><a target="_blank" href="https://www.youtube.com/watch?v=E17jlIWQrS4">Pour en savoir plus sur la certification MBTI</a></li>
+				</ul>
+			</div>
+		</div>
+	</section>
+{% endblock %}
