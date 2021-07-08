@@ -22,7 +22,7 @@ class AdminUserFixtures extends Fixture
         $admin->setEmail('admin@bretin.com');
         $admin->setRoles(['ROLE_ADMIN']);
         $admin->setBiographyFile(null);
-        $admin->setUrl('');
+        $admin->setUrl('cabinet2-60e6fb363885b176406252.jpg');
         $admin->setBiography('
         Issu du monde du travail et de l’entreprise, ayant évolué dans le secteur public et privé, j’ai évolué sur des 
         fonctions managériales en ressources humaines.

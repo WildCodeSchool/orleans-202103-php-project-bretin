@@ -67,6 +67,9 @@ class UserController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+var_dump($user);
+
             $this->getDoctrine()->getManager()->flush();
 
             $this->addFlash('success', 'la biographie à bien été modifiée.');

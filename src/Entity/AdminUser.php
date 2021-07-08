@@ -27,7 +27,7 @@ class AdminUser implements UserInterface
     /**
      * @ORM\Column(type="string", length=180, unique=true)
      */
-    private string $email;
+    private string $email = '';
 
     /**
      * @ORM\Column(type="json")
@@ -38,13 +38,13 @@ class AdminUser implements UserInterface
      * @var string The hashed password
      * @ORM\Column(type="string")
      */
-    private string $password;
+    private string $password = '';
 
     /**
      * @ORM\Column(type="text")
      * @Assert\NotBlank()
      */
-    private $biography;
+    private string $biography;
 
     /**
     * @Vich\UploadableField(mapping="biography_file", fileNameProperty="url")
@@ -60,12 +60,12 @@ class AdminUser implements UserInterface
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $url;
+    private ?string $url = null;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
      */
-    private $updated_at;
+    private ?DateTimeInterface $updatedAt;
 
     public function getId(): ?int
     {
@@ -165,7 +165,7 @@ class AdminUser implements UserInterface
         return $this->url;
     }
 
-    public function setUrl(string $url): self
+    public function setUrl(?string $url): self
     {
         $this->url = $url;
 
@@ -174,12 +174,12 @@ class AdminUser implements UserInterface
 
     public function getUpdatedAt(): ?DateTimeInterface
     {
-        return $this->updated_at;
+        return $this->updatedAt;
     }
 
-    public function setUpdatedAt(?DateTimeInterface $updated_at): self
+    public function setUpdatedAt(?DateTimeInterface $updatedAt): self
     {
-        $this->updated_at = $updated_at;
+        $this->updatedAt = $updatedAt;
 
         return $this;
     }
@@ -198,5 +198,4 @@ class AdminUser implements UserInterface
     {
         return $this->biographyFile;
     }
-    
 }
