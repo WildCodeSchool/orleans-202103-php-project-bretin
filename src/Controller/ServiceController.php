@@ -69,6 +69,7 @@ class ServiceController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
+            $this->addFlash('success', 'Le service a bien été modifié.');
             return $this->redirectToRoute('service_index');
         }
 
