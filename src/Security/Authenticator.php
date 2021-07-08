@@ -67,7 +67,7 @@ class Authenticator extends AbstractFormLoginAuthenticator implements PasswordAu
             throw new InvalidCsrfTokenException();
         }
 
-        $user = $this->entityManager->getRepository(AdminUser::class)->findOneBy(['Email' => $credentials['Email']]);
+        $user = $this->entityManager->getRepository(AdminUser::class)->findOneBy(['email' => $credentials['Email']]);
 
         if (!$user) {
             throw new UsernameNotFoundException('Email could not be found.');

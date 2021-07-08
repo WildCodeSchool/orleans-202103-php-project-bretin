@@ -21,7 +21,7 @@ class AdminUser implements UserInterface
     /**
      * @ORM\Column(type="string", length=180, unique=true)
      */
-    private string $Email;
+    private string $email;
 
     /**
      * @ORM\Column(type="json")
@@ -41,12 +41,12 @@ class AdminUser implements UserInterface
 
     public function getEmail(): ?string
     {
-        return $this->Email;
+        return $this->email;
     }
 
     public function setEmail(string $email): self
     {
-        $this->Email = $email;
+        $this->email = $email;
 
         return $this;
     }
@@ -58,7 +58,7 @@ class AdminUser implements UserInterface
      */
     public function getUsername(): string
     {
-        return (string) $this->Email;
+        return (string) $this->email;
     }
 
     /**
