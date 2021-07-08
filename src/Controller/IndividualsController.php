@@ -17,6 +17,6 @@ class IndividualsController extends AbstractController
     {
 
         return $this->render('Individuals/index.html.twig', [ "services" => $serviceRepository->findAll(),
-        "testimonies" => $testimonyRepository->findBy([], ['date' => 'ASC'])]);
+        "testimonies" => $testimonyRepository->findBy([], ['date' => 'DESC'])]);
     }
 }

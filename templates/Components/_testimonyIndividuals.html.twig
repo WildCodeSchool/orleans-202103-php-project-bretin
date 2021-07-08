@@ -1,14 +1,18 @@
+<h2 class="pt-5 mb-5 mx-5 text-center col-3">TÉMOIGNAGES</h2>
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
 	<div class="carousel-inner">
 		{% for testimony in testimonies %}
 			<div class="carousel-item {{ loop.index == 1 ? 'active' : '' }}">
-				<h2 class="carousel-inner pt-4 mb-3 ">TÉMOIGNAGES</h2>
-				<div class="container-fluid px-5 pb-5 fw-bold">
-					<img src="{{ asset('build/images/qwote.aa82f259.png') }}" class="quotes-testimony" alt="Quotes">
-					{{ testimony.message }}<br>
+				<div class="color-testimony pb-5 fw-bold col-9 position-relative bottom-0 start-50 translate-middle-x">
+					<p>
+					<img src="{{ asset('build/images/left-quotes-sign.7512b79e.png') }}" class="quotes-testimony" alt="QuotesLeft">
+					{{ testimony.message }}
+					<img src="{{ asset('build/images/right-quotes-symbol.9917dfde.png') }}" class="quotes-testimony" alt="QuotesRight">
+					<br><br>
 					{{ testimony.name }},
 					{{ testimony.age }} ans.
 					Le {{ testimony.date|date("d/m/Y") }}.
+					</p>
 				</div>
 			</div>
 		{% endfor %}
