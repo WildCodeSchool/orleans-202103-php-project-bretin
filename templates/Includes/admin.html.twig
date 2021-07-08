@@ -11,24 +11,15 @@
             </div>
             <div class="card m-2 intro">
                 <div class="card-header">
-                    {% if app.user %}
-                        <div class= "d-flex justify-content-end">
-                        {{ app.user.email }}&nbsp; &nbsp;
-                        <a href="{{ path('app_logout') }}" class="btn btn-primary"> Se déconnecter</a>
-                        </div>
-                        {% else %}
-                            <a href="{{ path('app_login') }}" class="btn btn-primary"> Se connecter</a>
-                    {% endif %}
+                     Mettre à jour vos données
                 </div>
                 <div class="card-body">
                     <div class= "row p-4">
                         <div class="d-flex flex-column mb-3">
-                         {% if app.user %}
                             <a href="" class="btn btn-primary">GÉRER LES COORDONNÉES DE VOS CABINETS</a><br>
                             <a href="" class="btn btn-primary">GÉRER VOS DIPLÔMES / FORMATIONS</a><br>
                             <a href="" class="btn btn-primary">GÉRER VOS SERVICES</a><br>
                             <a href="" class="btn btn-primary">GÉRER VOS AVIS CLIENTS</a>
-                         {% endif %}
                         </div>
                     </div>
                 </div>

@@ -26,6 +26,7 @@ class AdminUser implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
+     * @Assert\Length(max="180")
      */
     private string $email = '';
 
@@ -59,6 +60,7 @@ class AdminUser implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(max="255")
      */
     private ?string $url = null;
 
