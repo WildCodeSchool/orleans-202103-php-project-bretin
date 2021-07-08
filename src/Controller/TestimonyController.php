@@ -21,7 +21,7 @@ class TestimonyController extends AbstractController
     public function index(TestimonyRepository $testimonyRepository): Response
     {
         return $this->render('testimony/index.html.twig', [
-            'testimonies' => $testimonyRepository->findBy([], ['date' => 'ASC']),
+            'testimonies' => $testimonyRepository->findBy([], ['date' => 'DESC']),
         ]);
     }
 
