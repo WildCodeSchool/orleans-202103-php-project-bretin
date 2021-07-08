@@ -2,12 +2,18 @@
 
 namespace App\Entity;
 
+use DateTime;
+use DateTimeInterface;
 use App\Repository\AdminUserRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=AdminUserRepository::class)
+ * @Vich\Uploadable
  */
 class AdminUser implements UserInterface
 {
@@ -33,6 +39,33 @@ class AdminUser implements UserInterface
      * @ORM\Column(type="string")
      */
     private string $password;
+
+    /**
+     * @ORM\Column(type="text")
+     * @Assert\NotBlank()
+     */
+    private $biography;
+
+    /**
+    * @Vich\UploadableField(mapping="biography_file", fileNameProperty="url")
+    * @Assert\File(
+    *       maxSize = "2M",
+    *       mimeTypes = {"image/jpeg","image/png","image/webp"},
+    * )
+    * @var File
+    */
+    private ?File $biographyFile = null;
+
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $url;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $updated_at;
 
     public function getId(): ?int
     {
@@ -114,4 +147,56 @@ class AdminUser implements UserInterface
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
     }
+
+    public function getBiography(): ?string
+    {
+        return $this->biography;
+    }
+
+    public function setBiography(string $biography): self
+    {
+        $this->biography = $biography;
+
+        return $this;
+    }
+
+    public function getUrl(): ?string
+    {
+        return $this->url;
+    }
+
+    public function setUrl(string $url): self
+    {
+        $this->url = $url;
+
+        return $this;
+    }
+
+    public function getUpdatedAt(): ?DateTimeInterface
+    {
+        return $this->updated_at;
+    }
+
+    public function setUpdatedAt(?DateTimeInterface $updated_at): self
+    {
+        $this->updated_at = $updated_at;
+
+        return $this;
+    }
+
+    public function setBiographyFile(?File $image = null): AdminUser
+    {
+        $this->biographyFile = $image;
+        if ($image) {
+            $this->updatedAt = new DateTime('now');
+        }
+
+        return $this;
+    }
+
+    public function getBiographyFile(): ?File
+    {
+        return $this->biographyFile;
+    }
+    
 }

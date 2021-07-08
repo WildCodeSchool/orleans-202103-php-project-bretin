@@ -2,9 +2,9 @@
 
 namespace App\Controller;
 
-use App\Entity\User;
+use App\Entity\AdminUser;
 use App\Form\UserType;
-use App\Repository\UserRepository;
+use App\Repository\AdminUserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,7 +18,7 @@ class UserController extends AbstractController
     /**
      * @Route("/", name="user_index", methods={"GET"})
      */
-    public function index(UserRepository $userRepository): Response
+    public function index(AdminUserRepository $userRepository): Response
     {
         return $this->render('home/Admin/index_biography.html.twig', [
             'users' => $userRepository->findAll(),
@@ -30,7 +30,7 @@ class UserController extends AbstractController
      */
     public function new(Request $request): Response
     {
-        $user = new User();
+        $user = new AdminUser();
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
 
@@ -51,7 +51,7 @@ class UserController extends AbstractController
     /**
      * @Route("/{id}", name="user_show", methods={"GET"})
      */
-    public function show(User $user): Response
+    public function show(AdminUser $user): Response
     {
         return $this->render('user/show.html.twig', [
             'user' => $user,
@@ -61,7 +61,7 @@ class UserController extends AbstractController
     /**
      * @Route("/{id}/edit", name="user_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, User $user): Response
+    public function edit(Request $request, AdminUser $user): Response
     {
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
@@ -82,7 +82,7 @@ class UserController extends AbstractController
     /**
      * @Route("/{id}", name="user_delete", methods={"POST"})
      */
-    public function delete(Request $request, User $user): Response
+    public function delete(Request $request, AdminUser $user): Response
     {
         if ($this->isCsrfTokenValid('delete' . $user->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();

@@ -6,9 +6,7 @@
 <div class="d-flex justify-content-center">
     <div class="testimony-admin row col-lg-6 col-md-8 mb-4">
 
-    <h1 class="border text-center">Témoignages index</h1>
-
-    <h1>Témoignages</h1>
+    <h1 class="text-center">Liste des Témoignages</h1>
 
     <table class="table border text-center m-4">
         <thead>
@@ -28,9 +26,6 @@
                 <td>{{ testimony.age }}</td>
                 <td>{{ testimony.message }}</td>
                 <td class="d-flex border-0">
-                    <div class="btn btn-primary bg-light mx-2 px-3">
-                        <a href="{{ path('testimony_show', {'id': testimony.id}) }}">Voir</a>
-                    </div>
                     <div class="btn btn-primary bg-light mx-2 px-3">
                         <a href="{{ path('testimony_edit', {'id': testimony.id}) }}">Editer</a>
                     </div>
