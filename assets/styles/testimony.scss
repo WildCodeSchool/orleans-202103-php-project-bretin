@@ -5,8 +5,10 @@
 
 .quotes-testimony {
     width: 4%;
+
 }
 
-.color-testimony p{
-    color: $quarternary;
-}
+.parent svg path{
+    fill: $primary;
+    width: 100px;
+  }
