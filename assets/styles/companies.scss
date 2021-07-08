@@ -21,11 +21,20 @@ h2{
     color: $quarternary;
 }
 
-ul li a{
+ul li{
+    list-style-type: none;
     color: $quarternary;
 }
 
-ul li{
-    list-style-type: none;
+.intervention{
+list-style: url('/assets/images/clipboard-check.svg');
+
 }
 
+.services{
+    list-style: url('/assets/images/check-circle.svg');
+}
+
+ul li a{
+    color: $quarternary;
+}
