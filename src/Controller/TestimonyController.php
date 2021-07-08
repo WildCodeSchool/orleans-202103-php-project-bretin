@@ -19,7 +19,7 @@ class TestimonyController extends AbstractController
      * @Route("/", name="testimony_index", methods={"GET"})
      */
     public function index(TestimonyRepository $testimonyRepository): Response
-    {
+    {   
         return $this->render('testimony/index.html.twig', [
             'testimonies' => $testimonyRepository->findBy([], ['date' => 'ASC']),
         ]);
