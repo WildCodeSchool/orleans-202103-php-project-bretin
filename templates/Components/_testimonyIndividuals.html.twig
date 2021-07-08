@@ -1,7 +1,7 @@
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
 	<div class="carousel-inner">
 		{% for testimony in testimonies %}
-			<div class="carousel-item {{loop.index == 1 ? 'active' : ''}}">
+			<div class="carousel-item{{ loop.index == 1 ? 'active' : '' }}">
 				<h2 class="carousel-inner pt-4 mb-3 ">TÉMOIGNAGES</h2>
 				<div class="container-fluid px-5 pb-5 fw-bold">
 					<img src="{{ asset('build/images/qwote.aa82f259.png') }}" class="quotes-testimony" alt="Quotes">

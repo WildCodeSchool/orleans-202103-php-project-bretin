@@ -16,8 +16,7 @@ class IndividualsController extends AbstractController
     public function index(serviceRepository $serviceRepository, testimonyRepository $testimonyRepository): Response
     {
 
-        return $this->render('Individuals/index.html.twig', [ "services" => $serviceRepository->findAll(), 
-         "testimonies" => $testimonyRepository->findBy([], ['date' => 'ASC'])]);
+        return $this->render('Individuals/index.html.twig', [ "services" => $serviceRepository->findAll(),
+        "testimonies" => $testimonyRepository->findBy([], ['date' => 'ASC'])]);
     }
 }
-
