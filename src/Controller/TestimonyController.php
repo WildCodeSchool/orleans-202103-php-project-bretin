@@ -26,7 +26,7 @@ class TestimonyController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="testimony_new", methods={"GET","POST"})
+     * @Route("/ajout-temoignage", name="testimony_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
     {
@@ -39,10 +39,12 @@ class TestimonyController extends AbstractController
             $entityManager->persist($testimony);
             $entityManager->flush();
 
+            $this->addFlash('success', 'Le témoignage a bien été ajouté.');
+
             return $this->redirectToRoute('testimony_index');
         }
 
-        return $this->render('testimony/new.html.twig', [
+        return $this->render('Individuals/Admin/add_testimony.html.twig', [
             'testimony' => $testimony,
             'form' => $form->createView(),
         ]);
@@ -59,7 +61,7 @@ class TestimonyController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="testimony_edit", methods={"GET","POST"})
+     * @Route("/{id}/editer", name="testimony_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Testimony $testimony): Response
     {
@@ -69,17 +71,18 @@ class TestimonyController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
+            $this->addFlash('success', 'Le témoignage a bien été modifié.');
             return $this->redirectToRoute('testimony_index');
         }
 
-        return $this->render('testimony/edit.html.twig', [
+        return $this->render('Individuals/Admin/edit_testimony.html.twig', [
             'testimony' => $testimony,
             'form' => $form->createView(),
         ]);
     }
 
     /**
-     * @Route("/{id}", name="testimony_delete", methods={"POST"})
+     * @Route("/{id}/supprimer", name="testimony_delete", methods={"POST"})
      */
     public function delete(Request $request, Testimony $testimony): Response
     {

@@ -2,14 +2,21 @@
 
 namespace App\Entity;
 
-use App\Repository\PictureRepository;
+use DateTime;
+use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\PictureRepository;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=PictureRepository::class)
+ * @Vich\Uploadable
  */
 class Picture
 {
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -18,14 +25,19 @@ class Picture
     private int $id;
 
     /**
-     * @ORM\Column(type="string", length=50)
-     */
-    private string $name;
-
-    /**
      * @ORM\Column(type="string", length=255)
      */
-    private string $url;
+    private ?string $url;
+
+    /**
+    * @Vich\UploadableField(mapping="office_file", fileNameProperty="url")
+    * @Assert\File(
+    *       maxSize = "2M",
+    *       mimeTypes = {"image/jpeg","image/png","image/webp"},
+    * )
+    * @var File
+    */
+    private ?File $officeFile;
 
     /**
      * @ORM\ManyToOne(targetEntity=Office::class, inversedBy="pictures")
@@ -33,21 +45,14 @@ class Picture
      */
     private Office $office;
 
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private ?DateTimeInterface $updatedAt;
+
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getName(): ?string
-    {
-        return $this->name;
-    }
-
-    public function setName(string $name): self
-    {
-        $this->name = $name;
-
-        return $this;
     }
 
     public function getUrl(): ?string
@@ -55,7 +60,7 @@ class Picture
         return $this->url;
     }
 
-    public function setUrl(string $url): self
+    public function setUrl(?string $url): self
     {
         $this->url = $url;
 
@@ -73,5 +78,32 @@ class Picture
             $this->office = $office;
         }
         return $this;
+    }
+
+    public function getUpdatedAt(): ?DateTimeInterface
+    {
+        return $this->updatedAt;
+    }
+
+    public function setUpdatedAt(?DateTimeInterface $updatedAt): self
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    public function setOfficeFile(?File $image = null): Picture
+    {
+        $this->officeFile = $image;
+        if ($image) {
+            $this->updatedAt = new DateTime('now');
+        }
+
+        return $this;
+    }
+
+    public function getOfficeFile(): ?File
+    {
+        return $this->officeFile;
     }
 }

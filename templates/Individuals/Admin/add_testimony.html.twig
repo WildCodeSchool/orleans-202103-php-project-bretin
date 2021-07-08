@@ -1,0 +1,16 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Admin Ajout d'un Témoignage{% endblock %}
+
+{% block body %}
+<header class="container-fluid m-3 p-2">
+    </header>
+    <main class="container-fluid">
+        <div>
+           <div class = "fw-bold text-center">
+                <h1 class = "titre text center">Ajout d'un témoignage</h1>
+            </div>
+            {{ include('testimony/new.html.twig') }}
+        </div>
+    </main>
+{% endblock %}
