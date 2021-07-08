@@ -21,7 +21,10 @@
 	</header>
 	<body>
 		{% block navbar %}{% endblock %}
+		{% block flash %}
+			{% include 'Includes/flash.html.twig' %}
+			{% include 'Includes/_flashTestimony.html.twig' %}
+		{% endblock %}
 		{% block body %}{% endblock %}
-		{% block footer %}{% endblock %}
 	</body>
 </html>
