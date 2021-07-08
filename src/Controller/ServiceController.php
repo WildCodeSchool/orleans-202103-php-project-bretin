@@ -87,6 +87,9 @@ class ServiceController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($service);
             $entityManager->flush();
+
+            $this->addFlash('success', 'Le service a bien été supprimé.');
+            return $this->redirectToRoute('service_index');
         }
 
         return $this->redirectToRoute('service_index');
