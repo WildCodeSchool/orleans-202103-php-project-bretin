@@ -2,17 +2,28 @@
 
 namespace App\DataFixtures;
 
-use App\Entity\User;
+use App\Entity\AdminUser;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
-class UserFixtures extends Fixture
+class AdminUserFixtures extends Fixture
 {
+    private $passwordEncoder;
+
+    public function __construct(UserPasswordEncoderInterface $passwordEncoder)
+    {
+        $this->passwordEncoder = $passwordEncoder;
+    }
+
     public function load(ObjectManager $manager)
     {
-        $biography = new User();
-        $biography->setBiographyFile(null);
-        $biography->setBiography('
+        $admin = new AdminUser();
+        $admin->setEmail('admin@bretin.com');
+        $admin->setRoles(['ROLE_ADMIN']);
+        $admin->setBiographyFile(null);
+        $admin->setUrl('cabinet2-60e6fb363885b176406252.jpg');
+        $admin->setBiography('
         Issu du monde du travail et de l’entreprise, ayant évolué dans le secteur public et privé, j’ai évolué sur des 
         fonctions managériales en ressources humaines.
         L’expérience du travail transforme.
@@ -29,8 +40,12 @@ class UserFixtures extends Fixture
         pour y avoir été également exposé.
         Je vous accompagne également sur les sphères qui s’articulent avec qui celle du travail.
         ');
-        $manager->persist($biography);
+        $admin->setPassword($this->passwordEncoder->encodePassword(
+            $admin,
+            'orleans'
+        ));
 
+        $manager->persist($admin);
         $manager->flush();
     }
 }
