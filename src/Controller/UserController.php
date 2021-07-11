@@ -18,7 +18,7 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
  */
 class UserController extends AbstractController
 {
-    private $passwordEncoder;
+    private UserPasswordEncoderInterface $passwordEncoder;
 
     public function __construct(UserPasswordEncoderInterface $passwordEncoder)
     {
@@ -29,25 +29,22 @@ class UserController extends AbstractController
      */
     public function reset(AdminUserRepository $userRepository, Request $request): Response
     {
-        $AccountSearched = new Account();
-        $form = $this->createForm(AccountType::class, $AccountSearched);
+        $accountSearched = new Account();
+        $form = $this->createForm(AccountType::class, $accountSearched);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $account = $userRepository->findOneBy([
-                'email' => $AccountSearched->getEmail(),
+                'email' => $accountSearched->getEmail(),
             ]);
-            if ($account === null)
-            { 
-                $this->setError("Cette adresse email est inconnue");
-            }
-            else
-            { 
-                $pass1 = $AccountSearched->GetNewPassword();
-                $pass2 = $AccountSearched->getConfirmNewPassword();
 
-                if ($pass1 === $pass2)
-                    {
+            if ($account === null) {
+                $this->setError("Cette adresse email est inconnue");
+            } else {
+                $pass1 = $accountSearched->GetNewPassword();
+                $pass2 = $accountSearched->getConfirmNewPassword();
+
+                if ($pass1 === $pass2) {
                         $entityManager = $this->getDoctrine()->getManager();
                         $account->setPassword($this->passwordEncoder->encodePassword(
                             $account,
@@ -57,11 +54,9 @@ class UserController extends AbstractController
                         $entityManager->flush();
                         $this->addFlash('success', 'Le mot de passe administrateur à bien été réinistialisé.');
                         return $this->redirectToRoute('app_login');
-                    }
-                    else 
-                    {
-                        $this->setError("Attention ! Les deux mots de passe saisis doivent être strictement identiques.");
-                    }
+                } else {
+                        $this->setError("Les deux mots de passe saisis doivent être identiques !");
+                }
             }
         }
 
@@ -70,7 +65,7 @@ class UserController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
-    
+
     /**
      * @Route("/", name="user_index", methods={"GET"})
      */
@@ -148,7 +143,7 @@ class UserController extends AbstractController
         return $this->redirectToRoute('user_index');
     }
 
-    private function setError($errorMessage):void
+    private function setError(string $errorMessage): void
     {
         echo "<br><div class='alert alert-danger' role='alert'>{$errorMessage}</div>";
     }

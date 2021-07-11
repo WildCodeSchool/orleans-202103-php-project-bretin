@@ -7,9 +7,9 @@ use Symfony\Component\Validator\Constraints as Assert;
 class Account
 {
 
-    private ?string $email = '';
-    private ?string $newPassword = '';
-    private ?string $confirmNewPassword = '';
+    private string $email;
+    private string $newPassword;
+    private string $confirmNewPassword;
 
     /**
      * @Assert\NotBlank
@@ -34,22 +34,22 @@ class Account
      * @Assert\NotBlank
      * @Assert\Length(max=255)
      */
-    public function getConfirmNewPassword(): ?string
+    public function getConfirmNewPassword(): string
     {
         return $this->confirmNewPassword;
     }
 
-    public function setEmail(?string $email): void
+    public function setEmail(string $email): void
     {
         $this->email = $email;
     }
 
-    public function setNewPassword(?string $password): void
+    public function setNewPassword(string $password): void
     {
         $this->newPassword = $password;
     }
 
-    public function setConfirmNewPassword(?string $password): void
+    public function setConfirmNewPassword(string $password): void
     {
         $this->confirmNewPassword = $password;
     }
