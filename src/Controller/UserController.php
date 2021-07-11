@@ -39,7 +39,7 @@ class UserController extends AbstractController
             ]);
 
             if ($account === null) {
-                $this->setError("Cette adresse email est inconnue");
+                $this->setError("Cette adresse email est inconnue.");
             } else {
                 $pass1 = $accountSearched->GetNewPassword();
                 $pass2 = $accountSearched->getConfirmNewPassword();
@@ -52,7 +52,7 @@ class UserController extends AbstractController
                         ));
                         $entityManager->persist($account);
                         $entityManager->flush();
-                        $this->addFlash('success', 'Le mot de passe administrateur à bien été réinistialisé.');
+                        $this->addFlash('success', 'Le mot de passe administrateur a bien été réinitialisé.');
                         return $this->redirectToRoute('app_login');
                 } else {
                         $this->setError("Les deux mots de passe saisis doivent être identiques !");
