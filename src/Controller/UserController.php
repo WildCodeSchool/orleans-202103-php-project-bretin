@@ -3,18 +3,74 @@
 namespace App\Controller;
 
 use App\Entity\AdminUser;
+use App\Entity\Account;
+use App\Form\AccountType;
 use App\Form\UserType;
 use App\Repository\AdminUserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 /**
  * @Route("/user")
  */
 class UserController extends AbstractController
 {
+    private $passwordEncoder;
+
+    public function __construct(UserPasswordEncoderInterface $passwordEncoder)
+    {
+        $this->passwordEncoder = $passwordEncoder;
+    }
+      /**
+     * @Route("/reset", name="user_reset_index")
+     */
+    public function reset(AdminUserRepository $userRepository, Request $request): Response
+    {
+        $AccountSearched = new Account();
+        $form = $this->createForm(AccountType::class, $AccountSearched);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $account = $userRepository->findOneBy([
+                'email' => $AccountSearched->getEmail(),
+            ]);
+            if ($account === null)
+            { 
+                $this->setError("Cette adresse email est inconnue");
+            }
+            else
+            { 
+                $pass1 = $AccountSearched->GetNewPassword();
+                $pass2 = $AccountSearched->getConfirmNewPassword();
+
+                if ($pass1 === $pass2)
+                    {
+                        $entityManager = $this->getDoctrine()->getManager();
+                        $account->setPassword($this->passwordEncoder->encodePassword(
+                            $account,
+                            $pass1
+                        ));
+                        $entityManager->persist($account);
+                        $entityManager->flush();
+                        $this->addFlash('success', 'Le mot de passe administrateur à bien été réinistialisé.');
+                        return $this->redirectToRoute('app_login');
+                    }
+                    else 
+                    {
+                        $this->setError("Attention ! Les deux mots de passe saisis doivent être strictement identiques.");
+                    }
+            }
+        }
+
+        return $this->render('user/new_password.html.twig', [
+            'users' => $userRepository->findAll(),
+            'form' => $form->createView(),
+        ]);
+    }
+    
     /**
      * @Route("/", name="user_index", methods={"GET"})
      */
@@ -90,5 +146,10 @@ class UserController extends AbstractController
         }
 
         return $this->redirectToRoute('user_index');
+    }
+
+    private function setError($errorMessage):void
+    {
+        echo "<br><div class='alert alert-danger' role='alert'>{$errorMessage}</div>";
     }
 }
