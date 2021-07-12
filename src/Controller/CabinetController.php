@@ -13,7 +13,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/cabinet")
+ * @Route("/admin/cabinet")
  */
 class CabinetController extends AbstractController
 {
@@ -22,6 +22,10 @@ class CabinetController extends AbstractController
      */
     public function index(OfficeRepository $officeRepository): Response
     {
+        if (!$this->getUser()) {
+            return $this->redirectToRoute('accueil');
+        }
+       
         return $this->render('Contact/People/Admin/office_index.html.twig', [
             'offices' => $officeRepository->findAll(),
         ]);
