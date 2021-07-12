@@ -25,7 +25,7 @@ class CabinetController extends AbstractController
         if (!$this->getUser()) {
             return $this->redirectToRoute('accueil');
         }
-       
+
         return $this->render('Contact/People/Admin/office_index.html.twig', [
             'offices' => $officeRepository->findAll(),
         ]);
