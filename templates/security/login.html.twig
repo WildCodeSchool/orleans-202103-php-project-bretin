@@ -1,9 +1,12 @@
-{% extends 'layout.html.twig' %}
+{% extends 'base.html.twig' %}
+{% block navbar %}
+    {% include 'Includes/_navbar.html.twig' %}
+{% endblock %}
 
-{% block title %}Log in!{% endblock %}
+{% block title %}Cabinet Bretin - Admin - Connexion{% endblock %}
 
 {% block body %}
-    <header class="container-fluid m-3 p-2">
+    <header class="container-fluid m-3 p-5">
     </header>
     <main class="container-fluid col-md-4 p-5">
     <div class = "fw-bold text-center">
@@ -23,7 +26,10 @@
             <label for="inputPassword">Mot de passe</label>
             <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required><br>
             <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-            <button class="btn btn-lg btn-primary" type="submit">Se connecter</button>
+            <button class="btn btn-lg btn-primary w-100" type="submit">Se connecter</button>
         </form>
+        <div class ="d-flex justify-content-center p-4">
+            <a href="/user/reset">Mot de passe oublié</a>
+        </div>
     </main>
 {% endblock %}
