@@ -12,7 +12,9 @@
             {{ form_start(form) }}
                 <div class="d-flex justify-content-center m-2">
                     <div class="row col-lg-6 col-md-8 mb-4 fw-bold">
-                        {{ form_row(form.officeFile, {'attr': {'class': 'form-control'}}) }}
+                        {{ form_label(form.officeFile, "Mettre à jour vos visuels") }}
+                        {{ form_widget(form.officeFile) }}
+                        {{ form_errors(form.officeFile) }}
                     <div>
                 </div>
             {{ form_end(form) }}
