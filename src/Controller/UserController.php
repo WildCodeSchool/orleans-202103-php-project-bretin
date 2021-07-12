@@ -14,7 +14,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 /**
- * @Route("/user")
+ * @Route("/admin/user")
  */
 class UserController extends AbstractController
 {
@@ -71,6 +71,9 @@ class UserController extends AbstractController
      */
     public function index(AdminUserRepository $userRepository): Response
     {
+        if (!$this->getUser()) {
+            return $this->redirectToRoute('accueil');
+        }
         return $this->render('home/Admin/index_biography.html.twig', [
             'users' => $userRepository->findAll(),
         ]);

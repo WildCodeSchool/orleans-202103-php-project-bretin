@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/testimony")
+ * @Route("/admin/testimony")
  */
 class TestimonyController extends AbstractController
 {
@@ -20,6 +20,10 @@ class TestimonyController extends AbstractController
      */
     public function index(TestimonyRepository $testimonyRepository): Response
     {
+        if (!$this->getUser()) {
+            return $this->redirectToRoute('accueil');
+        }
+
         return $this->render('testimony/index.html.twig', [
             'testimonies' => $testimonyRepository->findBy([], ['date' => 'DESC']),
         ]);

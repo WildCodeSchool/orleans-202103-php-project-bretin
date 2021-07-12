@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/service")
+ * @Route("/admin/service")
  */
 class ServiceController extends AbstractController
 {
@@ -20,6 +20,10 @@ class ServiceController extends AbstractController
      */
     public function index(ServiceRepository $serviceRepository): Response
     {
+        if (!$this->getUser()) {
+            return $this->redirectToRoute('accueil');
+        }
+
         return $this->render('service/index.html.twig', [
             'services' => $serviceRepository->findAll(),
         ]);

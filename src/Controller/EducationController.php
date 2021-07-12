@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/education")
+ * @Route("/admin/education")
  */
 class EducationController extends AbstractController
 {
@@ -20,6 +20,10 @@ class EducationController extends AbstractController
      */
     public function index(EducationRepository $educationRepository): Response
     {
+        if (!$this->getUser()) {
+            return $this->redirectToRoute('accueil');
+        }
+
         return $this->render('home/Admin/index_education.html.twig', [
             'education' => $educationRepository->findAll(),
         ]);
