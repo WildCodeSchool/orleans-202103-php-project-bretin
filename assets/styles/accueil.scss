@@ -13,6 +13,11 @@
     font-weight: bolder;
 }
 
+.btn-primary{
+    color: $light !important;
+    font-weight: bolder !important;
+}
+
 .btn:hover {
     color: $quarternary;
 }
