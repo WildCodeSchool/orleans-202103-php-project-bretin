@@ -6,6 +6,7 @@ use App\Repository\TestimonyRepository;
 use DateTime;
 use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=TestimonyRepository::class)
@@ -21,16 +22,25 @@ class Testimony
 
     /**
      * @ORM\Column(type="string", length=25)
+     * @Assert\NotBlank()
      */
     private string $name;
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\NotBlank()
+     * @Assert\GreaterThan(
+     *     value = 18
+     * )
+     * @Assert\LessThan(
+     *     value = 130
+     * )
      */
     private int $age;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\NotBlank()
      */
     private string $message;
 

@@ -24,30 +24,6 @@ class TestimonyType extends AbstractType
             ->add('date', null, ['attr' => [
                 'placeholder' => '10/07/2021',
             ]])
-        ->add('name', null, ['attr' => [
-            'placeholder' => 'John Doe'
-        ]])
-        ->add('age', null, ['attr' => [
-            'placeholder' => '35',
-        ]])
-        ->add('message', null, ['attr' => [
-            'placeholder' => 'Avis',
-        ]])
-        ->add('date', null, [ 'attr' => [
-            'placeholder' => '10/07/2021',
-        ]])
-            ->add('name', null, array('attr' => array(
-                'placeholder' => 'nom'
-            )))
-            ->add('age', null, array( 'attr' => array(
-                'placeholder' => 'âge',
-            )))
-            ->add('message', null, array( 'attr' => array(
-                'placeholder' => 'message',
-            )))
-            ->add('date', null, array( 'attr' => array(
-                'placeholder' => 'date',
-            )))
         ;
     }
 
