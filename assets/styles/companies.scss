@@ -4,7 +4,11 @@
 .title_companies h1{
     color: $quinary;
     font-weight: 900;
-    background-color: opacify($color: #ffffff80, $amount: -0);
+    background-color: opacify($color: #ffffff90, $amount: -0);
+
+    @media (min-width: 260px) and (max-width: 1400px) {
+        display:none;
+    }
 }
 
 h2{

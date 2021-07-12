@@ -9,7 +9,15 @@
 
 
 {% block body %}
-	<h1 class="text-center pt-3 mt-5">ESPACE PARTICULIERS</h1>
+	<section="individuals">
+		<img class="background-particuliers w-100 position-relative" img src="{{ asset('build/images/background-particuliers.jpg') }}" alt="background_particuliers_picture">
+			{# <div class ="row">
+			<div class = "col col-md-6 col-lg-3"> #}
+		<div class="title_individuals position-absolute top-50 start-50 translate-middle">
+			<h1>ESPACE PARTICULIERS</h1>
+		</div>
+		</div>
+			</div>
 	<section class="services py-5 px-5">
 	<div class="container">
 		<h2>MES SERVICES</h2>
@@ -33,6 +41,7 @@
 			</div>
 		</div>
 		</div>
+	</section>
 	</section>
 	<section class = "text-center ">
 		{% include "Components/_testimonyIndividuals.html.twig" %}

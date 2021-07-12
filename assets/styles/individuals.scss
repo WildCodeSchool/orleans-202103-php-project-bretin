@@ -1,8 +1,16 @@
 @import 'variables.scss';
 @import "~bootstrap/scss/bootstrap";
 
-h1{
+.title_individuals h1{
     color: $quinary;
+    font-weight: 900;
+    background-color: opacify($color: #ffffff90, $amount: -0);
+ 
+
+@media (min-width: 260px) and (max-width: 1400px) {
+    display:none;
+}
+
 }
 
 h2{
@@ -32,7 +40,6 @@ h2{
 
 
 .services_description{
-    font-weight: bold;
     font-size: 18px;
     text-align: justify;
     line-height: 1.5em;
