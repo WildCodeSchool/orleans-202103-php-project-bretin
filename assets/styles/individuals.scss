@@ -7,8 +7,8 @@
     background-color: opacify($color: #ffffff90, $amount: -0);
  
 
-@media (min-width: 260px) and (max-width: 1400px) {
-    display:none;
+    @media (min-width: 260px) and (max-width: 1400px) {
+        display:none;
 }
 
 }
