@@ -44,11 +44,21 @@ It's symfony website-skeleton project with some additional tools to validate cod
 2. Run `composer install`
 3. Run `yarn install`
 4. Run `yarn encore dev` to build assets
+5. Run `composer require symphony/mailer` 
+6. Run `composer require fakerphp/faker`
 
 ### Working
 
 1. Run `symfony server:start` to launch your local php web server
 2. Run `yarn run dev --watch` to launch your local server for assets
+3. Run `symfony console doctrine:migration:migrates`
+4. Run `symfony console doctrine:fixtures:load`
+5. To connect admin part :
+url: /login 
+e-mail: cabinet.bretin@gmail.com
+MDP: orleans
+
+
 
 ### Testing
 
