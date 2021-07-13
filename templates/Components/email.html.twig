@@ -1,0 +1,16 @@
+<body>
+    <h1>Récapulatif des informations </h1>
+    <p>Nom du contact : {{ contact.civility }} {{ contact.lastname }} {{ contact.firstname }}</p>
+    <p>E-mail : {{ contact.mail }}</p>
+    <p>Nom de l'Entreprise : {{ contact.businessName }}</p>
+    <p>Fonction :{{ contact.job }}</p>
+    <p>Quelle est la situation rencontrée ?<br>{{ contact.situation }}</p>
+    <p>Quel serait votre besoin ?<br>{{ contact.need }}</p>
+    <p>L’intervention est-elle urgente ?<br>{{ contact.urgent }}</p>
+    <p>Pourquoi ?<br>{{ contact.urgentResponse }}</p>
+    <p>Avez-vous déjà fait intervenir un psychologue du travail dans votre entreprise et
+    si oui à quelle occasion ?<br>{{ contact.intervention }}</p>
+    <p>Quelles sont vos contraintes(organisation du travail,
+    budget, temps, environnement, etc...) ?<br>{{ contact.constraint }}</p>
+    <p>Quelles sont vos disponibilités pour se rencontrer ou échanger sur votre besoin ?<br>{{ contact.availability }}</p>
+</body>
