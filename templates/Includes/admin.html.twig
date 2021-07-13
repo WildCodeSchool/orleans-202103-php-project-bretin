@@ -1,4 +1,4 @@
-{% extends 'layout.html.twig' %}
+{% extends 'layout_admin.html.twig' %}
 
 {% block title %}Administration{% endblock %}
 
@@ -16,10 +16,21 @@
                 <div class="card-body">
                     <div class= "row p-4">
                         <div class="d-flex flex-column mb-3">
-                            <a href="" class="btn btn-primary">GÉRER LES COORDONNÉES DE VOS CABINETS</a><br>
-                            <a href="" class="btn btn-primary">GÉRER VOS DIPLÔMES / FORMATIONS</a><br>
-                            <a href="" class="btn btn-primary">GÉRER VOS SERVICES</a><br>
-                            <a href="" class="btn btn-primary">GÉRER VOS AVIS CLIENTS</a>
+                            <div class = "row m-2">
+                                <a href="{{ path('cabinet_index') }}" class="btn btn-primary">GÉRER LES COORDONNÉES DE VOS CABINETS</a>
+                            </div>
+                            <div class = "row m-2">
+                                <a href="{{ path('education_index') }}" class="btn btn-primary">GÉRER VOS DIPLÔMES / FORMATIONS</a>
+                            </div>
+                            <div class = "row m-2">
+                                <a href="{{ path('user_index') }}" class="btn btn-primary">GÉRER VOTRE BIOGRAPHIE</a>
+                            </div>
+                            <div class = "row m-2">
+                                <a href="{{ path('service_index') }}" class="btn btn-primary">GÉRER VOS SERVICES</a>
+                            </div>
+                            <div class = "row m-2">
+                                <a href="{{ path('testimony_index') }}" class="btn btn-primary">GÉRER VOS AVIS CLIENTS</a>
+                            </div>
                         </div>
                     </div>
                 </div>

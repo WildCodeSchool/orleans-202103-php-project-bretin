@@ -19,7 +19,7 @@ class AdminUserFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
         $admin = new AdminUser();
-        $admin->setEmail('admin@bretin.com');
+        $admin->setEmail('cabinet.bretin@gmail.com');
         $admin->setRoles(['ROLE_ADMIN']);
         $admin->setBiographyFile(null);
         $admin->setUrl('cabinet2-60e6fb363885b176406252.jpg');

@@ -32,6 +32,10 @@ class SecurityController extends AbstractController
      */
     public function admin(): Response
     {
+        if (!$this->getUser()) {
+            return $this->redirectToRoute('accueil');
+        }
+
         return $this->render('Includes/admin.html.twig');
     }
 
