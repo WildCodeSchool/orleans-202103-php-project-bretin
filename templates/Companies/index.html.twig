@@ -1,7 +1,6 @@
 {% extends 'layout.html.twig' %}
 
-{% block title %}Espace Entreprises
-{% endblock %}
+{% block title %}Espace Entreprises{% endblock %}
 
 {% block stylesheets %}
 	{{ parent() }}
@@ -11,9 +10,10 @@
 
 {% block body %}
 	<section="companies">
-		<img class="background-entreprises w-100 position-relative" img src="{{ asset('build/images/background-entreprises.jpg') }}" alt="background_entreprises_picture">
-		<div class="title_companies position-absolute top-50 start-50 translate-middle">
+		<div class="background-companies">
+		<div class="title-companies">
 			<h1>ESPACE ENTREPRISES</h1>
+		</div>
 		</div>
 		<div class="container_description px-3">
 			<h2 class="subtitle text-center pt-5 text-uppercase">L' accompagnement du collectif de travail et de l' entreprise</h2>
