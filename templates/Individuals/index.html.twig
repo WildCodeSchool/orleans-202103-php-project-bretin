@@ -9,32 +9,40 @@
 
 
 {% block body %}
-	<h1 class="text-center pt-3 mt-5">ESPACE PARTICULIERS</h1>
-	<section class="services py-5 px-5">
-	<div class="container">
-		<h2>MES SERVICES</h2>
-		<p class="services_description">J’accompagne au sein de mon cabinet, toute personne qui souhaite trouver un lieu d’écoute, de soutien, un lieu sécurisé et bienveillant, pour trouver les clés et les réponses d’un avenir meilleur. Les séances s’organisent et reposent sur des principes forts du cabinet, à savoir la confidentialité, la confiance, le non jugement.<br>
-			Ces principes rendent alors possible une expression libre et libérée, facilitée.</p>
-		<div class="row g-2">
-			<div class="col col-md-6 col-lg-3">
-				<img class="candle w-100" img src="{{ asset('build/images/candle.png') }}" alt="candle_picture">
+	<section="individuals">
+		<div class="background-individuals">
+			<div class="title-individuals">
+				<h1>ESPACE PARTICULIERS</h1>
 			</div>
-			<div class="card container col col-lg-9">
-				<div class="card-body row">
-					{% set price = 0 %}
-					{% for service in services %}
-						<div class="col col-sm col-md col-lg-4">
-							<p class="card-text">{{ service.name }}</p>
+		</div>
+		<section class="services py-5 px-5">
+			<div class="container">
+				<h2>MES SERVICES</h2>
+				<p class="services_description">J’accompagne au sein de mon cabinet, toute personne qui souhaite trouver un lieu d’écoute, de soutien, un lieu sécurisé et bienveillant, pour trouver les clés et les réponses d’un avenir meilleur. Les séances s’organisent et reposent sur des principes forts du cabinet, à savoir la confidentialité, la confiance, le non jugement.<br>
+					Ces principes rendent alors possible une expression libre et libérée, facilitée.</p>
+				<div class="row g-2">
+					<div class="col col-md-6 col-lg-3">
+						<img class="candle w-100" img src="{{ asset('build/images/candle.png') }}" alt="candle_picture">
+					</div>
+					<div class="card container col col-lg-9">
+						<div class="card-body row">
+							{% set price = 0 %}
+							{% for service in services %}
+								<div class="col col-sm col-md col-lg-4">
+									<p class="card-text">{{ service.name }}</p>
+								</div>
+								{% set price = service.price %}
+							{% endfor %}
 						</div>
-					{% set price = service.price %}
-					{% endfor %}
+						<p class="prices">*tarif unique à la consultation
+							{{ price }}
+							€ (durée de la séance 50 à 60 min)</p>
+					</div>
 				</div>
-				<p class="prices">*tarif unique à la consultation {{ price }} € (durée de la séance 50 à 60 min)</p>
 			</div>
-		</div>
-		</div>
+		</section>
 	</section>
-	<section class = "text-center ">
+	<section class="text-center ">
 		{% include "Components/_testimonyIndividuals.html.twig" %}
 	</section>
 {% endblock %}
