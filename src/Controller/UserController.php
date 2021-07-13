@@ -71,6 +71,9 @@ class UserController extends AbstractController
      */
     public function index(AdminUserRepository $userRepository): Response
     {
+        if (!$this->getUser()) {
+            return $this->redirectToRoute('accueil');
+        }
         return $this->render('home/Admin/index_biography.html.twig', [
             'users' => $userRepository->findAll(),
         ]);
