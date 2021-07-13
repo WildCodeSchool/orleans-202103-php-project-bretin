@@ -27,27 +27,12 @@ class ContactController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $civility = $contact->getCivility();
-            $lastname = $contact->getLastname();
-            $firstname = $contact->getFirstname();
             $mail = $contact->getMail();
-            $businessName = $contact->getBusinessName();
-            $job = $contact->getJob();
-            $situation = $contact->getSituation();
-            $need = $contact->getNeed();
-            $urgent = $contact->getUrgent();
-            $urgentResponse = $contact->getUrgentResponse();
-            $intervention = $contact->getIntervention();
-            $constraint = $contact->getConstraint();
-            $availability = $contact->getAvailability();
-            $message = $civility . '<br>' . $lastname . '<br>' . $firstname . '<br>' . $mail . '<br>' . $businessName;
-            $message .= '<br>' . $job . '<br>' . $situation . '<br>' . $need . '<br>' . $urgent;
-            $message .= $urgentResponse . '<br>' . $intervention . '<br>' . $constraint . '<br>' . $availability;
             $email = (new Email())
             ->from($mail)
             ->to(strval($this->getParameter('mailer_to')))
             ->subject('Informations après remplissage du formulaire de contact entreprise')
-            ->html($message);
+            ->html($this->renderView('Components/email.html.twig', ['contact' => $contact]));
             $mailer->send($email);
         }
 
