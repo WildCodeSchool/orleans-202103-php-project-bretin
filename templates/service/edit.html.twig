@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout_admin.html.twig' %}
 
 {% block title %}Edit Service{% endblock %}
 
@@ -6,7 +6,9 @@
 {{ form_start(form) }}
 <div class="d-flex justify-content-center">
     <div class="row col-lg-6 col-md-8 mb-4 fw-bold">
-     <h1>Modification d'un service</h1>
+    <div class="card mt-5">
+        <div class="card-body">
+     <h1 class ="text-center">Modification d'un service</h1>
     {% block form_row %}
         <div class="form_row p-2">
             {{ form_label(form.name, "Nom") }}
@@ -27,9 +29,11 @@
         {{ form_errors(form.price2) }}
     {% endblock form_row %}
         <div class = "d-flex justify-content-end m-3 p-3">
-            <button class="btn btn-primary">{{ button_label|default('Mettre à jour') }}</button>
+            <button class="btn btn-primary text-light">{{ button_label|default('Mettre à jour') }}</button>
         </div>
     </div>
-<div>
+</div>
+</div>
+
 {{ form_end(form) }}
 {% endblock %}
