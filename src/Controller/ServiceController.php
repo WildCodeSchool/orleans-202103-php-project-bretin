@@ -64,7 +64,7 @@ class ServiceController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="service_edit", methods={"GET","POST"})
+     * @Route("/{id}/modification", name="service_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Service $service): Response
     {

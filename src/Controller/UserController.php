@@ -14,7 +14,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 /**
- * @Route("/user")
+ * @Route("/admin/biographie")
  */
 class UserController extends AbstractController
 {
@@ -113,7 +113,7 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="user_edit", methods={"GET","POST"})
+     * @Route("/{id}/modifier", name="user_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, AdminUser $user): Response
     {
