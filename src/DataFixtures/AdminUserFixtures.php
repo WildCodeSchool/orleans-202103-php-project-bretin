@@ -38,7 +38,7 @@ class AdminUserFixtures extends Fixture
         Titulaire du titre de psychologue du travail, certifié sur le MBTI niveau et niveau 2, j’aborde mon activité 
         d’écoute et de soutien avec une connaissance des paradoxes, tensions, impasses, empêchements du travail,
         pour y avoir été également exposé.
-        Je vous accompagne également sur les sphères qui s’articulent avec qui celle du travail.
+        Je vous accompagne également sur les sphères qui s’articulent avec celles du travail.
         ');
         $admin->setPassword($this->passwordEncoder->encodePassword(
             $admin,
