@@ -29,7 +29,7 @@
             <button class="btn btn-lg btn-primary w-100" type="submit">Se connecter</button>
         </form>
         <div class ="d-flex justify-content-center p-4">
-            <a href="/user/reset">Mot de passe oublié</a>
+            <a href="{{ path('app_forgot_password_request') }}">Mot de passe oublié</a>
         </div>
     </main>
 {% endblock %}
