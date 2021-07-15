@@ -11,13 +11,13 @@
         <p class = "titre">Réinitialisation du mot de passe administrateur</p>
     </div>
     <div class="d-flex justify-content-center p-5">
-        {% for flashError in app.flashes('reset_password_error') %}
-            <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+        {% for flash_error in app.flashes('reset_password_error') %}
+            <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
         {% endfor %}
         <div class = "text-center p-5">
             {{ form_start(requestForm) }}
                 <medium>
-                    Merci de saisir votre adresse Email afin que nous puissions vous envoyer votre <br> 
+                    Merci de saisir votre adresse Email afin que nous puissions vous envoyer votre <br>
                     lien de réinitialisation du mot de passe administrateur.
                 </medium>
                 <div class = "row p-4">

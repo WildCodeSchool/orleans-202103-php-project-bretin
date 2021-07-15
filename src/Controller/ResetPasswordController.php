@@ -63,7 +63,8 @@ class ResetPasswordController extends AbstractController
     {
         // Generate a fake token if the user does not exist or someone hit this page directly.
         // This prevents exposing whether or not a user was found with the given email address or not
-        if (null === ($resetToken = $this->getTokenObjectFromSession())) {
+        $resetToken = $this->getTokenObjectFromSession();
+        if (null === ($resetToken)) {
             $resetToken = $this->resetPasswordHelper->generateFakeResetToken();
         }
 
@@ -77,7 +78,7 @@ class ResetPasswordController extends AbstractController
      *
      * @Route("/reset/{token}", name="app_reset_password")
      */
-    public function reset(Request $request, UserPasswordEncoderInterface $passwordEncoder, string $token = null): Response
+    public function reset(Request $request, UserPasswordEncoderInterface $passEncoder, string $token = null): Response
     {
         if ($token) {
             // We store the token in session and remove it from the URL, to avoid the URL being
@@ -112,7 +113,7 @@ class ResetPasswordController extends AbstractController
             $this->resetPasswordHelper->removeResetRequest($token);
 
             // Encode the plain password, and set it.
-            $encodedPassword = $passwordEncoder->encodePassword(
+            $encodedPassword = $passEncoder->encodePassword(
                 $user,
                 $form->get('plainPassword')->getData()
             );
@@ -157,9 +158,11 @@ class ResetPasswordController extends AbstractController
             return $this->redirectToRoute('app_check_email');
         }
 
+        $currentUser = strval($user->getEmail());
+
         $email = (new TemplatedEmail())
             ->from(new Address('cabinet.bretin@gmail.com', 'Loic Bretin'))
-            ->to($user->getEmail())
+            ->to($currentUser)
             ->subject('Your password reset request')
             ->htmlTemplate('reset_password/email.html.twig')
             ->context([
