@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout_admin.html.twig' %}
 
 {% block title %}Admin Editer un Témoignage{% endblock %}
 
@@ -29,10 +29,7 @@
                 {{ form_errors(form.date) }}
                 <div class = "row">
                     <div class="col-6 p-3">
-                        <button class="btn btn-primary">{{ button_label|default('Enregistrer') }}</button>
-                    </div>
-                    <div class = "col-6 text-end p-4">
-                        <a href="{{ path('testimony_index') }}">retour à la liste</a>
+                        <button class="btn btn-primary text-light">{{ button_label|default('Enregistrer') }}</button>
                     </div>
                 </div>
             {% endblock form_row %}

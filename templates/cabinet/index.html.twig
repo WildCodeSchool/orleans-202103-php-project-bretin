@@ -14,7 +14,7 @@
                     <p class="card-title">&nbsp; <img src="{{ asset("build/images/address.svg") }}" alt="icon_address" height="22" width="27">  {{ office.address }} - {{ office.zipcode }} -  {{ office.city }} </p>
                     <p class="card-text"> &nbsp; <img src="{{ asset("build/images/tel.svg") }}" alt="icon_tel" height="22" width="27">  {{ office.phone }} - <img src="{{ asset("build/images/envelope.svg") }}" alt="icon_mail" height="22" width="27">  <a href="mailto:{{ office.mail }}" target="_blank">{{ office.mail }}<a></p>
                     <div class="d-flex justify-content-end">
-                        <a href="{{ path('cabinet_edit', {'id': office.id}) }}" class="btn btn-primary">Modifier</a>&nbsp; &nbsp;
+                        <a href="{{ path('cabinet_edit', {'id': office.id}) }}" class="btn btn-primary text-light">Modifier</a>&nbsp; &nbsp;
                         {{ include('cabinet/_delete_form.html.twig') }}
                     </div>
                 </div>
@@ -23,7 +23,7 @@
     {% endfor %}
         <div class="card-body">
             <div class= "row">
-                  <a href="{{ path('cabinet_new') }}" class="btn btn-primary">Ajouter un nouveau cabinet</a>
+                  <a href="{{ path('cabinet_new') }}" class="btn btn-primary text-light">Ajouter un nouveau cabinet</a>
             </div>
         </div>
 </div>
