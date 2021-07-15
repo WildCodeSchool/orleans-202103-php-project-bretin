@@ -12,7 +12,7 @@
 
 ## Description
 
-Project Bretin is an showcase website for the occupational psychologist M.Bretin Loïc.
+Project Bretin is a showcase website for workplace psychologist M.Bretin Loïc.
 
 ## Prerequisites
 
