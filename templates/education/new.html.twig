@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout_admin.html.twig' %}
 
 {% block title %}Nouveau Dipôme/Formation{% endblock %}
 
@@ -6,5 +6,4 @@
 
     {{ include('education/_form.html.twig') }}
 
-    <a href="{{ path('education_index') }}">Retour à la liste</a>
 {% endblock %}

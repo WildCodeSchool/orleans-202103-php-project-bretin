@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout_admin.html.twig' %}
 
 {% block title %}Nouveau cabinet{% endblock %}
 
@@ -45,7 +45,7 @@
         {{ form_errors(form.mail) }}
     {% endblock form_row %}
         <div class = "d-flex justify-content-end m-3 p-3">
-            <button class="btn btn-primary">{{ button_label|default('Enregistrer') }}</button>
+            <button class="btn btn-primary text-light">{{ button_label|default('Enregistrer') }}</button>
         </div>
     </div>
 <div>
