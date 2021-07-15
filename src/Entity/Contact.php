@@ -6,7 +6,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 class Contact
 {
-    private ?string $civility;
+    private string $civility;
 
     /**
      * @Assert\Notblank
@@ -34,9 +34,10 @@ class Contact
     private string $businessName;
 
     /**
+     * @Assert\Notblank
      * @Assert\Length(max="50")
      */
-    private ?string $job;
+    private string $job;
 
     /**
      * @Assert\Notblank
@@ -48,22 +49,22 @@ class Contact
      */
     private string $need;
 
-    private ?string $urgent;
+    private string $urgent;
 
     private ?string $urgentResponse;
 
-    private ?string $intervention;
+    private string $intervention;
 
-    private ?string $constraint;
+    private string $constraint;
 
-    private ?string $availability;
+    private string $availability;
 
-    public function getCivility(): ?string
+    public function getCivility(): string
     {
         return $this->civility;
     }
 
-    public function setCivility(?string $civility): self
+    public function setCivility(string $civility): self
     {
         $this->civility = $civility;
 
@@ -118,12 +119,12 @@ class Contact
         return $this;
     }
 
-    public function getJob(): ?string
+    public function getJob(): string
     {
         return $this->job;
     }
 
-    public function setJob(?string $job): self
+    public function setJob(string $job): self
     {
         $this->job = $job;
 
@@ -154,12 +155,12 @@ class Contact
         return $this;
     }
 
-    public function getUrgent(): ?string
+    public function getUrgent(): string
     {
         return $this->urgent;
     }
 
-    public function setUrgent(?string $urgent): self
+    public function setUrgent(string $urgent): self
     {
         $this->urgent = $urgent;
 
@@ -178,36 +179,36 @@ class Contact
         return $this;
     }
 
-    public function getIntervention(): ?string
+    public function getIntervention(): string
     {
         return $this->intervention;
     }
 
-    public function setIntervention(?string $intervention): self
+    public function setIntervention(string $intervention): self
     {
         $this->intervention = $intervention;
 
         return $this;
     }
 
-    public function getConstraint(): ?string
+    public function getConstraint(): string
     {
         return $this->constraint;
     }
 
-    public function setConstraint(?string $constraint): self
+    public function setConstraint(string $constraint): self
     {
         $this->constraint = $constraint;
 
         return $this;
     }
 
-    public function getAvailability(): ?string
+    public function getAvailability(): string
     {
         return $this->availability;
     }
 
-    public function setAvailability(?string $availability): self
+    public function setAvailability(string $availability): self
     {
         $this->availability = $availability;
 
