@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+{% block navbar %}
+    {% include 'Includes/_navbar.html.twig' %}
+{% endblock %}
+
+{% block title %}Cabinet Bretin - Lien de réinitialisation du mot de passe admin envoyé{% endblock %}
+
+{% block body %}
+<main class="container-fluid p-5">
+    <div class = "fw-bold text-center p-5">
+        <p class = "titre">Réinitialisation du mot de passe administrateur</p>
+    </div>
+    <div class="d-flex justify-content-center text-center">
+        <p class = "intro">
+            <strong>
+            Nous venons d'envoyer à l'adresse Email que vous avez indiquée un lien vers la page de réinitialisation du mot de passe.
+            <br>Pour des raisons de sécurité, celui-ci expirera dans {{ resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') }}.
+            <br>
+            Si n'avez pas reçu cet email, merci de bien vouloir vérifier votre dossier de spam ou <a href="{{ path('app_forgot_password_request') }}">de réitérer votre demande.</a>
+        </strong>
+        </p>
+    </div>
+</main>
+{% endblock %}

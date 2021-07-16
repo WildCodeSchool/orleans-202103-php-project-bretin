@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+{% block navbar %}
+    {% include 'Includes/_navbar.html.twig' %}
+{% endblock %}
+
+{% block title %}Cabinet Bretin - Admin - Connexion{% endblock %}
+
+{% block body %}
+<main class="container-fluid p-5 fw-bold">
+    <div class = "text-center">
+        <p class = "titre">Réinitialisation du mot de passe administrateur</p>
+    </div>
+    <div class="d-flex justify-content-center p-5">
+        {% for flash_error in app.flashes('reset_password_error') %}
+            <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+        {% endfor %}
+        <div class = "text-center p-5">
+            {{ form_start(requestForm) }}
+                <medium>
+                    Merci de saisir votre adresse Email afin que nous puissions vous envoyer votre <br>
+                    lien de réinitialisation du mot de passe administrateur.
+                </medium>
+                <div class = "row p-4">
+                    {{ form_row(requestForm.email) }}
+                </div>
+                <button class="btn btn-primary w-100">M'envoyez le lien de réinitialisation du mot de passe</button>
+            {{ form_end(requestForm) }}
+        </div>
+    </div>
+</main>
+{% endblock %}

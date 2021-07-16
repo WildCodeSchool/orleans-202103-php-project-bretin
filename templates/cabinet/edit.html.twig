@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout_admin.html.twig' %}
 
 {% block title %}Edit Office{% endblock %}
 
@@ -44,11 +44,8 @@
         {{ form_errors(form.mail) }}
     {% endblock form_row %}
         <div class = "d-flex justify-content-end m-3 p-3">
-            <button class="btn btn-primary">{{ button_label|default('Mettre à jour') }}</button>
+            <button class="btn btn-primary text-light">{{ button_label|default('Mettre à jour') }}</button>
         </div>
     </div>
-<div>
 {{ form_end(form) }}
-
-
 {% endblock %}

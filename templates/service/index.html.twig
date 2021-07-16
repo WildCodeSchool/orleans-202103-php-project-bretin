@@ -1,11 +1,11 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout_admin.html.twig' %}
 
 {% block title %}Service index{% endblock %}
 
 {% block body %}
 	<div class="d-flex justify-content-center">
-		<div class="testimony-admin row col-lg-6 col-md-8 mb-4">
-			<h1>Liste de mes services pour particulier</h1>
+		<div class="service-admin row col-lg-6 col-md-8 mb-4">
+			<h1 class ="mt-5 text-center">Liste de mes services pour particuliers</h1>
 
 			<table class="table border text-center m-4">
 				<thead>
@@ -24,7 +24,7 @@
 							<td>{{ service.price2 }}</td>
 							<td class="d-flex justify-content-around">
 								<div class="mx-2 px-3">
-									<a href="{{ path('service_edit', {'id': service.id}) }}" class="btn btn-primary">Modifier</a>
+									<a href="{{ path('service_edit', {'id': service.id}) }}" class="btn btn-primary text-light">Modifier</a>
 								</div>
 								{{ include('service/_delete_form.html.twig') }}
 							</td>

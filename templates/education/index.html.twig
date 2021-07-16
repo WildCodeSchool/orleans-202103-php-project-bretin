@@ -18,7 +18,7 @@
                     <td>{{ education.name }}</td>
                     <td>{{ education.obtentionYear }}</td>
                     <td>
-                        <a href="{{ path('education_edit', {'id': education.id}) }}" class="btn btn-primary">Modifier</a>
+                        <a href="{{ path('education_edit', {'id': education.id}) }}" class="btn btn-primary text-light mb-2">Modifier</a>
                         {{ include('education/_delete_form.html.twig') }}
                     </td>
                 </tr>
