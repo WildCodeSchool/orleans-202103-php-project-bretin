@@ -34,7 +34,7 @@ class ContactType extends AbstractType
                     'Non' => 'Non',
                 ],
             ])
-            ->add('urgentResponse', TextareaType::class)
+            ->add('urgentResponse', TextareaType::class, ['required' => false, 'empty_data' => 'Non renseigné',])
             ->add('intervention', TextareaType::class)
             ->add('constraint', TextareaType::class)
             ->add('availability', TextareaType::class)

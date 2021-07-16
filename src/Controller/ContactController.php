@@ -34,6 +34,9 @@ class ContactController extends AbstractController
             ->subject('Informations après remplissage du formulaire de contact entreprise')
             ->html($this->renderView('Components/email.html.twig', ['contact' => $contact]));
             $mailer->send($email);
+
+            $this->addFlash('success', 'Votre e-mail a été transmis');
+            return $this->redirectToRoute('contact_');
         }
 
         return $this->render('Contact/People/contact.html.twig', ['offices' => $office->findAll(),
