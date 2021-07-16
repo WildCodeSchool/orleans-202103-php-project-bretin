@@ -25,7 +25,7 @@ class Contact
      * @Assert\Email
      * @Assert\Length(max="50")
      */
-    private ?string $mail;
+    private string $mail;
 
     /**
      * @Assert\Notblank
@@ -95,12 +95,12 @@ class Contact
         return $this;
     }
 
-    public function getMail(): ?string
+    public function getMail(): string
     {
         return $this->mail;
     }
 
-    public function setMail(?string $mail): self
+    public function setMail(string $mail): self
     {
         $this->mail = $mail;
 
