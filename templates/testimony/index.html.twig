@@ -6,7 +6,7 @@
 <div class="d-flex justify-content-center">
     <div class="testimony-admin row col-lg-6 col-md-8 mb-4">
 
-    <h1 class="text-center">Liste des Témoignages</h1>
+    <h1 class="text-center mt-5">Liste des Témoignages</h1>
 
     <table class="table border text-center m-4">
         <thead>
@@ -26,8 +26,8 @@
                 <td>{{ testimony.age }}</td>
                 <td>{{ testimony.message }}</td>
                 <td class="d-flex border-0">
-                    <a class="btn btn-primary mx-2 px-3" href="{{ path('testimony_edit', {'id': testimony.id}) }}">
-                    Editer
+                    <a class="btn btn-primary text-light mx-2 px-3" href="{{ path('testimony_edit', {'id': testimony.id}) }}">
+                    Modifier
                     </a>
                     {{ include('testimony/_delete_form.html.twig') }}
                 </td>
@@ -39,8 +39,6 @@
         {% endfor %}
         </tbody>
     </table>
-    <div class = "m-2 p-3">
-        <a class="btn btn-primary" href="{{ path('testimony_new') }}">Ajout Témoignages</a>
-    </div>
+        <a class="btn btn-primary text-light" href="{{ path('testimony_new') }}">Ajout Témoignages</a>
 <div>
 {% endblock %}

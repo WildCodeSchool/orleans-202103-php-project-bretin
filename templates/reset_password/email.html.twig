@@ -1,0 +1,9 @@
+<p>Bonjour,</p>
+
+<p>Pour réinitialiser votre mot de passe administrateur, merci de cliquer sur le lien suivant: </p>
+
+<a href="{{ url('app_reset_password', {token: resetToken.token}) }}">{{ url('app_reset_password', {token: resetToken.token}) }}</a>
+
+<p>Pour des raisons de sécurité, celui-ci expirera dans {{ resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') }}.</p>
+
+<p>Merci</p>

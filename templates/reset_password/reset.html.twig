@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+{% block navbar %}
+    {% include 'Includes/_navbar.html.twig' %}
+{% endblock %}
+
+{% block title %}Cabinet Bretin - Admin - Connexion{% endblock %}
+
+{% block body %}
+<main class="container-fluid p-5 fw-bold col-md-4">
+<div class = "row p-3"></div>
+    <div class = "text-center">
+        <p class = "titre">Réinitialisation du mot de passe administrateur</p>
+    </div>
+    <div class="d-flex justify-content-center p-1">
+        <div class = "text-center p-5">
+            {{ form_start(resetForm) }}
+                <div class = "row p-4">
+                    {{ form_row(resetForm.plainPassword) }}
+                </div>
+                <button class="btn btn-primary w-100">Changez le mot de passe</button>
+            {{ form_end(resetForm) }}
+        </div>
+    </div>
+</main>
+{% endblock %}

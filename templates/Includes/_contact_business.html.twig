@@ -2,7 +2,7 @@
     <div class="card m-2 intro">
         <div class="card-header">
             <div class = "fw-bold text-center m-2 p-4">
-                <p class = "titre">Si vous êtes une Entreprise</p>
+                <p class = "titre">Si vous êtes une ENTREPRISE</p>
             </div>
             <div class="card-body">
                 {{ form_start(form) }}
@@ -11,19 +11,19 @@
                         {% block form_row %}
                         <div class="form_row p-2">
                             {{ form_label(form.civility, 'Civilité') }}
+                        </div>
                             {{ form_widget(form.civility) }}
                             {{ form_errors(form.civility) }}
-                        </div>
                         <div class="form_row p-2">
                             {{ form_label(form.lastname, 'Nom') }}
+                        </div>
                             {{ form_widget(form.lastname) }}
                             {{ form_errors(form.lastname) }}
-                        </div>
                         <div class="form_row p-2">
                             {{ form_label(form.firstname, 'Prénom') }}
+                        </div>
                             {{ form_widget(form.firstname) }}
                             {{ form_errors(form.firstname) }}
-                        </div>
                         <div class="form_row p-2">
                             {{ form_label(form.mail, 'E-mail') }}
                         </div>
@@ -55,7 +55,7 @@
                         {{ form_widget(form.urgent) }}
                         {{ form_errors(form.urgent) }}
                         <div class="form_row p-2">
-                            {{ form_label(form.urgentResponse, 'Pourquoi ?') }}
+                            {{ form_label(form.urgentResponse, 'Si oui, pourquoi ?') }}
                         </div>
                         {{ form_widget(form.urgentResponse) }}
                         {{ form_errors(form.urgentResponse) }}
