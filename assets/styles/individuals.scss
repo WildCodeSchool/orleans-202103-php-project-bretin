@@ -5,10 +5,6 @@
     color: $quinary;
     font-weight: 900;
     background-color: opacify($color: #ffffff90, $amount: -0);
-    // text-align: center;
-    // position: absolute;
-    // top: 50%;
-    // left: 40%;
 }
 
 .background-individuals{
@@ -41,15 +37,8 @@ h2{
     font-weight: bolder;
  }
 
-// .candle{
-//     width: 250px; 
-//     height: 200px;
-// }
-
-
 .services_description{
     font-size: 18px;
     text-align: justify;
-    // line-height: 1.5em;
     color: $quarternary;
 }
