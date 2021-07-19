@@ -15,20 +15,20 @@
 				<h1>ESPACE PARTICULIERS</h1>
 			</div>
 		</div>
-		<section class="services py-5 px-5">
-			<div class="container">
-				<h2>MES SERVICES</h2>
-				<p class="services_description">J’accompagne au sein de mon cabinet, toute personne qui souhaite trouver un lieu d’écoute, de soutien, un lieu sécurisé et bienveillant, pour trouver les clés et les réponses d’un avenir meilleur. Les séances s’organisent et reposent sur des principes forts du cabinet, à savoir la confidentialité, la confiance, le non jugement.<br>
+		<section class="services container-fluid py-3">
+			{# <div class="col-8 offset-2"> #}
+				<h2 class="col-8 pt-5 mb-5 text-center col-sm-5 text-sm-start col-md-4 text-md-start px-md-1 col-lg-8 px-lg-3 text-lg-start offset-2">MES SERVICES</h2>
+				<p class="services_description col-8 text-start pb-5 col-sm-9 pb-sm-2 mb-sm-5 col-md-8 text-md-start px-md-2 col-lg-8 text-lg-start offset-2 col-xl-9 px-xl-3 col-xxl-9 pb-xxl-0">J’accompagne au sein de mon cabinet, toute personne qui souhaite trouver un lieu d’écoute, de soutien, un lieu sécurisé et bienveillant, pour trouver les clés et les réponses d’un avenir meilleur. Les séances s’organisent et reposent sur des principes forts du cabinet, à savoir la confidentialité, la confiance, le non jugement.<br>
 					Ces principes rendent alors possible une expression libre et libérée, facilitée.</p>
-				<div class="row g-2">
-					<div class="col col-md-6 col-lg-3">
-						<img class="candle w-100" img src="{{ asset('build/images/candle.png') }}" alt="candle_picture">
+				<div class="row col offset-1 g-2 px-3 pb-5 col-sm-11 px-sm-5 col-md-10 col-lg-12 offset-lg-0 px-lg-0 col-xl-10 offset-xl-2 pt-xl-5 p-xl-0 pb-xl-5 col-xxl-10 offset-xxl-2 px-xl-3 ">
+					<div class="col-12 text-center px-3 p-1 text-end col-sm-10 col-md-11 pb-md-4 col-lg-12 text-lg-center px-lg-0 col-xl-4 px-xl-0 py-xl-5 p-xl-0 col-xxl-4 py-xxl-0">
+						<img class="candle col-12 pb-5 col-sm-12 col-md-11 col-lg-8 pb-lg-0 col-xl-12" img src="{{ asset('build/images/candle.png') }}" alt="candle_picture">
 					</div>
-					<div class="card container col col-lg-9">
+					<div class="card px-4 col text-center col-sm-10 col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-lg-start col-xl-7 offset-xl-0 col-xxl-7 offset-xxl-0">
 						<div class="card-body row">
 							{% set price = 0 %}
 							{% for service in services %}
-								<div class="col col-sm col-md col-lg-4">
+								<div class="px-4 text-center g-3 col-sm-6 px-sm-3 col-lg-4 text-lg-start col-xl-4">
 									<p class="card-text">{{ service.name }}</p>
 								</div>
 								{% set price = service.price %}
@@ -39,7 +39,7 @@
 							€ (durée de la séance 50 à 60 min)</p>
 					</div>
 				</div>
-			</div>
+			{# </div> #}
 		</section>
 	</section>
 	<section>
