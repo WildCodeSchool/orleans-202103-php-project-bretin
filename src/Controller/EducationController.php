@@ -30,7 +30,7 @@ class EducationController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="education_new", methods={"GET","POST"})
+     * @Route("/ajout", name="education_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
     {
@@ -63,7 +63,7 @@ class EducationController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="education_edit", methods={"GET","POST"})
+     * @Route("/{id}/modification", name="education_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Education $education): Response
     {
