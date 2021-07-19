@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/admin/testimony")
+ * @Route("/admin/temoignages")
  */
 class TestimonyController extends AbstractController
 {
@@ -30,7 +30,7 @@ class TestimonyController extends AbstractController
     }
 
     /**
-     * @Route("/ajout-temoignage", name="testimony_new", methods={"GET","POST"})
+     * @Route("/ajout", name="testimony_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
     {
@@ -65,7 +65,7 @@ class TestimonyController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/editer", name="testimony_edit", methods={"GET","POST"})
+     * @Route("/{id}/modification", name="testimony_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Testimony $testimony): Response
     {
