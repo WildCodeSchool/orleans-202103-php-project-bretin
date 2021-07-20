@@ -1,6 +1,6 @@
-<h2 class="pt-5 mb-5 mx-5 text-center col-3">TÉMOIGNAGES</h2>
+<h2 class="col-8 pt-5 mb-5 text-center col-sm-3 col-sm-start col-md-3 text-md-end px-md-1 col-lg-8 px-lg-3 text-lg-start offset-2">TÉMOIGNAGES</h2>
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-	<div class="carousel-inner">
+	<div class="carousel-inner text-center">
 		{% for testimony in testimonies %}
 			<div class="carousel-item {{ loop.index == 1 ? 'active' : '' }}">
 				<div class="color-testimony pb-5 fw-bold col-9 position-relative bottom-0 start-50 translate-middle-x">
@@ -32,11 +32,10 @@
 		{% endfor %}
 	</div>
 	<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-		<span class="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
+		<svg width="100" height="50" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">><path d="M12 0c6.623 0 12 5.377 12 12s-5.377 12-12 12-12-5.377-12-12 5.377-12 12-12zm0 1c6.071 0 11 4.929 11 11s-4.929 11-11 11-11-4.929-11-11 4.929-11 11-11zm3 5.753l-6.44 5.247 6.44 5.263-.678.737-7.322-6 7.335-6 .665.753z" class="arrow-left" transform="scale(2)"/></svg>
 		<span class="visually-hidden">Previous</span>
 	</button>
 	<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-		<span class="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
-		<span class="visually-hidden">Next</span>
+		<svg width="100" height="50" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M12 0c6.623 0 12 5.377 12 12s-5.377 12-12 12-12-5.377-12-12 5.377-12 12-12zm0 1c6.071 0 11 4.929 11 11s-4.929 11-11 11-11-4.929-11-11 4.929-11 11-11zm-3 5.753l6.44 5.247-6.44 5.263.678.737 7.322-6-7.335-6-.665.753z" class="arrow-left" transform="scale(2)"/></svg>		<span class="visually-hidden">Next</span>
 	</button>
 </div>
