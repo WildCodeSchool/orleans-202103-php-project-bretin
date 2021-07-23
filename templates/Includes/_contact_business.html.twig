@@ -1,90 +1,15 @@
-<div class="container col-md-8">
-    <div class="card m-2 intro">
-        <div class="card-header">
-            <div class = "fw-bold text-center m-2 p-4">
-                <p class = "titre">Si vous êtes une ENTREPRISE</p>
+<div class="d-flex flex-column justify-content-center align-items-center my-3">
+    <div class = "d-flex justify-content-center mt-5 mb-3 p-4">
+        <h1 class = "titre">Si vous êtes une ENTREPRISE</h1>
+    </div>
+    <div class="container intro">
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+                <div class = "d-flex justify-content-end m-3 p-3">
+                    <button class="btn btn-primary text-light">{{ button_label|default('Envoyer') }}</button>
+                </div>
             </div>
-            <div class="card-body">
-                {{ form_start(form) }}
-                <div class="d-flex justify-content-center">
-                    <div class="row col-lg-6 col-md-8 mb-4 fw-bold">
-                        {% block form_row %}
-                        <div class="form_row p-2">
-                            {{ form_label(form.civility, 'Civilité') }}
-                        </div>
-                            {{ form_widget(form.civility) }}
-                            {{ form_errors(form.civility) }}
-                        <div class="form_row p-2">
-                            {{ form_label(form.lastname, 'Nom') }}
-                        </div>
-                            {{ form_widget(form.lastname) }}
-                            {{ form_errors(form.lastname) }}
-                        <div class="form_row p-2">
-                            {{ form_label(form.firstname, 'Prénom') }}
-                        </div>
-                            {{ form_widget(form.firstname) }}
-                            {{ form_errors(form.firstname) }}
-                        <div class="form_row p-2">
-                            {{ form_label(form.mail, 'E-mail') }}
-                        </div>
-                        {{ form_widget(form.mail) }}
-                        {{ form_errors(form.mail) }}
-                        <div class="form_row p-2">
-                            {{ form_label(form.businessName, 'Nom de l\'Entreprise') }}
-                        </div>
-                        {{ form_widget(form.businessName) }}
-                        {{ form_errors(form.businessName) }}
-                        <div class="form_row p-2">
-                            {{ form_label(form.job, 'Fonction') }}
-                        </div>
-                        {{ form_widget(form.job) }}
-                        {{ form_errors(form.job) }}
-                        <div class="form_row p-2">
-                            {{ form_label(form.situation, 'Quelle est la situation rencontrée ?') }}
-                        </div>
-                        {{ form_widget(form.situation) }}
-                        {{ form_errors(form.situation) }}
-                        <div class="form_row p-2">
-                            {{ form_label(form.need, 'Quel serait votre besoin ?') }}
-                        </div>
-                        {{ form_widget(form.need) }}
-                        {{ form_errors(form.need) }}
-                        <div class="form_row p-2">
-                            {{ form_label(form.urgent, 'L’intervention est-elle urgente ?') }}
-                        </div>
-                        {{ form_widget(form.urgent) }}
-                        {{ form_errors(form.urgent) }}
-                        <div class="form_row p-2">
-                            {{ form_label(form.urgentResponse, 'Si oui, pourquoi ?') }}
-                        </div>
-                        {{ form_widget(form.urgentResponse) }}
-                        {{ form_errors(form.urgentResponse) }}
-                        <div class="form_row p-2">
-                            {{ form_label(form.intervention, 'Avez-vous déjà fait intervenir un psychologue du travail
-                            dans votre entreprise et si oui à quelle occasion ?') }}
-                        </div>
-                        {{ form_widget(form.intervention) }}
-                        {{ form_errors(form.intervention) }}
-                        <div class="form_row p-2">
-                            {{ form_label(form.constraint, 'Quelles sont vos contraintes
-                            (organisation du travail, budget, temps, environnement, etc...) ?') }}
-                        </div>
-                        {{ form_widget(form.constraint) }}
-                        {{ form_errors(form.constraint) }}
-                        <div class="form_row p-2">
-                            {{ form_label(form.availability, 'Quelles sont vos disponibilités pour se rencontrer
-                            ou échanger sur votre besoin ?') }}
-                        </div>
-                        {{ form_widget(form.availability) }}
-                        {{ form_errors(form.availability) }}
-                        {% endblock form_row %}
-                        <div class = "d-flex justify-content-end m-3 p-3">
-                            <button class="btn btn-primary">{{ button_label|default('Envoyer') }}</button>
-                        </div>
-                    </div>
-                <div>
-                {{ form_end(form) }}
-            </div>
-        </div>
+        <div>
+    {{ form_end(form) }}
     </div>
 </div>
