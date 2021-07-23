@@ -57,7 +57,7 @@ class CabinetController extends AbstractController
     }
 
       /**
-     * @Route("/picture/{id}/edit", name="cabinet_picture_edit", methods={"GET","POST"})
+     * @Route("/photo/{id}/modification", name="cabinet_picture_edit", methods={"GET","POST"})
      */
     public function editPicture(Request $request, Picture $picture): Response
     {
@@ -87,7 +87,7 @@ class CabinetController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="cabinet_edit", methods={"GET","POST"})
+     * @Route("/{id}/modification", name="cabinet_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Office $office): Response
     {
