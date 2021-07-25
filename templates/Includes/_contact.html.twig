@@ -5,9 +5,9 @@
     <div class="card-body">
         <p class="card-text cadre">
         <img src="{{ asset("build/images/calendar-date.svg") }}" alt="icon_calendar" height="22" width="27">
-            &nbsp; J'interviens uniquement sur RDV <br>
-            Je vous invite à me joindre par téléphone ou mail pour prendre rendez-vous ou obtenir des renseignements.
-            <br>Les séances sont d'une durée de 50 à 60 minutes.
+            &nbsp; J'interviens uniquement sur RDV. <br>
+        <img src="{{ asset("build/images/info-circle.svg") }}" alt="icon_calendar" height="22" width="27">
+            &nbsp; Les séances sont d'une durée de 50 à 60 minutes.
         </p>
     </div>
     {% for office in offices %}
@@ -26,6 +26,9 @@
                 <div class= "row p-4">
                     <p class="card-title">&nbsp; <img src="{{ asset("build/images/address.svg") }}" alt="icon_address" height="22" width="27">  {{ office.address }} - {{ office.zipcode }} -  {{ office.city }} </p>
                     <p class="card-text"> &nbsp; <img src="{{ asset("build/images/tel.svg") }}" alt="icon_tel" height="22" width="27">  {{ office.phone }} - <img src="{{ asset("build/images/envelope.svg") }}" alt="icon_mail" height="22" width="27">  <a href="mailto:{{ office.mail }}" target="_blank">{{ office.mail }}<a></p>
+                </div>
+                <div class= "row p-4">
+                    <a href= "https://www.doctolib.fr/psychologue/orleans/loic-bretin" target = "_blank" class = "btn btn-primary">Je prends mon rendez-vous</a>
                 </div>
             </div>
         </div>
