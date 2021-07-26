@@ -70,19 +70,14 @@ class AdminUser implements UserInterface
      */
     private ?DateTimeInterface $updatedAt;
 
-   
-   
     public function __serialize(): array
     {
         return [
-            'id'=> $this->getId(),
-            'email'=> $this-> getUsername(),
-            'password'=>$this-> getPassword(),
+            'id' => $this->getId(),
+            'email' => $this-> getUsername(),
+            'password' => $this-> getPassword(),
         ];
     }
-
-
-
 
     public function getId(): ?int
     {
