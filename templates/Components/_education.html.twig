@@ -1,7 +1,7 @@
 <section class="educ vh-auto" id="education">
     <div class="row g-0 d-flex align-items-start justify-content-evenly m-0 p-5">
         <div class="col-md-9 col-lg-9" style="width: 81%">
-            <h2>Mes Formations/Diplômes</h2><br>
+            <h2>Mes Formations/Diplômes</h2>
             {% for education in educations %}
                 <p>{{ education.name }} . Obtenu en {{ education.getObtentionyear }}</p>
             {% endfor %}
