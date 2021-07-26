@@ -47,6 +47,7 @@ class AdminUser implements UserInterface
      */
     private string $biography;
 
+
     /**
     * @Vich\UploadableField(mapping="biography_file", fileNameProperty="url")
     * @Assert\File(
@@ -55,19 +56,33 @@ class AdminUser implements UserInterface
     * )
     * @var File
     */
-    private ?File $biographyFile = null;
+    private ?File $biographyFile;
 
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\Length(max="255")
      */
-    private ?string $url = null;
+    private ?string $url;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
      */
     private ?DateTimeInterface $updatedAt;
+
+   
+   
+    public function __serialize(): array
+    {
+        return [
+            'id'=> $this->getId(),
+            'email'=> $this-> getUsername(),
+            'password'=>$this-> getPassword(),
+        ];
+    }
+
+
+
 
     public function getId(): ?int
     {
