@@ -20,8 +20,7 @@ class ContactType extends AbstractType
                 'choices' => ['Madame' => 'Mme', 'Mademoiselle' => 'Mlle', 'Monsieur' => 'M.',],
                 'label' => 'Civilité',
                 'attr' => ['class' => 'mb-3',],
-                'multiple' => true,
-                'expanded' => true,
+                'placeholder' => 'Choisissez votre civilité',
             ])
             ->add('lastname', TextType::class, [
                 'attr' => ['class' => 'mb-3',],
@@ -57,9 +56,8 @@ class ContactType extends AbstractType
                     'Non' => 'Non',
                 ],
                 'attr' => ['class' => 'mb-3',],
+                'placeholder' => 'Choisissez votre réponse',
                 'label' => 'L’intervention est-elle urgente ?',
-                'multiple' => true,
-                'expanded' => true,
             ])
             ->add('urgentResponse', TextareaType::class, [
                 'required' => false,
