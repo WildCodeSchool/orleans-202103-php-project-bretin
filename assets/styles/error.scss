@@ -1,0 +1,10 @@
+@import 'variables';
+@import 'app';
+
+main {
+    height: auto;
+    h2 {
+        font-family: $second-text-font;
+        font-size: $title-size;
+    }
+}

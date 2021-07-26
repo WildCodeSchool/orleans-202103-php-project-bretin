@@ -1,0 +1,23 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('error') }}
+{% endblock %}
+
+{% block title %}
+    {{ parent() }}
+    - Site indisponible
+{% endblock %}
+
+{% block body %}
+    <main class="p-md-5 p-4">
+        <div class="p-md-5 pd-3">
+            <h1 class="h1 text-danger">Erreur 500 - Site indisponible</h1>
+            <h2 class="h3">
+                Cette page que vous essayez d'accéder est actuellement indisponible. Merci de réessayer ultérieurement.
+            </h2>
+            <a href="{{ path('accueil') }}" class="btn btn-primary btn-lg mt-3">Retourner à l'accueil</a>
+        </div>
+    </main>
+{% endblock %}
