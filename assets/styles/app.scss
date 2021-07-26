@@ -6,6 +6,7 @@
 @import 'testimony.scss';
 @import "~bootstrap/scss/bootstrap";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import 'accueil.scss';
 @import 'contact.scss';
 
@@ -22,12 +23,12 @@ body {
 
 h1, h2, h3 {
     font-size: $title-size;
-    font-family: $text-font;
+    font-family: $title-font;
     color: $quinary;
 }
 
 .nav-link, .navbar-brand{
-    font-family: $title-font;
+    font-family: $text-font;
     color: $primary;
     font-weight: bolder;
 }
