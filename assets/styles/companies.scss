@@ -43,15 +43,19 @@ ul li{
 }
 
 .intervention{
-    list-style: url('/assets/images/clipboard-check.svg');
+    list-style: url('/assets/images/icon_symbole.png');
 
 }
 
 .services{
-    list-style: url('/assets/images/check-circle.svg');
+    list-style: url('/assets/images/icon_symbole1.png');
 }
 
 ul li a{
     color: $quarternary;
     text-decoration: none;
+}
+
+.link{
+    font-weight: bolder;
 }
