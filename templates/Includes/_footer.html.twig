@@ -7,6 +7,7 @@
 			<p class="psy fs-5">Psychologie</p>
 			<p class="psy">Accompagnement Professionnel et Personnel</p>
 			<p class="psy fs-5">Numéro ADELI : 459309159</p>
+			<a href="{{ path('cgu') }}" class="cgu text-light" >Mentions Légales</a>
 		</div>
 		<div class="text-center text-sm-end col-sm-4 col-md-3 col-lg-2 col-xl-2">
 			<img class="col-5 col-sm-8 col-md-8 col-lg-10 col-xl-7 p-1 mt-3" src="{{ asset('build/images/Logo_L.Bretinrogn.png') }}" alt="photo">
@@ -15,7 +16,7 @@
 		{% for office in offices %}
 			<address class="contacts text-center text-sm-start col-sm-3 col-md-2 col-lg-2 col-xl-2 pt-4">
 				{% if loop.first %}
-					<p class="fs-5">Lieux de Consultation:</p>
+					<p class="col-11 fs-5">Lieux de Consultation:</p>
 				{% else %}
 					<div class="pt-5"></div>
 				{% endif %}
