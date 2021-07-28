@@ -1,6 +1,6 @@
 <footer class="container-fluid pt-3 footer">
 	<div class="row">
-		<div class ="text-center text-sm-end col-sm-4 col-md-2 col-lg-2 col-xl-2">
+		<div class="text-center text-sm-end col-sm-4 col-md-2 col-lg-2 col-xl-2">
 			<img class="profil-loic col-4 col-sm-6 mx-sm-3 col-md-11 mx-md-2 col-lg-9 col-xl-6 pb-4 pt-3" src="{{ asset('build/images/loic-footer.png') }}" alt="profil"/>
 		</div>
 		<div class="psy text-center col-sm-6 text-sm-start col-md-2 text-md-start col-lg-3 pb-3 pt-4">
@@ -9,18 +9,26 @@
 			<p class="psy fs-5">Numéro ADELI : 459309159</p>
 		</div>
 		<div class="text-center text-sm-end col-sm-4 col-md-3 col-lg-2 col-xl-2">
-			<img class="col-5 col-sm-8 col-md-8 col-lg-10 col-xl-7 p-1 mt-3" src="{{ asset('build/images/Logo_L.Bretinrogn.png') }}" alt="photo" >
+			<img class="col-5 col-sm-8 col-md-8 col-lg-10 col-xl-7 p-1 mt-3" src="{{ asset('build/images/Logo_L.Bretinrogn.png') }}" alt="photo">
 		</div>
-		<address class="contacts text-center text-sm-start col-sm-3 col-md-2 col-lg-2 col-xl-2 pt-4">
-			<p class="fs-5">Cabinet 1:</p>
-			1 Rue Courcaille,<br>
-			45000 Orléans<br><br>
-			<p>Tél: 06 25 60 94 94</p>
-		</address>
-		<address class="contacts text-center text-sm-start col-sm-3 col-md-3 col-lg-2 col-xl-3 pt-4">
-			<p class="fs-5">Cabinet 2:</p>
-			89 Rue du Haut Midi,<br>
-			45160 Saint-Hilaire-Saint-Mesmin
-		</address>
+
+		{% for office in offices %}
+			<address class="contacts text-center text-sm-start col-sm-3 col-md-2 col-lg-2 col-xl-2 pt-4">
+				{% if loop.first %}
+					<p class="fs-5">Lieux de Consultation:</p>
+				{% else %}
+					<div class="pt-5"></div>
+				{% endif %}
+				{{ office.address }}
+				<br>
+				{{ office.zipcode }}
+				{{ office.city }}
+				<br>
+				{% if loop.first %}
+					Tél:
+					{{ office.phone }}
+				{% endif %}
+			</address>
+		{% endfor %}
 	</div>
 </footer>
