@@ -56,8 +56,7 @@ class AdminUser implements UserInterface
     * )
     * @var File
     */
-    private ?File $biographyFile;
-
+    private ?File $biographyFile = null;
 
     /**
      * @ORM\Column(type="string", length=255)

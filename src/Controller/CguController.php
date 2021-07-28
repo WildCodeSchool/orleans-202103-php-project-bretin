@@ -7,15 +7,21 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class CompaniesController extends AbstractController
+/**
+ * @Route("/cgu", name="cgu")
+ */
+
+
+class CguController extends AbstractController
 {
     /**
-     * @Route("/entreprises", name="entreprises")
+     * @Route("/", name="")
      */
     public function index(OfficeRepository $officeRepository): Response
     {
-        return $this->render('Companies/index.html.twig', [
-            'offices' => $officeRepository->findAll(),
+        $offices = $officeRepository->findAll();
+        return $this->render('cgu/index.html.twig', [
+            'offices' => $offices,
         ]);
     }
 }
