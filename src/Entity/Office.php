@@ -66,7 +66,7 @@ class Office
     private string $mail;
 
     /**
-     * @ORM\OneToMany(targetEntity=Picture::class, mappedBy="office")
+     * @ORM\OneToMany(targetEntity=Picture::class, mappedBy="office", cascade={"remove"})
      */
     private collection $pictures;
 

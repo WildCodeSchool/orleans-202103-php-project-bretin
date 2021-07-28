@@ -56,6 +56,35 @@ class CabinetController extends AbstractController
         ]);
     }
 
+
+    /**
+     * @Route("/photo/{id}", name="pic_new", methods={"GET","POST"})
+     */
+    public function newpic(Request $request, Office $office): Response
+    {
+        $picture = new Picture();
+
+        $form = $this->createForm(PictureType::class, $picture);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $entityManager = $this->getDoctrine()->getManager();
+            $picture->setOffice($office);
+            $entityManager->persist($picture);
+            $entityManager->flush();
+
+            $this->addFlash('success', 'Le cabinet a bien été ajouté.');
+
+            return $this->redirectToRoute('cabinet_index');
+        }
+
+        return $this->render('cabinet/edit_picture.html.twig', [
+            'picture' => $picture,
+            'form' => $form->createView(),
+        ]);
+    }
+
       /**
      * @Route("/photo/{id}/modification", name="cabinet_picture_edit", methods={"GET","POST"})
      */
@@ -115,6 +144,20 @@ class CabinetController extends AbstractController
         if ($this->isCsrfTokenValid('delete' . $office->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($office);
+            $entityManager->flush();
+        }
+
+        return $this->redirectToRoute('cabinet_index');
+    }
+
+        /**
+     * @Route("/photo/delete/{id}", name="pic_delete", methods={"POST"})
+     */
+    public function picdelete(Request $request, Picture $picture): Response
+    {
+        if ($this->isCsrfTokenValid('delete' . $picture->getId(), $request->request->get('_token'))) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($picture);
             $entityManager->flush();
         }
 

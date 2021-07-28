@@ -27,7 +27,7 @@ class Picture
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private ?string $url;
+    private ?string $url = '';
 
     /**
     * @Vich\UploadableField(mapping="office_file", fileNameProperty="url")
