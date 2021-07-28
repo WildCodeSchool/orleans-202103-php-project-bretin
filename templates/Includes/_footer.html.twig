@@ -14,7 +14,7 @@
 
 		{% for office in offices %}
 			<address class="contacts text-center text-sm-start col-sm-3 col-md-2 col-lg-2 col-xl-2 pt-4">
-				{% if loop.index == 1 %}
+				{% if loop.first %}
 					<p class="fs-5">Lieux de Consultation:</p>
 				{% else %}
 					<div class="pt-5"></div>
@@ -24,7 +24,7 @@
 				{{ office.zipcode }}
 				{{ office.city }}
 				<br>
-				{% if loop.index == 1 %}
+				{% if loop.first %}
 					Tél:
 					{{ office.phone }}
 				{% endif %}
