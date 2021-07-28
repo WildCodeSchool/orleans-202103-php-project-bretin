@@ -19,9 +19,9 @@ class CguController extends AbstractController
      */
     public function index(OfficeRepository $officeRepository): Response
     {
-        $office = $officeRepository->findAll();
+        $offices = $officeRepository->findAll();
         return $this->render('cgu/index.html.twig', [
-            'offices' => $office,
+            'offices' => $offices,
         ]);
     }
 }
