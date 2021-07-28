@@ -1,7 +1,7 @@
 .intro {
     font-family: $second-text-font;
     color: $quarternary;
-    font-size: 18px;
+    font-size: $text-size;
     font-weight: bolder;
     background-color:$senary;
 }
@@ -9,13 +9,13 @@
 .cadre {
     font-family: $second-text-font;
     color: $quarternary;
-    font-size: 18px;
+    font-size: $text-size;
     font-weight: bolder;
 }
 
 .card-header {
     font-family: $second-text-font;
-    font-size: 22px;
+    font-size: $title-size;
     font-weight: bolder;
     color:  $quinary;
     background-color:$light;
@@ -29,5 +29,5 @@
 .titre 
 {
     color:  $quinary;
-    font-size: 25px;
+    font-size: $title-size;
 }

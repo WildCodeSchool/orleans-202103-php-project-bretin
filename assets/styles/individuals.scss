@@ -18,6 +18,7 @@
 }
 
 h2{
+    font-size: $title-size;
     color: $quinary;
     font-weight: bolder;
 }
@@ -38,7 +39,7 @@ h2{
  }
 
 .services_description{
-    font-size: 18px;
+    font-size: $text-size;
     text-align: justify;
     color: $quarternary;
 }
