@@ -19,9 +19,9 @@
                 </div>
             {{ form_end(form) }}
                 <button class="btn btn-primary m-2 col-3 px-1">{{ button_label|default('Enregistrer') }}</button>
-                {% if picture.url is not empty %} 
+                {% if picture.url is not empty %}
                   {{ include('cabinet/_delete_pic.html.twig') }}
-                {% endif %} 
+                {% endif %}
         </div>
     </main>
 {% endblock %}

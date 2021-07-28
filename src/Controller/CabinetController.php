@@ -68,7 +68,6 @@ class CabinetController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-
             $entityManager = $this->getDoctrine()->getManager();
             $picture->setOffice($office);
             $entityManager->persist($picture);
